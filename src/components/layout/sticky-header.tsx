@@ -11,10 +11,10 @@ interface StickyHeaderProps {
 }
 
 const navLinks = [
-  { label: 'Produits', href: '/produits/assurance-vie' },
-  { label: 'Comparer', href: '/comparer' },
-  { label: 'Glossaire', href: '/glossaire' },
-  { label: 'À propos', href: '/a-propos' },
+  { label: 'Produits', href: '/produits/assurance-vie', activePrefix: '/produits' },
+  { label: 'Comparer', href: '/comparer', activePrefix: '/comparer' },
+  { label: 'Glossaire', href: '/glossaire', activePrefix: '/glossaire' },
+  { label: 'À propos', href: '/a-propos', activePrefix: '/a-propos' },
 ]
 
 export function StickyHeader({ className }: StickyHeaderProps) {
@@ -88,8 +88,8 @@ export function StickyHeader({ className }: StickyHeaderProps) {
     }
   }, [isMenuOpen])
 
-  function isActive(href: string) {
-    return pathname === href || pathname.startsWith(href + '/')
+  function isActive(link: (typeof navLinks)[number]) {
+    return pathname.startsWith(link.activePrefix)
   }
 
   return (
@@ -135,10 +135,11 @@ export function StickyHeader({ className }: StickyHeaderProps) {
             <li key={link.href}>
               <Link
                 href={link.href}
+                aria-current={isActive(link) ? 'page' : undefined}
                 className={`inline-flex min-h-[44px] min-w-[44px] items-center px-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary ${
                   isScrolled ? 'text-white' : 'text-ep-text-primary'
                 } ${
-                  isActive(link.href)
+                  isActive(link)
                     ? 'font-bold underline underline-offset-4 decoration-2'
                     : 'hover:underline hover:underline-offset-4 hover:decoration-2'
                 }`}
@@ -211,8 +212,9 @@ export function StickyHeader({ className }: StickyHeaderProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
+                aria-current={isActive(link) ? 'page' : undefined}
                 className={`min-h-[44px] inline-flex items-center text-xl rounded px-4 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2 ${
-                  isActive(link.href)
+                  isActive(link)
                     ? 'font-bold text-ep-primary underline underline-offset-4 decoration-2'
                     : 'text-ep-text-primary hover:text-ep-primary'
                 }`}
