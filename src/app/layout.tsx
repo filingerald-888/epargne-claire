@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "EpargneClaire | PatriMap",
-  description: "Comprendre l'épargne et le patrimoine, simplement.",
+  title: "EpargneClaire — Comprendre l'épargne, simplement",
+  description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
 }
 
 export default function RootLayout({
