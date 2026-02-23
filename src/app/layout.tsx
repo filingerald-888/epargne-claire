@@ -2,6 +2,10 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
+import { SkipLink } from "@/components/layout/skip-link"
+import { StickyHeader } from "@/components/layout/sticky-header"
+import { Footer } from "@/components/layout/footer"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -29,7 +33,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        {children}
+        <SkipLink />
+        <StickyHeader />
+        <main id="main-content" className="mx-auto max-w-[1200px] px-4">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )
