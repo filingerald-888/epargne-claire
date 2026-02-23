@@ -5,6 +5,7 @@ import "./globals.css"
 import { SkipLink } from "@/components/layout/skip-link"
 import { StickyHeader } from "@/components/layout/sticky-header"
 import { Footer } from "@/components/layout/footer"
+import { AppTooltipProvider } from "@/components/layout/tooltip-provider"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,12 +34,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <SkipLink />
-        <StickyHeader />
-        <main id="main-content" className="mx-auto max-w-[1200px] px-4">
-          {children}
-        </main>
-        <Footer />
+        <AppTooltipProvider>
+          <SkipLink />
+          <StickyHeader />
+          <main id="main-content" className="mx-auto max-w-[1200px] px-4">
+            {children}
+          </main>
+          <Footer />
+        </AppTooltipProvider>
       </body>
     </html>
   )

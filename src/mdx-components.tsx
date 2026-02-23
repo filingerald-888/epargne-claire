@@ -1,8 +1,9 @@
 import type { MDXComponents } from "mdx/types"
+import { GlossaryTooltip } from "@/components/content/glossary-tooltip"
 
-// Mapping vide — les composants content/ seront ajoutés en Story 2.1+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
+    GlossaryTooltip,
   }
 }

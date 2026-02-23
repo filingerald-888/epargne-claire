@@ -1,0 +1,89 @@
+{
+  "Assurance-vie": {
+    "definition": "Contrat d'épargne à long terme permettant de se constituer un capital ou une rente, avec un cadre fiscal avantageux après 8 ans.",
+    "definitionComplete": "L'assurance-vie est un contrat entre un souscripteur et un assureur. Elle permet de placer son argent sur des supports variés (fonds euros à capital garanti, unités de compte en actions/obligations/immobilier). Les gains ne sont imposés qu'au retrait (rachat), avec un abattement fiscal significatif après 8 ans de détention. C'est l'enveloppe d'épargne préférée des Français, utilisée aussi bien pour l'épargne de précaution que pour la transmission de patrimoine.",
+    "aliases": ["assurance vie", "AV", "contrat d'assurance-vie"]
+  },
+  "PEA": {
+    "definition": "Plan d'Épargne en Actions : enveloppe fiscale permettant d'investir en actions européennes avec exonération d'impôt sur les gains après 5 ans.",
+    "definitionComplete": "Le PEA (Plan d'Épargne en Actions) est un compte-titres bénéficiant d'un cadre fiscal privilégié. Il permet d'investir jusqu'à 150 000 € en actions d'entreprises européennes ou en fonds (OPCVM) éligibles. Après 5 ans de détention, les plus-values et dividendes sont exonérés d'impôt sur le revenu (seuls les prélèvements sociaux de 17,2 % restent dus). Tout retrait avant 5 ans entraîne la clôture du plan et l'imposition au PFU.",
+    "aliases": ["plan d'épargne en actions"]
+  },
+  "PER": {
+    "definition": "Plan d'Épargne Retraite : produit d'épargne à long terme dont les versements sont déductibles du revenu imposable, avec sortie au moment de la retraite.",
+    "definitionComplete": "Le PER (Plan d'Épargne Retraite), créé par la loi PACTE en 2019, remplace les anciens PERP et Madelin. Les versements volontaires sont déductibles du revenu imposable (dans certaines limites), ce qui réduit l'impôt l'année du versement. En contrepartie, l'épargne est bloquée jusqu'à la retraite (sauf cas de déblocage anticipé comme l'achat de la résidence principale). À la sortie, le capital est imposé selon le barème de l'IR.",
+    "aliases": ["plan d'épargne retraite"]
+  },
+  "SCPI": {
+    "definition": "Société Civile de Placement Immobilier : fonds collectif investissant dans l'immobilier professionnel, distribuant des revenus locatifs aux porteurs de parts.",
+    "definitionComplete": "Une SCPI est une société qui collecte l'épargne de nombreux investisseurs pour acheter et gérer un patrimoine immobilier (bureaux, commerces, entrepôts, santé). Les loyers perçus sont redistribués sous forme de dividendes trimestriels, typiquement entre 4 % et 6 % par an. L'investisseur détient des parts (à partir de quelques centaines d'euros) sans avoir à gérer les biens. Les SCPI sont considérées comme un placement à moyen-long terme (8-10 ans minimum recommandé).",
+    "aliases": ["société civile de placement immobilier", "pierre-papier"]
+  },
+  "Livret A": {
+    "definition": "Livret d'épargne réglementé par l'État, à capital garanti, dont les intérêts sont totalement exonérés d'impôt et de prélèvements sociaux.",
+    "definitionComplete": "Le Livret A est le placement le plus populaire en France. Son taux est fixé par l'État (3 % en 2024), le capital est garanti et les intérêts sont nets d'impôt et de prélèvements sociaux. Le plafond de dépôt est de 22 950 €. L'argent est disponible à tout moment. C'est l'outil d'épargne de précaution par excellence, mais son rendement est souvent inférieur à l'inflation sur le long terme.",
+    "aliases": ["livret A"]
+  },
+  "LDDS": {
+    "definition": "Livret de Développement Durable et Solidaire : livret réglementé similaire au Livret A, avec un plafond de 12 000 €, même taux et même exonération fiscale.",
+    "definitionComplete": "Le LDDS fonctionne exactement comme le Livret A : même taux réglementé, mêmes intérêts exonérés d'impôt et de prélèvements sociaux, même disponibilité immédiate. La différence principale est le plafond, limité à 12 000 €. Une partie des fonds collectés est orientée vers le financement de projets de développement durable et de l'économie sociale et solidaire.",
+    "aliases": ["livret de développement durable et solidaire", "LDD"]
+  },
+  "PFU": {
+    "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 30 % sur les revenus du capital, combinant 12,8 % d'IR et 17,2 % de prélèvements sociaux.",
+    "definitionComplete": "Le PFU, instauré en 2018, simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Au lieu du barème progressif de l'impôt sur le revenu, un taux forfaitaire unique de 30 % s'applique (12,8 % d'IR + 17,2 % de prélèvements sociaux). Le contribuable peut toutefois opter pour l'imposition au barème progressif si cela lui est plus favorable (option globale pour l'ensemble des revenus du capital).",
+    "aliases": ["flat tax", "prélèvement forfaitaire unique"]
+  },
+  "Fonds euros": {
+    "definition": "Support d'investissement à capital garanti au sein d'un contrat d'assurance-vie, composé principalement d'obligations d'État.",
+    "definitionComplete": "Le fonds euros est le support sécurisé de l'assurance-vie. L'assureur garantit le capital investi (effet cliquet : les intérêts acquis sont définitivement acquis). Le portefeuille est composé majoritairement d'obligations d'État et d'entreprises, avec une poche diversifiée (immobilier, actions). Le rendement moyen était d'environ 2,5 % en 2023, en hausse grâce à la remontée des taux. C'est le placement idéal pour la partie sécuritaire d'une allocation.",
+    "aliases": ["fonds en euros", "support euros"]
+  },
+  "Unités de compte": {
+    "definition": "Supports d'investissement en assurance-vie investis sur les marchés financiers (actions, obligations, immobilier), sans garantie en capital.",
+    "definitionComplete": "Les unités de compte (UC) sont les supports non garantis d'un contrat d'assurance-vie. Contrairement au fonds euros, le capital n'est pas garanti : la valeur fluctue selon les marchés. Les UC peuvent être des fonds actions, obligataires, diversifiés, des ETF, des SCPI, ou des supports structurés. Elles offrent un potentiel de rendement supérieur au fonds euros en contrepartie d'un risque de perte en capital. La diversification entre fonds euros et UC est la clé d'une allocation équilibrée.",
+    "aliases": ["UC", "unité de compte"]
+  },
+  "Rente": {
+    "definition": "Revenu régulier versé périodiquement (mensuel, trimestriel) en échange d'un capital, généralement jusqu'au décès du bénéficiaire.",
+    "definitionComplete": "La rente viagère est un mécanisme par lequel un assureur transforme un capital en revenus réguliers versés jusqu'au décès du bénéficiaire. Le montant dépend du capital converti, de l'âge au moment de la conversion et des tables de mortalité. C'est un mode de sortie possible en assurance-vie et en PER. L'avantage est la sécurité d'un revenu garanti à vie ; l'inconvénient est l'aliénation du capital (il ne peut plus être transmis, sauf option de réversion)."
+  },
+  "Capital": {
+    "definition": "Somme d'argent épargnée ou investie, distincte des intérêts ou gains qu'elle produit.",
+    "definitionComplete": "En épargne, le capital désigne la somme initialement investie (les versements), par opposition aux gains (intérêts, plus-values, dividendes). Quand on parle de « garantie en capital », cela signifie que l'épargnant est assuré de récupérer au minimum les sommes versées. La sortie « en capital » (par opposition à « en rente ») signifie que l'épargnant récupère son argent en une ou plusieurs fois, et non sous forme de revenus périodiques."
+  },
+  "Plus-value": {
+    "definition": "Gain réalisé lors de la vente d'un actif (action, part de fonds, bien immobilier) à un prix supérieur à son prix d'achat.",
+    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au PFU (30 %) ou au barème de l'IR sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
+    "aliases": ["plus value", "gain"]
+  },
+  "Rétrocessions": {
+    "definition": "Commissions reversées par les sociétés de gestion aux distributeurs (banques, conseillers) qui commercialisent leurs fonds.",
+    "definitionComplete": "Les rétrocessions sont la part des frais de gestion d'un fonds (OPCVM, UC d'assurance-vie) que la société de gestion reverse à l'intermédiaire qui a distribué le produit (banque, courtier, CGP). Elles représentent typiquement 0,5 % à 1 % par an sur l'encours. C'est un point à surveiller car elles peuvent créer un conflit d'intérêts : le distributeur peut être incité à recommander les fonds qui lui versent les rétrocessions les plus élevées, pas nécessairement les plus performants.",
+    "aliases": ["rétrocession", "commissions de distribution"]
+  },
+  "TMI": {
+    "definition": "Taux Marginal d'Imposition : taux d'impôt appliqué à la dernière tranche de vos revenus, déterminant l'économie d'impôt réelle des déductions.",
+    "definitionComplete": "Le TMI est le taux de la tranche la plus élevée du barème progressif de l'IR qui s'applique à vos revenus. Les tranches 2024 sont : 0 % (jusqu'à 11 294 €), 11 % (11 295 – 28 797 €), 30 % (28 798 – 82 341 €), 41 % (82 342 – 177 106 €), 45 % (au-delà). Connaître son TMI est essentiel pour évaluer l'intérêt de dispositifs déductibles comme le PER : un versement PER de 1 000 € pour un TMI à 30 % génère une économie d'impôt de 300 €.",
+    "aliases": ["taux marginal d'imposition", "tranche marginale"]
+  },
+  "Frais de gestion": {
+    "definition": "Prélèvement annuel effectué par l'assureur ou la société de gestion sur votre épargne, en pourcentage de l'encours.",
+    "definitionComplete": "Les frais de gestion rémunèrent la société de gestion (pour un fonds) ou l'assureur (pour un contrat d'assurance-vie) pour l'administration et la gestion de votre placement. Ils sont exprimés en pourcentage annuel de l'encours et sont prélevés automatiquement. En assurance-vie, ils varient de 0,5 % à 1 % par an sur les fonds euros, et de 0,6 % à 1,2 % sur les UC. S'ajoutent les frais des fonds sous-jacents (UC). L'impact cumulé sur le long terme peut être considérable.",
+    "aliases": ["frais annuels", "frais de gestion annuels"]
+  },
+  "Prélèvements sociaux": {
+    "definition": "Cotisations sociales prélevées sur les revenus du patrimoine et du capital, au taux global de 17,2 %.",
+    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global de 17,2 % se décompose en CSG (9,2 %), CRDS (0,5 %), prélèvement de solidarité (7,5 %). Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : PEA après 5 ans, intérêts du Livret A exceptés). Dans le cadre du PFU, les 17,2 % sont inclus dans les 30 % de flat tax.",
+    "aliases": ["PS", "cotisations sociales", "CSG-CRDS"]
+  },
+  "Abattement": {
+    "definition": "Réduction forfaitaire appliquée sur une base imposable avant le calcul de l'impôt, diminuant le montant effectivement taxé.",
+    "definitionComplete": "Un abattement fiscal est une somme soustraite du revenu ou de la plus-value avant l'application du taux d'imposition. En assurance-vie après 8 ans, un abattement annuel de 4 600 € (9 200 € pour un couple) s'applique sur les gains lors d'un rachat. En succession, l'assurance-vie bénéficie d'un abattement de 152 500 € par bénéficiaire pour les versements effectués avant 70 ans. Les abattements sont des leviers puissants d'optimisation fiscale."
+  },
+  "Horizon de placement": {
+    "definition": "Durée pendant laquelle vous prévoyez de laisser votre argent investi avant d'en avoir besoin.",
+    "definitionComplete": "L'horizon de placement est un concept clé pour déterminer la répartition optimale de votre épargne. Court terme (< 2 ans) : privilégier la sécurité (Livret A, LDDS, fonds euros). Moyen terme (2-8 ans) : diversifier entre sécurité et performance (assurance-vie mixte, PEA). Long terme (> 8 ans) : accepter plus de risque pour plus de rendement (actions, SCPI, UC dynamiques). Plus l'horizon est long, plus on peut tolérer la volatilité des marchés.",
+    "aliases": ["durée de placement", "horizon d'investissement"]
+  }
+}
