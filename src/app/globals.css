@@ -23,6 +23,11 @@
   --color-ep-text-primary: #1F2937;
   --color-ep-text-muted: #64748B;
 
+  /* Subtle background tints */
+  --color-ep-bg-blue-subtle: #EFF6FF;
+  --color-ep-bg-green-subtle: #ECFDF5;
+  --color-ep-bg-warm-subtle: #FFFBEB;
+
   /* Labels objectifs */
   --color-securiser-bg: #ECFDF5;
   --color-securiser-text: #059669;
@@ -148,6 +153,7 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   h1[id], h2[id], h3[id], h4[id] {
     scroll-margin-top: 5rem;
@@ -163,4 +169,13 @@
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

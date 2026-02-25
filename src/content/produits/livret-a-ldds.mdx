@@ -1,0 +1,168 @@
+export const frontmatter = {
+  title: 'Livret A / LDDS',
+  slug: 'livret-a-ldds',
+  subtitle: "Votre matelas de sécurité : 0 risque, disponible à tout instant. Fait pour protéger, pas pour enrichir.",
+  readingTime: 6,
+  lastUpdated: '2026-02-23',
+  objectifs: ['securiser'],
+  labelCouleur: ['Sécuriser'],
+  heroImage: '/images/hero-livret-a.jpg',
+  disclaimer: 'fiche-produit',
+  seo: {
+    title: 'Livret A / LDDS : tout comprendre en 6 minutes | EpargneClaire',
+    description: 'Guide complet et neutre sur le Livret A et le LDDS : taux, plafonds, fiscalité, impact social et exemples concrets.',
+  },
+}
+
+{/* Écran 1 — Intro + Split + Exemple concret */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Votre argent disponible à tout moment, sans impôt."
+  subtitle="Le Livret A et le LDDS sont les deux placements les plus simples en France : zéro risque, zéro frais, zéro impôt. Votre argent reste disponible à tout instant."
+/>
+
+<SplitComparison>
+
+<SplitItem icon="Shield" title="Le Livret A">
+
+Votre <GlossaryTooltip term="Capital">capital</GlossaryTooltip> est **garanti par l'État**. Le plafond est de **22 950 €** (hors intérêts accumulés). Les fonds collectés financent principalement le **logement social** en France, via un organisme public (la Caisse des Dépôts).
+
+</SplitItem>
+
+<SplitItem icon="Leaf" title="Le LDDS">
+
+Même taux, même garantie d'État, même fiscalité. Le plafond est de **12 000 €**. La différence ? Votre épargne finance la **transition écologique** et les **petites entreprises françaises**. Vous pouvez avoir les deux.
+
+</SplitItem>
+
+</SplitComparison>
+
+<LivretConcreteExample />
+
+</ProductSection>
+
+{/* Écran 2 — Personas */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Qui devrait avoir un Livret A ?"
+  subtitle="Tout le monde. Le Livret A est la base de toute épargne, quel que soit votre âge ou vos revenus."
+/>
+
+<LivretPersonaCards />
+
+</ProductSection>
+
+{/* Écran 3 — Taux du Livret A */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Comment est fixé le taux du Livret A ?"
+  subtitle="Ce n'est pas votre banque qui décide. Le taux suit une formule officielle, liée à l'inflation."
+  gradient
+/>
+
+<LivretRateExplainer />
+
+</ProductSection>
+
+{/* Écran 4 — Avantage fiscal */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase title="Aucun impôt. Aucune cotisation. Jamais." />
+
+<KeyFigure
+  value="0 €"
+  label="d'impôts sur vos intérêts"
+  description={<>Contrairement à la plupart des placements, les intérêts du Livret A et du LDDS ne sont soumis à <strong>aucun impôt sur le revenu</strong> et à <strong>aucune charge sociale</strong>. Ce que vous gagnez, vous le gardez intégralement.</>}
+/>
+
+<LivretTaxComparison />
+
+</ProductSection>
+
+{/* Écran 5 — Impact social */}
+
+<ProductSection>
+
+<StrongPhrase title="Votre épargne finance la France de demain." />
+
+<KeyFigure
+  value="540 milliards €"
+  label="placés sur les Livrets A en France"
+  description={<>Le Livret A est le placement préféré des Français. Cet argent ne dort pas sur un compte : il est <strong>utilisé concrètement</strong> pour financer des projets utiles à tous.</>}
+/>
+
+<LivretSocialImpact />
+
+</ProductSection>
+
+{/* Écran 6 — Parcours épargne de précaution */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Construire son matelas de sécurité, mois après mois."
+  subtitle="Suivez le parcours de Sophie : de son premier versement à un fonds d'urgence qui lui permet de dormir tranquille."
+  gradient
+/>
+
+<LivretEmergencyJourney />
+
+</ProductSection>
+
+{/* Écran 7 — Auto-sélection */}
+
+<ProductSection>
+
+<StrongPhrase title="Le Livret A est-il fait pour vous ?" />
+
+<SplitComparison>
+
+<SplitItem icon="CircleCheck" title="Souvent un bon choix si…" variant="green">
+
+- Vous voulez constituer une **épargne de précaution** accessible à tout moment
+- Vous débutez et cherchez un placement **simple, sûr et gratuit**
+- Vous épargnez pour un projet à **court terme** (vacances, achat, travaux)
+- Vous voulez un placement **sans aucune contrainte** de durée ni de montant minimum
+
+</SplitItem>
+
+<SplitItem icon="AlertTriangle" title="Pas toujours adapté si…" variant="red">
+
+- Vous cherchez un **rendement plus élevé** (l'<GlossaryTooltip term="Assurance-vie">assurance-vie</GlossaryTooltip> ou le <GlossaryTooltip term="PEA">PEA</GlossaryTooltip> offrent plus sur le long terme)
+- Votre Livret A est déjà **au plafond** (explorez d'autres placements)
+- Vous avez un **projet à 5 ans ou plus** et acceptez une part de risque
+- Vous souhaitez **transmettre un patrimoine** avec des avantages fiscaux (préférez l'assurance-vie)
+
+</SplitItem>
+
+</SplitComparison>
+
+</ProductSection>
+
+{/* Écran 8 — Closing */}
+
+<ProductSection background="dark">
+
+<ProductClosing
+  phrase="L'épargne de précaution est le premier réflexe d'un épargnant serein."
+  nextSlug="assurance-vie"
+  nextTitle="Assurance-vie"
+>
+
+- [Banque de France — Le Livret A](https://www.banque-france.fr)
+- [Service-Public.fr — Livret A](https://www.service-public.fr/particuliers/vosdroits/F2365)
+- [Service-Public.fr — LDDS](https://www.service-public.fr/particuliers/vosdroits/F2368)
+- [Legifrance — Code monétaire et financier](https://www.legifrance.gouv.fr)
+
+</ProductClosing>
+
+<DisclaimerBanner variant="fiche-produit" className="mt-8" />
+
+</ProductSection>

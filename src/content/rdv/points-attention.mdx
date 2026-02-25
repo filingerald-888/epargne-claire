@@ -1,0 +1,105 @@
+export const frontmatter = {
+  title: "Les points d'attention",
+  slug: 'points-attention',
+  subtitle: "Des éléments à garder en tête avant de signer quoi que ce soit.",
+  readingTime: 4,
+  lastUpdated: '2026-02-23',
+  disclaimer: 'rdv',
+  seo: {
+    title: "Les points d'attention avant de signer un placement | EpargneClaire",
+    description: "Les éléments essentiels à surveiller : frais invisibles, rétrocessions, conditions de sortie, signaux d'alerte lors d'un RDV conseiller.",
+  },
+}
+
+{/* Section 1 — Les frais invisibles */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Les frais invisibles"
+  subtitle={"Au-delà des frais affichés, d'autres coûts peuvent s'ajouter sans que vous le réalisiez."}
+/>
+
+<RdvAlertCard
+  severity="info"
+  title="Les commissions du conseiller"
+  description={"Quand votre conseiller vous propose un produit, il peut recevoir une **commission** de la part de l'assureur ou de la banque. C'est légal et courant. Mais cela signifie qu'il a un **intérêt financier** à vous vendre ce produit plutôt qu'un autre."}
+  persona="Sophie, 34 ans — cadre"
+  example={"Sophie place 20\u00A0000\u00A0€ dans une assurance-vie. Son conseiller touche **1\u00A0% de commission**, soit **200\u00A0€**. Un autre contrat, moins cher pour Sophie mais sans commission pour le conseiller, ne lui a pas été proposé. En demandant « **touchez-vous une commission sur ce contrat ?** », Sophie aurait pu comparer."}
+/>
+
+<RdvAlertCard
+  severity="warning"
+  title="Les frais de gestion cachés dans les fonds"
+  description={"En plus des frais de votre contrat, les fonds dans lesquels vous investissez ont leurs propres frais. Ces **deux couches de frais s'additionnent**, et le total peut être **bien plus élevé** que ce qu'on vous annonce au départ."}
+  persona="Marc, 42 ans — indépendant"
+  example={"Marc souscrit un contrat avec **0,8\u00A0%** de frais de gestion. Ça semble raisonnable. Mais les fonds dans son contrat prélèvent aussi **1,5\u00A0%** par an. Au total, Marc paie **2,3\u00A0% de frais chaque année**. Sur 30\u00A0000\u00A0€, ça fait **690\u00A0€ par an** — soit **57\u00A0€ par mois** — prélevés sur son épargne."}
+/>
+
+</ProductSection>
+
+{/* Section 2 — Les conditions réelles */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Les conditions réelles"
+  subtitle="Ce qui compte, c'est ce qui est écrit dans le contrat — pas ce qui est dit à l'oral."
+/>
+
+<RdvAlertCard
+  severity="warning"
+  title={"La durée d'engagement cachée"}
+  description={"Même si on vous dit « vous pouvez retirer quand vous voulez », le faire trop tôt peut coûter cher : **impôts plus élevés**, perte de bonus, ou **pénalités**."}
+  persona="Julie, 38 ans — salariée"
+  example={"Julie ouvre une assurance-vie et retire son argent au bout de 2 ans. Elle paie **30\u00A0% d'impôts** sur ses gains. Si elle avait attendu 8 ans, elle n'aurait payé que **7,5\u00A0%** (après un abattement). Cette différence, **personne ne la lui avait clairement expliquée** lors du RDV."}
+/>
+
+<RdvAlertCard
+  severity="warning"
+  title="Les conditions de sortie"
+  description={"**Combien de temps** faut-il pour récupérer votre argent ? Y a-t-il des **frais de sortie** ? Est-ce que retirer tôt change votre fiscalité ? Toutes ces questions méritent une **réponse claire avant de signer**."}
+  persona="Pierre, 45 ans — salarié"
+  example={"Pierre demande à retirer 5\u00A0000\u00A0€ de son PER pour un projet personnel. Son conseiller lui explique que c'est **impossible** : le PER est **bloqué jusqu'à la retraite** (sauf achat de résidence principale ou accident de la vie). Si Pierre avait su, il aurait peut-être choisi une assurance-vie à la place."}
+/>
+
+</ProductSection>
+
+{/* Section 3 — Les signaux d'alerte */}
+
+<ProductSection>
+
+<StrongPhrase
+  title={"Les signaux d'alerte"}
+  subtitle="Quelques situations qui doivent vous faire ralentir."
+/>
+
+<RdvAlertCard
+  severity="danger"
+  title={"L'urgence artificielle"}
+  description={"Si votre conseiller vous dit « c'est maintenant ou jamais », « l'offre se termine demain » ou « les taux vont changer », **prenez du recul**. En épargne, les bonnes opportunités **ne disparaissent pas en 24 heures**."}
+  persona="Léa, 29 ans — jeune active"
+  example={"Léa est en RDV et son conseiller lui dit : « Ce taux promotionnel s'arrête vendredi, il faut signer aujourd'hui. » Léa prend le temps de vérifier chez un concurrent. Elle découvre que le taux proposé est en fait **standard et disponible toute l'année**. Elle a bien fait d'attendre."}
+/>
+
+<RdvAlertCard
+  severity="danger"
+  title="Le produit miracle"
+  description={"**Aucun placement** ne peut vous offrir en même temps un **rendement élevé**, **zéro risque** et la possibilité de retirer votre argent quand vous voulez. Si on vous promet les trois, quelque chose est faux."}
+  persona="Thomas, 55 ans — proche de la retraite"
+  example={"Thomas se voit proposer un placement à « **8\u00A0% garanti, sans risque, avec retrait possible à tout moment** ». C'est trop beau pour être vrai. En vérifiant sur le site de l'AMF, Thomas découvre que ce produit **n'est pas autorisé en France**. Il a évité une arnaque."}
+/>
+
+</ProductSection>
+
+{/* Closing */}
+
+<ProductSection background="dark">
+
+<RdvClosing
+  phrase={"Vous savez ce qu'il faut surveiller."}
+  subtitle={"L'information est votre meilleur allié pour un échange constructif."}
+  currentSlug="points-attention"
+/>
+
+</ProductSection>

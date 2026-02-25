@@ -1,18 +1,13 @@
 import type { Metadata } from 'next'
 
+import { ComparateurPageClient } from '@/components/comparateur/comparateur-page'
+
 export const metadata: Metadata = {
   title: 'Comparer les produits — EpargneClaire',
+  description:
+    "Comparez les produits d'épargne côte à côte : assurance-vie, PEA, PER, SCPI, Livret A. Comparaison factuelle et neutre.",
 }
 
 export default function ComparerPage() {
-  return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-ep-text-primary">
-          Comparer les produits
-        </h1>
-        <p className="mt-4 text-ep-text-muted">Contenu à venir.</p>
-      </div>
-    </div>
-  )
+  return <ComparateurPageClient />
 }

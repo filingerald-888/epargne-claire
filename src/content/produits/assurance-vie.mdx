@@ -1,11 +1,12 @@
 export const frontmatter = {
   title: 'Assurance-vie',
   slug: 'assurance-vie',
-  subtitle: "L'enveloppe patrimoniale la plus polyvalente de l'épargnant français",
-  readingTime: 7,
+  subtitle: "Épargner, investir, transmettre : le couteau suisse de votre argent.",
+  readingTime: 8,
   lastUpdated: '2026-02-12',
   objectifs: ['securiser', 'projets-de-vie', 'retraite', 'transmission'],
   labelCouleur: ['Sécuriser', 'Projets de vie', 'Retraite', 'Transmission'],
+  heroImage: '/images/hero-assurance-vie-v2.jpg',
   disclaimer: 'fiche-produit',
   seo: {
     title: 'Assurance-vie : tout comprendre en 7 minutes | EpargneClaire',
@@ -13,164 +14,202 @@ export const frontmatter = {
   },
 }
 
-## C'est quoi ?
+{/* Écran 1 — Intro + Split + Spectre + Exemple concret */}
 
-L'<GlossaryTooltip term="Assurance-vie">assurance-vie</GlossaryTooltip> est un contrat entre un épargnant (le souscripteur) et un assureur. Malgré son nom, ce n'est pas qu'une assurance en cas de décès : c'est avant tout une **enveloppe d'épargne** à long terme.
+<ProductSection background="primary-subtle">
 
-Elle permet de :
+<StrongPhrase
+  title="Deux façons de faire travailler votre argent."
+  subtitle="L'assurance-vie vous laisse choisir : la sécurité d'un capital garanti, le potentiel des marchés financiers, ou un mélange des deux."
+/>
 
-- **Se constituer un capital** en investissant à son rythme (versements libres ou programmés)
-- **Faire fructifier son épargne** sur différents supports, du plus sécurisé au plus dynamique
-- **Transmettre un patrimoine** dans un cadre fiscal avantageux, en dehors des règles classiques de succession
+<p className="mt-2 text-center text-sm text-ep-text-muted">Vérifié avec les données officielles de l'<strong className="text-ep-text-primary">AMF</strong> et de <strong className="text-ep-text-primary">France Assureurs</strong>.</p>
 
-Avec plus de 1 900 milliards d'euros d'encours en France, l'assurance-vie est le placement préféré des Français.
+<SplitComparison>
 
-## Comment ça marche ?
+<SplitItem icon="Shield" title="Le fonds euros">
 
-Le fonctionnement repose sur deux types de supports :
+Votre <GlossaryTooltip term="Capital">capital</GlossaryTooltip> est **garanti** par l'assureur. Les intérêts sont acquis définitivement chaque année (on appelle cela « l'effet cliquet »). Le <GlossaryTooltip term="Rendement brut">rendement</GlossaryTooltip> moyen se situe autour de 2,5 % à 3 % par an.
 
-1. **Le <GlossaryTooltip term="Fonds euros">fonds euros</GlossaryTooltip>** : le capital est garanti par l'assureur. Les intérêts sont acquis définitivement chaque année (effet cliquet). Le rendement moyen se situe autour de 2,5 % à 3 % par an.
+</SplitItem>
 
-2. **Les <GlossaryTooltip term="Unités de compte">unités de compte</GlossaryTooltip> (UC)** : l'épargne est investie sur les marchés financiers (actions, obligations, immobilier via SCPI). Le capital n'est pas garanti, mais le potentiel de rendement est plus élevé.
+<SplitItem icon="TrendingUp" title="Les unités de compte">
 
-L'épargnant répartit son investissement entre ces deux types de supports selon son profil de risque. Il peut modifier cette répartition (arbitrages) à tout moment sans fiscalité.
+Votre épargne est investie sur les marchés financiers (actions, obligations, immobilier). Le capital **n'est pas garanti** — sa valeur peut baisser — mais le potentiel de gain est plus élevé sur le long terme.
 
-**Les versements** sont libres : il est possible d'alimenter le contrat par des versements ponctuels ou programmés, sans montant minimum imposé dans la plupart des contrats en ligne.
+</SplitItem>
 
-**Les retraits** (appelés « rachats ») sont possibles à tout moment. Seuls les gains contenus dans le rachat sont soumis à l'impôt, pas le capital retiré.
+</SplitComparison>
 
-## Pour qui ?
+<SpectrumBar
+  leftLabel="Sécurité"
+  rightLabel="Performance"
+  markers={["Fonds euros", "Mixte", "100 % marchés"]}
+  caption={<>Vous choisissez votre positionnement entre sécurité et performance. Et vous pouvez le modifier <strong>à tout moment, sans impôt</strong>.</>}
+/>
 
-L'assurance-vie s'adresse à une grande diversité de profils :
+<PlacementExample />
 
-- **Épargnants prudents** : le fonds euros offre un rendement supérieur aux livrets, avec un capital garanti
-- **Investisseurs à moyen-long terme** : les UC permettent de diversifier et de viser un rendement plus élevé sur 5 à 10 ans et plus
-- **Parents prévoyants** : idéal pour préparer un capital pour ses enfants (études, premier achat)
-- **Personnes souhaitant transmettre** : l'assurance-vie bénéficie d'un cadre fiscal de succession très avantageux
-- **Futurs retraités** : en complément d'un PER, pour disposer d'une épargne disponible
+</ProductSection>
 
-Il n'y a pas d'âge minimum ou maximum pour ouvrir un contrat, ni de conditions de revenus.
+{/* Écran 2 — Personas */}
 
-## Avantages
+<ProductSection>
 
-- **Souplesse** : versements et retraits libres, à tout moment, sans contrainte de durée
-- **Fiscalité attractive** : <GlossaryTooltip term="Abattement">abattement</GlossaryTooltip> de 4 600 € (9 200 € pour un couple) sur les gains après 8 ans
-- **Transmission optimisée** : chaque bénéficiaire profite d'un abattement de 152 500 € sur les capitaux transmis (versements avant 70 ans)
-- **Diversification** : accès à des centaines de supports (fonds euros, actions, obligations, SCPI, ETF)
-- **Capital garanti** sur le fonds euros (effet cliquet : les intérêts acquis ne peuvent pas être perdus)
-- **Pas de plafond de versement** : contrairement au Livret A (22 950 €) ou au PEA (150 000 €)
+<StrongPhrase
+  title="À qui s'adresse l'assurance-vie ?"
+  subtitle="Quel que soit votre profil, l'assurance-vie peut s'adapter à vos objectifs."
+/>
 
-## Inconvénients
+<PersonaCards />
 
-- **Rendement limité du fonds euros** : environ 2,5 % à 3 % en 2025, souvent inférieur à l'inflation sur longue période
-- **Risque de perte en capital** sur les unités de compte : la valeur peut baisser selon les marchés
-- **Frais multiples** : frais d'entrée, de gestion, d'arbitrage et frais des supports sous-jacents qui grignotent la performance
-- **Fiscalité moins avantageuse avant 8 ans** : le <GlossaryTooltip term="PFU">PFU</GlossaryTooltip> de 30 % s'applique sur les gains en cas de rachat
-- **Complexité** : le choix des supports, la lecture des conditions générales et la comparaison des contrats demandent du temps
-- **Fonds bloqués en cas de succession** : le versement aux bénéficiaires peut prendre plusieurs semaines après le décès
+</ProductSection>
 
-## Frais
+{/* Écran 3 — Idées reçues */}
 
-Les frais sont un élément déterminant de la performance finale. Voici les principaux :
+<ProductSection background="primary-subtle">
 
-| Type de frais | Contrats en ligne | Contrats bancaires |
-|---|---|---|
-| Frais sur versement | 0 % | 0 % à 3 % |
-| <GlossaryTooltip term="Frais de gestion">Frais de gestion</GlossaryTooltip> fonds euros | 0,5 % à 0,75 % / an | 0,75 % à 1 % / an |
-| Frais de gestion UC | 0,5 % à 0,6 % / an | 0,8 % à 1,2 % / an |
-| Frais d'arbitrage | 0 % | 0 % à 1 % |
+<StrongPhrase
+  title="6 idées reçues sur l'assurance-vie."
+  gradient
+/>
 
-À ces frais s'ajoutent les frais internes des fonds (UC), typiquement 1,5 % à 2 % par an, dont une partie peut être reversée au distributeur sous forme de <GlossaryTooltip term="Rétrocessions">rétrocessions</GlossaryTooltip>.
+<AvMythBuster />
 
-<ExampleBlock title="Impact des frais sur 20 ans">
-Pour un versement initial de **10 000 €** avec un rendement brut de 5 % par an :
+</ProductSection>
 
-- **Contrat en ligne** (0,6 % de frais de gestion) : capital final ≈ **23 700 €**
-- **Contrat bancaire** (1,2 % de frais de gestion) : capital final ≈ **20 800 €**
+{/* Écran 4 — Risques */}
 
-Différence : **2 900 €**, soit 29 % du capital initial, perdus en frais supplémentaires.
-</ExampleBlock>
+<ProductSection>
 
-## Fiscalité
+<StrongPhrase title="Les risques réels de l'assurance-vie." />
 
-La fiscalité de l'assurance-vie dépend de l'ancienneté du contrat au moment du rachat :
+<AvRiskGrid />
 
-**Avant 8 ans** : les gains sont soumis au PFU de 30 % (12,8 % d'impôt + 17,2 % de <GlossaryTooltip term="Prélèvements sociaux">prélèvements sociaux</GlossaryTooltip>).
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">L'assurance-vie n'est pas sans risque.</strong> Même le fonds euros peut perdre face à l'inflation. Comparez les contrats et adaptez votre allocation à votre horizon.</p>
 
-**Après 8 ans** : un abattement annuel s'applique sur les gains :
-- 4 600 € pour une personne seule
-- 9 200 € pour un couple
+</ProductSection>
 
-Au-delà de l'abattement, le taux réduit est de 24,7 % (7,5 % d'impôt + 17,2 % de prélèvements sociaux) pour les versements inférieurs à 150 000 €.
+{/* Écran 5 — Transmission */}
 
-<ExampleBlock title="Fiscalité d'un rachat après 8 ans">
-Situation : contrat de **50 000 €** dont **10 000 €** de gains. Rachat total après 8 ans, personne seule.
+<ProductSection>
 
-- Gains imposables : 10 000 €
-- Abattement : - 4 600 €
-- Base taxable : **5 400 €**
-- Impôt (7,5 %) : 405 €
-- Prélèvements sociaux (17,2 % sur 10 000 €) : 1 720 €
-- **Total fiscalité : 2 125 €** (soit 21,3 % des gains)
+<StrongPhrase
+  title="La transmission : l'atout méconnu de l'assurance-vie."
+  subtitle="Jusqu'à 152 500 € par bénéficiaire sans impôt — sous conditions. Un avantage unique en France, mais avec des règles précises."
+  gradient
+/>
 
-Sans l'abattement des 8 ans, la fiscalité aurait été de 3 000 € (PFU 30 %).
-</ExampleBlock>
+<TransmissionComparison />
 
-**En cas de décès** : les capitaux transmis aux bénéficiaires désignés bénéficient d'un abattement de 152 500 € par bénéficiaire (pour les versements effectués avant 70 ans). C'est l'un des outils de transmission les plus efficaces du droit français.
+</ProductSection>
 
-## Exemple concret
+{/* Écran 6 — Frais */}
 
-Marie, 35 ans, ouvre un contrat d'assurance-vie en ligne avec 5 000 € et programme des versements de 200 € par mois.
+<ProductSection background="primary-subtle">
 
-Elle choisit une allocation 60 % fonds euros / 40 % UC diversifiées.
+<StrongPhrase title="Les frais font plus de différence que vous ne le pensez." />
 
-**Après 10 ans** (hypothèse : 2,5 % net sur fonds euros, 5 % net sur UC) :
-- Versements totaux : 5 000 € + (200 € × 120 mois) = **29 000 €**
-- Valeur estimée du contrat : environ **35 500 €**
-- <GlossaryTooltip term="Plus-value">Plus-value</GlossaryTooltip> : environ **6 500 €**
+<KeyFigure
+  value="2 900 €"
+  label="d'écart sur les frais"
+  description={<>Sur 10 000 € placés pendant 20 ans avec un rendement de 5 % par an, <strong>la différence de frais</strong> entre un contrat en ligne et un contrat bancaire peut atteindre cette somme.</>}
+/>
 
-Marie peut effectuer un rachat partiel en bénéficiant de l'abattement fiscal après 8 ans, ou continuer à faire fructifier son épargne.
+<FeeComparison
+  onlineSubtitle="Plateforme internet spécialisée dans l'épargne — pas d'agence physique, ce qui permet des frais plus bas"
+  bankSubtitle="Votre banque habituelle — vous bénéficiez d'un conseiller en agence, mais les frais sont généralement plus élevés"
+  rows={[
+    { label: "Frais sur versement", online: "0 %", bank: "0 % à 3 %" },
+    { label: "Frais de gestion (fonds euros)", online: "0,50 – 0,75 %/an", bank: "0,75 – 1 %/an" },
+    { label: "Frais de gestion (marchés)", online: "0,50 – 0,60 %/an", bank: "0,80 – 1,20 %/an" },
+    { label: "Frais de changement de supports", online: "0 %", bank: "0 – 1 %" }
+  ]}
+/>
 
-## Objectifs associés
+<p className="mt-8 text-center text-sm text-ep-text-muted">À ces frais s'ajoutent les frais propres aux fonds dans lesquels vous investissez (typiquement 1,5 % à 2 % par an). <strong className="text-ep-text-primary">Ces frais sont les mêmes quel que soit le type de contrat.</strong></p>
 
-L'assurance-vie répond à plusieurs objectifs patrimoniaux :
+</ProductSection>
 
-- **Sécuriser son épargne** : le fonds euros offre un rendement garanti, adapté à une épargne de précaution de moyen terme
-- **Financer des projets de vie** : achat immobilier, études des enfants, voyage... les rachats partiels permettent de piocher dans le contrat
-- **Préparer sa retraite** : en complément d'un PER, l'assurance-vie offre une épargne disponible et diversifiée
-- **Transmettre son patrimoine** : le cadre fiscal successoral (152 500 € d'abattement par bénéficiaire) en fait un outil de transmission privilégié
+{/* Écran 7 — Fiscalité */}
 
-## FAQ
+<ProductSection>
 
-**Peut-on avoir plusieurs contrats d'assurance-vie ?**
+<StrongPhrase title="Quand l'assurance-vie devient-elle vraiment intéressante ?" />
 
-Oui, il n'y a aucune limite au nombre de contrats. Cela permet de diversifier les assureurs, les supports disponibles et les bénéficiaires. C'est même une pratique courante recommandée par les conseillers.
+<FiscalTimeline
+  milestone="8 ans"
+  before={{ label: "Avant 8 ans", description: <>Si vous retirez de l'argent, l'État prélève <strong>30 %</strong> sur vos gains (impôt sur le revenu + cotisations sociales).</> }}
+  after={{ label: "Après 8 ans", description: <>Chaque année, une partie de vos gains retirés est <strong>exonérée d'impôt</strong> (<strong>4 600 €</strong> si vous êtes seul, <strong>9 200 €</strong> en couple). Au-delà, le taux d'imposition est réduit.</> }}
+  detail={<>En clair : après 8 ans, vous payez <strong>moins d'impôts</strong> quand vous retirez votre argent. Et les cotisations sociales (17,2 %) restent dues dans les deux cas — c'est un prélèvement automatique sur vos gains.</>}
+/>
 
-**L'argent est-il bloqué pendant 8 ans ?**
+<FiscalExample />
 
-Non. Les rachats sont possibles à tout moment. L'échéance de 8 ans concerne uniquement la fiscalité : après 8 ans, un abattement s'applique sur les gains retirés. Mais rien n'empêche de retirer avant.
+</ProductSection>
 
-**Que se passe-t-il en cas de faillite de l'assureur ?**
+{/* Écran 8 — Parcours 10 ans */}
 
-Un fonds de garantie (FGAP) protège les épargnants à hauteur de 70 000 € par assuré et par compagnie. C'est pourquoi la diversification entre plusieurs assureurs peut être pertinente pour les patrimoines importants.
+<ProductSection background="primary-subtle">
 
-**L'assurance-vie entre-t-elle dans la succession ?**
+<StrongPhrase
+  title="10 ans d'épargne, étape par étape."
+  subtitle="Un scénario possible parmi d'autres. Suivez le parcours de Marie — avec ses bons moments et ses doutes."
+  gradient
+/>
 
-Non, en principe. Les capitaux versés aux bénéficiaires désignés dans la clause bénéficiaire ne font pas partie de la succession. Ils sont transmis « hors succession », avec leur propre cadre fiscal avantageux.
+<JourneyTimeline />
 
-**Quelle est la différence entre assurance-vie et PER ?**
+</ProductSection>
 
-L'assurance-vie est souple (retraits à tout moment) mais les versements ne sont pas déductibles du revenu imposable. Le PER permet de déduire les versements (économie d'impôt immédiate) mais l'épargne est bloquée jusqu'à la retraite (sauf exceptions). Les deux produits sont complémentaires.
+{/* Écran 9 — Self-sélection */}
 
-**Faut-il choisir un contrat en ligne ou en banque ?**
+<ProductSection>
 
-Les contrats en ligne proposent généralement des frais plus bas (pas de frais d'entrée, frais de gestion réduits) et un plus grand choix de supports. Les contrats bancaires offrent un accompagnement en agence. Le choix dépend du niveau d'autonomie souhaité.
+<StrongPhrase title="L'assurance-vie est-elle faite pour vous ?" />
 
-## Sources
+<SplitComparison>
 
-- [France Assureurs — Chiffres clés de l'assurance-vie](https://www.franceassureurs.fr)
-- [Service-public.fr — Assurance-vie](https://www.service-public.fr/particuliers/vosdroits/F15268)
-- [Autorité des Marchés Financiers (AMF) — Comprendre l'assurance-vie](https://www.amf-france.org)
-- [Code des assurances — Articles L132-1 et suivants](https://www.legifrance.gouv.fr)
+<SplitItem icon="CircleCheck" title="Souvent un bon choix si..." variant="green">
 
-<DisclaimerBanner variant="fiche-produit" />
+- Vous voulez épargner **à votre rythme**, sans contrainte de montant ni de durée
+- Vous cherchez à **payer moins d'impôts après 8 ans**
+- Vous pensez **transmission** et souhaitez protéger vos proches
+- Vous voulez **diversifier** vos placements (actions, obligations, immobilier)
+
+</SplitItem>
+
+<SplitItem icon="AlertTriangle" title="Pas toujours adapté si..." variant="red">
+
+- Vous avez besoin de votre argent **immédiatement** (le <GlossaryTooltip term="Livret A">Livret A</GlossaryTooltip> est mieux adapté)
+- Vous ne supportez **aucun risque** de perte en capital
+- Vous comptez retirer votre argent dans **moins de 3 ans**
+
+</SplitItem>
+
+</SplitComparison>
+
+</ProductSection>
+
+{/* Écran 10 — Closing */}
+
+<ProductSection background="dark">
+
+<ProductClosing
+  phrase="Vous n'avez pas besoin d'être expert pour commencer."
+  nextSlug="pea"
+  nextTitle="PEA"
+  compareHref="/comparer"
+  compareLabel="Comparer Assurance-vie vs PEA"
+>
+
+- [AMF — Comprendre l'assurance-vie](https://www.amf-france.org)
+- [Service-Public.fr — Assurance-vie](https://www.service-public.fr/particuliers/vosdroits/F15268)
+- [France Assureurs — Chiffres clés](https://www.franceassureurs.fr)
+- [Code des assurances — Legifrance](https://www.legifrance.gouv.fr)
+
+</ProductClosing>
+
+<DisclaimerBanner variant="fiche-produit" className="mt-8" />
+
+</ProductSection>

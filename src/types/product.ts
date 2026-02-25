@@ -7,6 +7,7 @@ export interface ProductFrontmatter {
   objectifs: string[]
   labelCouleur: string[]
   disclaimer: string
+  heroImage?: string
   seo: { title: string; description: string; ogImage?: string }
 }
 

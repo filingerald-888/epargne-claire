@@ -9,6 +9,9 @@ export interface ProductModule {
 
 const productModules: Record<string, () => Promise<{ default: ComponentType; frontmatter: ProductFrontmatter }>> = {
   'assurance-vie': () => import('@/content/produits/assurance-vie.mdx'),
+  'pea': () => import('@/content/produits/pea.mdx'),
+  'per': () => import('@/content/produits/per.mdx'),
+  'livret-a-ldds': () => import('@/content/produits/livret-a-ldds.mdx'),
 }
 
 /** All product slugs (including those without MDX content yet) */
@@ -22,10 +25,7 @@ const allSlugs = [
 
 /** Placeholder titles for products without MDX content */
 const placeholderTitles: Record<string, string> = {
-  pea: "PEA (Plan d'Épargne en Actions)",
-  per: "PER (Plan d'Épargne Retraite)",
   scpi: 'SCPI',
-  'livret-a-ldds': 'Livret A / LDDS',
 }
 
 export async function getProduct(slug: string): Promise<ProductModule | null> {

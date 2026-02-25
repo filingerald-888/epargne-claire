@@ -85,5 +85,30 @@
     "definition": "Durée pendant laquelle vous prévoyez de laisser votre argent investi avant d'en avoir besoin.",
     "definitionComplete": "L'horizon de placement est un concept clé pour déterminer la répartition optimale de votre épargne. Court terme (< 2 ans) : privilégier la sécurité (Livret A, LDDS, fonds euros). Moyen terme (2-8 ans) : diversifier entre sécurité et performance (assurance-vie mixte, PEA). Long terme (> 8 ans) : accepter plus de risque pour plus de rendement (actions, SCPI, UC dynamiques). Plus l'horizon est long, plus on peut tolérer la volatilité des marchés.",
     "aliases": ["durée de placement", "horizon d'investissement"]
+  },
+  "Contrat en ligne": {
+    "definition": "Contrat d'assurance-vie souscrit auprès d'un courtier en ligne, offrant généralement des frais réduits et un large choix de supports.",
+    "definitionComplete": "Un contrat en ligne est un contrat d'assurance-vie distribué par un courtier sur Internet (Linxea, Assurancevie.com, Boursorama, etc.). Ces contrats se distinguent des contrats bancaires par des frais nettement inférieurs : pas de frais d'entrée, frais de gestion réduits, arbitrages gratuits. Ils offrent aussi un choix de supports plus large (parfois 500+ UC). La contrepartie est l'absence de conseil en agence.",
+    "aliases": ["contrat internet", "courtier en ligne"]
+  },
+  "Contrat bancaire": {
+    "definition": "Contrat d'assurance-vie souscrit auprès d'une banque traditionnelle, souvent avec des frais plus élevés et un choix de supports limité.",
+    "definitionComplete": "Un contrat bancaire est un contrat d'assurance-vie distribué par une banque de réseau (BNP Paribas, Société Générale, Crédit Agricole, etc.). Ces contrats présentent généralement des frais d'entrée (jusqu'à 3 %), des frais de gestion plus élevés, et un nombre limité de supports. L'avantage est la proximité d'un conseiller en agence. L'écart de frais avec un contrat en ligne peut représenter plusieurs milliers d'euros sur 20 ans.",
+    "aliases": ["contrat en banque", "assurance-vie bancaire"]
+  },
+  "Frais d'arbitrage": {
+    "definition": "Frais prélevés par l'assureur lors d'un changement de répartition entre les supports d'un contrat d'assurance-vie.",
+    "definitionComplete": "Les frais d'arbitrage sont facturés chaque fois que vous transférez une partie de votre épargne d'un support à un autre au sein de votre contrat (par exemple, du fonds euros vers des UC ou l'inverse). Ils peuvent être forfaitaires (15 à 30 €) ou proportionnels (0,5 % à 1 %). La plupart des contrats en ligne proposent des arbitrages gratuits et illimités.",
+    "aliases": ["frais de transfert", "arbitrage"]
+  },
+  "Frais internes": {
+    "definition": "Frais de gestion prélevés à l'intérieur même des fonds (UC) dans lesquels vous êtes investi, en plus des frais du contrat.",
+    "definitionComplete": "Les frais internes (ou frais courants) sont les frais de gestion propres à chaque fonds d'investissement dans lequel vous placez votre épargne via les unités de compte. Ils varient de 0,2 % par an (ETF) à 2,5 % par an (fonds actifs). Ils s'ajoutent aux frais de gestion du contrat d'assurance-vie. C'est un coût souvent méconnu mais significatif sur le long terme.",
+    "aliases": ["frais courants", "frais de gestion internes", "TER"]
+  },
+  "Rendement brut": {
+    "definition": "Performance d'un placement avant déduction de tous les frais et de la fiscalité.",
+    "definitionComplete": "Le rendement brut est le taux de rentabilité d'un investissement avant que n'en soient déduits les frais de gestion du contrat, les frais internes des fonds, et l'impôt. Par exemple, si un fonds affiche un rendement brut de 5 % et que les frais totaux s'élèvent à 2 %, le rendement net de frais est de 3 %. C'est le chiffre le plus souvent mis en avant dans la communication commerciale.",
+    "aliases": ["performance brute", "rendement avant frais"]
   }
 }

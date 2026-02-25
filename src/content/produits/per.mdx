@@ -1,0 +1,253 @@
+export const frontmatter = {
+  title: "Plan d'Épargne Retraite",
+  slug: 'per',
+  subtitle: "Déduisez vos versements de vos impôts aujourd'hui. Mais argent bloqué jusqu'à la retraite.",
+  readingTime: 8,
+  lastUpdated: '2026-02-23',
+  objectifs: ['retraite', 'securiser'],
+  labelCouleur: ['Retraite', 'Sécuriser'],
+  heroImage: '/images/hero-per-v2.jpg',
+  disclaimer: 'fiche-produit',
+  seo: {
+    title: "PER : tout comprendre en 8 minutes | EpargneClaire",
+    description: "Guide complet et neutre sur le Plan d'Épargne Retraite : avantage fiscal, frais, sortie en capital ou rente, et exemples concrets.",
+  },
+}
+
+{/* Écran 1 — Intro + Avantage fiscal + Spectre + Exemple concret */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Votre épargne travaille, vos impôts diminuent."
+  subtitle="Le PER vous permet de préparer votre retraite tout en payant moins d'impôts aujourd'hui. Chaque euro versé réduit votre revenu imposable. Mais le capital n'est pas garanti si vous investissez en actions."
+/>
+
+<SplitComparison>
+
+<SplitItem icon="Shield" title="L'avantage fiscal immédiat">
+
+Chaque versement sur votre PER est **déduit de votre revenu imposable**. Concrètement : si vous versez 3 000 € et que votre taux d'imposition le plus élevé est de 30 %, vous payez **900 € d'impôts en moins** cette année-là.
+
+</SplitItem>
+
+<SplitItem icon="TrendingUp" title="La contrepartie : l'argent est bloqué">
+
+En échange de cet avantage, votre épargne reste **bloquée jusqu'à la retraite** (sauf quelques exceptions comme l'achat de votre résidence principale). C'est un engagement de long terme.
+
+</SplitItem>
+
+</SplitComparison>
+
+<SpectrumBar
+  leftLabel="Sécurité"
+  rightLabel="Performance"
+  markers={["Capital garanti", "Mixte", "100 % actions"]}
+  caption={<>Comme pour l'assurance-vie, vous choisissez comment votre argent est investi. La gestion automatique <strong>sécurise progressivement</strong> votre épargne à l'approche de la retraite.</>}
+/>
+
+<PerTaxSavingsExample />
+
+</ProductSection>
+
+{/* Écran 2 — Personas */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="À qui s'adresse le PER ?"
+  subtitle="Le PER est surtout intéressant si vous payez des impôts. Plus vous payez d'impôts, plus l'avantage est important."
+/>
+
+<PerPersonaCards />
+
+</ProductSection>
+
+{/* Écran 3 — Idées reçues */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="5 idées reçues sur le PER."
+  gradient
+/>
+
+<PerMythBuster />
+
+</ProductSection>
+
+{/* Écran 4 — Risques */}
+
+<ProductSection>
+
+<StrongPhrase title="Les risques réels du PER." />
+
+<PerRiskGrid />
+
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">Le PER n'est pas sans risque.</strong> Avant de verser, assurez-vous que votre épargne de précaution est constituée et que vous n'aurez pas besoin de cet argent avant la retraite.</p>
+
+</ProductSection>
+
+{/* Écran 5 — Déblocage anticipé */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Votre argent est bloqué... mais pas dans tous les cas."
+  subtitle="La loi prévoit six situations dans lesquelles vous pouvez récupérer votre épargne avant la retraite."
+  gradient
+/>
+
+<PerUnlockCases />
+
+</ProductSection>
+
+{/* Écran 6 — Frais */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase title="Les frais font la différence, ici aussi." />
+
+<KeyFigure
+  value="3 400 €"
+  label="d'écart sur les frais"
+  description={<>Sur 200 € versés par mois pendant 25 ans avec un rendement de 5 % par an, <strong>la différence de frais</strong> entre un PER en ligne et un PER bancaire peut atteindre cette somme.</>}
+/>
+
+<FeeComparison
+  onlineSubtitle="PER souscrit auprès d'une plateforme en ligne — frais réduits, large choix de placements"
+  bankSubtitle="PER souscrit auprès de votre banque — conseiller en agence, mais frais plus élevés"
+  rows={[
+    { label: "Frais sur versement", online: "0 %", bank: "0 % à 3 %" },
+    { label: "Frais de gestion (fonds euros)", online: "0,50 – 0,75 %/an", bank: "0,75 – 1 %/an" },
+    { label: "Frais de gestion (actions)", online: "0,50 – 0,60 %/an", bank: "0,80 – 1,20 %/an" },
+    { label: "Frais de transfert", online: "0 % (après 5 ans)", bank: "1 % (0 % après 5 ans)" }
+  ]}
+/>
+
+<p className="mt-8 text-center text-sm text-ep-text-muted">À ces frais s'ajoutent les frais propres aux placements que vous choisissez (environ 1,5 % à 2 % par an). <strong className="text-ep-text-primary">Ces frais sont les mêmes quel que soit le type de PER.</strong></p>
+
+</ProductSection>
+
+{/* Écran 7 — Fiscalité */}
+
+<ProductSection>
+
+<StrongPhrase title="Comment fonctionne l'avantage fiscal ?" />
+
+<FiscalTimeline
+  milestone="Retraite"
+  before={{ label: "Quand vous versez", description: <>Chaque euro versé est <strong>déduit de votre revenu imposable</strong>. Résultat : vous payez moins d'impôts l'année du versement. Le plafond de déduction est d'environ <strong>10 % de vos revenus professionnels</strong>.</> }}
+  after={{ label: "Quand vous retirez", description: <>À la retraite, le capital récupéré est <strong>soumis à l'impôt sur le revenu</strong>. Les gains sont taxés séparément, avec un prélèvement fixe de <strong>30 %</strong> (ou au calcul classique, si c'est plus avantageux pour vous).</> }}
+  detail={<>En clair : l'État vous fait <strong>un prêt fiscal</strong>. Vous payez moins d'impôts aujourd'hui, mais vous les payez à la retraite. L'intérêt ? Votre taux d'imposition est souvent <strong>plus bas à la retraite</strong> qu'en activité — vous y gagnez.</>}
+/>
+
+<PerExitOptions />
+
+<ExampleBlock title="Exemple : le gain fiscal sur 25 ans">
+
+Thomas verse **10 000 € par an** pendant 25 ans sur son PER. Son taux d'imposition en activité est de **30 %**.
+
+- **Économie d'impôt chaque année** : 10 000 × 30 % = **3 000 €**
+- **Total économisé sur 25 ans** : 75 000 €
+- **À la retraite**, son taux tombe à **11 %**. Il retire 250 000 € en capital et paie **27 500 € d'impôt** sur ce retrait.
+- **Bilan** : 75 000 € économisés – 27 500 € payés = **47 500 € de gain fiscal net**, sans compter les gains générés par l'épargne elle-même.
+
+</ExampleBlock>
+
+</ProductSection>
+
+{/* Écran 8 — PER vs Assurance-vie */}
+
+<ProductSection>
+
+<StrongPhrase title="PER ou assurance-vie ?" />
+
+<SplitComparison>
+
+<SplitItem icon="Shield" title="Le PER">
+
+- **Réduction d'impôt immédiate** : chaque versement réduit votre revenu imposable
+- **Argent bloqué** jusqu'à la retraite (sauf exceptions)
+- Idéal si vous êtes **fortement imposé** et avez un horizon retraite
+
+</SplitItem>
+
+<SplitItem icon="TrendingUp" title="L'assurance-vie">
+
+- **Pas de réduction d'impôt** à l'entrée
+- **Argent disponible** à tout moment
+- Idéal pour des **projets à moyen terme** ou la transmission
+
+</SplitItem>
+
+</SplitComparison>
+
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">Les deux sont complémentaires.</strong> Le PER pour préparer la retraite avec un avantage fiscal. L'assurance-vie pour les autres projets, avec une épargne toujours disponible.</p>
+
+</ProductSection>
+
+{/* Écran 9 — Parcours 25 ans */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="25 ans d'épargne retraite, étape par étape."
+  subtitle="Un scénario possible parmi d'autres. Suivez le parcours de Thomas — avec ses bons moments et ses doutes."
+  gradient
+/>
+
+<PerJourneyTimeline />
+
+</ProductSection>
+
+{/* Écran 10 — Self-sélection */}
+
+<ProductSection>
+
+<StrongPhrase title="Le PER est-il fait pour vous ?" />
+
+<SplitComparison>
+
+<SplitItem icon="CircleCheck" title="Souvent un bon choix si..." variant="green">
+
+- Vous payez **plus de 2 000 € d'impôts par an** et souhaitez réduire la facture
+- Vous êtes en **milieu ou fin de carrière** et pensez déjà à la retraite
+- Vous n'avez **pas besoin** de cet argent avant 15 à 25 ans
+- Vous voulez un **complément de revenus** pour votre retraite
+
+</SplitItem>
+
+<SplitItem icon="AlertTriangle" title="Pas toujours adapté si..." variant="red">
+
+- Vous êtes **peu ou pas imposable** (l'avantage fiscal serait faible)
+- Vous risquez d'avoir besoin de cet argent **avant la retraite**
+- Vous préférez un placement **disponible à tout moment** (le <GlossaryTooltip term="Livret A">Livret A</GlossaryTooltip> ou l'<GlossaryTooltip term="Assurance-vie">assurance-vie</GlossaryTooltip> sont mieux adaptés)
+- Vous êtes **déjà à la retraite** ou très proche du départ
+
+</SplitItem>
+
+</SplitComparison>
+
+</ProductSection>
+
+{/* Écran 11 — Closing */}
+
+<ProductSection background="dark">
+
+<ProductClosing
+  phrase="Préparer sa retraite, c'est s'offrir le choix de vivre comme on le souhaite."
+  nextSlug="scpi"
+  nextTitle="SCPI"
+>
+
+- [Service-Public.fr — Plan d'épargne retraite](https://www.service-public.fr/particuliers/vosdroits/F34982)
+- [AMF — Comprendre le PER](https://www.amf-france.org)
+- [Loi PACTE — Legifrance](https://www.legifrance.gouv.fr)
+- [Info-Retraite.fr — Estimer sa retraite](https://www.info-retraite.fr)
+
+</ProductClosing>
+
+<DisclaimerBanner variant="fiche-produit" className="mt-8" />
+
+</ProductSection>

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { createElement, Fragment, type ReactNode } from "react"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -15,6 +15,22 @@ export function textContent(children: ReactNode): string {
     return textContent((children as { props: { children?: ReactNode } }).props.children)
   }
   return ""
+}
+
+/** Render **bold** markers inside a string as <strong> elements */
+export function renderBold(text: ReactNode): ReactNode {
+  if (typeof text !== 'string') return text
+  const parts = text.split(/\*\*(.*?)\*\*/g)
+  if (parts.length === 1) return text
+  return createElement(
+    Fragment,
+    null,
+    ...parts.map((part, i) =>
+      i % 2 === 1
+        ? createElement('strong', { key: i, className: 'font-semibold text-ep-text-primary' }, part)
+        : part
+    )
+  )
 }
 
 /** Generate a URL-friendly slug from text (handles French accents) */

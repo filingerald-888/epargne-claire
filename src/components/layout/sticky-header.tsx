@@ -6,12 +6,14 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
+import { useHeroVisibility } from '@/lib/hero-context'
+
 interface StickyHeaderProps {
   className?: string
 }
 
 const navLinks = [
-  { label: 'Produits', href: '/produits/assurance-vie', activePrefix: '/produits' },
+  { label: 'Produits', href: '/produits', activePrefix: '/produits' },
   { label: 'Comparer', href: '/comparer', activePrefix: '/comparer' },
   { label: 'Glossaire', href: '/glossaire', activePrefix: '/glossaire' },
   { label: 'À propos', href: '/a-propos', activePrefix: '/a-propos' },
@@ -21,8 +23,15 @@ export function StickyHeader({ className }: StickyHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { isHeroVisible, setHeroVisible } = useHeroVisibility()
+  const showWhite = isScrolled || isHeroVisible
   const overlayRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  // Reset hero visibility on route change so pages without a hero get the default header
+  useEffect(() => {
+    setHeroVisible(false)
+  }, [pathname, setHeroVisible])
 
   useEffect(() => {
     function handleScroll() {
@@ -106,25 +115,25 @@ export function StickyHeader({ className }: StickyHeaderProps) {
         >
           {/* Desktop: logo + texte */}
           <Image
-            src={isScrolled ? '/logo-blanc.svg' : '/logo-bleu.svg'}
+            src={showWhite ? '/logo-blanc.svg' : '/logo-bleu.svg'}
             alt="Épargne Claire"
             width={32}
             height={34}
             className="hidden lg:block"
           />
-          <span className={`hidden lg:inline text-xl font-bold ${isScrolled ? 'text-white' : 'text-ep-primary'}`}>
+          <span className={`hidden lg:inline text-xl font-bold ${showWhite ? 'text-white' : 'text-ep-primary'}`}>
             Épargne Claire
           </span>
 
           {/* Mobile: logo + texte */}
           <Image
-            src={isScrolled ? '/logo-blanc.svg' : '/logo-bleu.svg'}
+            src={showWhite ? '/logo-blanc.svg' : '/logo-bleu.svg'}
             alt="Épargne Claire"
             width={28}
             height={30}
             className="lg:hidden"
           />
-          <span className={`lg:hidden text-lg font-bold ${isScrolled ? 'text-white' : 'text-ep-primary'}`}>
+          <span className={`lg:hidden text-lg font-bold ${showWhite ? 'text-white' : 'text-ep-primary'}`}>
             Épargne Claire
           </span>
         </Link>
@@ -137,7 +146,7 @@ export function StickyHeader({ className }: StickyHeaderProps) {
                 href={link.href}
                 aria-current={isActive(link) ? 'page' : undefined}
                 className={`inline-flex min-h-[44px] min-w-[44px] items-center px-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary ${
-                  isScrolled ? 'text-white' : 'text-ep-text-primary'
+                  showWhite ? 'text-white' : 'text-ep-primary'
                 } ${
                   isActive(link)
                     ? 'font-bold underline underline-offset-4 decoration-2'
@@ -158,7 +167,7 @@ export function StickyHeader({ className }: StickyHeaderProps) {
           aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`flex lg:hidden min-h-[44px] min-w-[44px] items-center justify-center rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary ${
-            isScrolled ? 'text-white' : 'text-ep-text-primary'
+            showWhite ? 'text-white' : 'text-ep-primary'
           }`}
         >
           <Menu className="h-6 w-6" />

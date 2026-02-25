@@ -1,0 +1,211 @@
+export const frontmatter = {
+  title: "Plan d'Épargne en Actions",
+  slug: 'pea',
+  subtitle: "Investir en Bourse européenne avec 0 impôt sur les gains après 5 ans. Plafond : 150 000 €.",
+  readingTime: 7,
+  lastUpdated: '2026-02-23',
+  objectifs: ['projets-de-vie'],
+  labelCouleur: ['Projets de vie'],
+  heroImage: '/images/hero-pea.jpg',
+  disclaimer: 'fiche-produit',
+  seo: {
+    title: "PEA : tout comprendre en 7 minutes | EpargneClaire",
+    description: "Guide complet et neutre sur le PEA : fonctionnement, fiscalité après 5 ans, frais, placements éligibles et exemples concrets.",
+  },
+}
+
+{/* Écran 1 — Intro + PEA vs Compte-titres + Exemple concret */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Investir en actions avec un cadre fiscal spécifique."
+  subtitle="Le Plan d'Épargne en Actions est une enveloppe qui permet d'investir en Bourse. Après 5 ans, vos gains ne sont plus taxés sur le revenu — mais le capital n'est pas garanti."
+/>
+
+<SplitComparison>
+
+<SplitItem icon="Shield" title="Le PEA (Plan d'Épargne en Actions)">
+
+Vous investissez en actions européennes dans une **enveloppe protégée par l'État**. Après 5 ans, vos gains ne sont soumis qu'aux cotisations sociales (17,2 %) au lieu de 30 %. Plafond de versements : **150 000 €**.
+
+</SplitItem>
+
+<SplitItem icon="Scale" title="Le compte-titres classique">
+
+Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont taxés à 30 % dès le premier euro. En contrepartie : aucun plafond, aucune restriction géographique.
+
+</SplitItem>
+
+</SplitComparison>
+
+<PeaGrowthSimulator />
+
+</ProductSection>
+
+{/* Écran 2 — Personas */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="À qui s'adresse le PEA ?"
+  subtitle="Le PEA n'est pas réservé aux experts. Il suffit d'un horizon de 5 ans et d'un minimum de curiosité."
+/>
+
+<PeaPersonaCards />
+
+</ProductSection>
+
+{/* Écran 3 — Éligibilité */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Qu'est-ce qu'on peut mettre dans un PEA ?"
+  subtitle="Le PEA a une règle simple : actions européennes uniquement. Mais grâce aux fonds indiciels, le choix est bien plus large qu'on ne le croit."
+  gradient
+/>
+
+<PeaEligibleInvestments />
+
+</ProductSection>
+
+{/* Écran 4 — Idées reçues */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="5 idées reçues sur le PEA."
+  gradient
+/>
+
+<PeaMythBuster />
+
+</ProductSection>
+
+{/* Écran 5 — Risques */}
+
+<ProductSection>
+
+<StrongPhrase title="Les risques réels du PEA." />
+
+<PeaRiskGrid />
+
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">Investir en Bourse comporte un risque de perte en capital.</strong> Les performances passées ne garantissent pas les résultats futurs.</p>
+
+</ProductSection>
+
+{/* Écran 6 — Fiscalité */}
+
+<ProductSection>
+
+<StrongPhrase title="L'avantage fiscal du PEA, c'est simple." />
+
+<FiscalTimeline
+  milestone="5 ans"
+  before={{ label: "Avant 5 ans", description: <>Retrait = <strong>clôture du PEA</strong>. Vos gains sont taxés à <strong>30 %</strong> (impôt sur le revenu + cotisations sociales).</> }}
+  after={{ label: "Après 5 ans", description: <>Retraits possibles <strong>sans fermer votre PEA</strong>. Vos gains sont <strong>exonérés d'impôt sur le revenu</strong>. Il ne reste que les cotisations sociales (17,2 %).</> }}
+  detail={<>En clair : gardez votre PEA ouvert 5 ans, et vos gains ne sont taxés qu'à <strong>17,2 % au lieu de 30 %</strong>. Sur 10 000 € de gains, c'est <strong>1 280 € d'économie</strong>.</>}
+/>
+
+<div className="mt-10" />
+
+<KeyFigure
+  value="1 280 €"
+  label="d'économie d'impôt"
+  description={<>Sur 10 000 € de gains, la différence entre <strong>30 %</strong> (avant 5 ans) et <strong>17,2 %</strong> (après 5 ans). Plus vos gains sont élevés, plus l'économie est importante.</>}
+/>
+
+</ProductSection>
+
+{/* Écran 7 — Frais */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase title="En ligne ou en banque : les frais ne sont pas les mêmes." />
+
+<KeyFigure
+  value="4 200 €"
+  label="d'écart sur les frais"
+  description={<>Sur 150 € investis par mois pendant 15 ans avec un rendement de 7 % par an, <strong>la différence de frais</strong> entre un courtier en ligne et une banque traditionnelle peut atteindre cette somme.</>}
+/>
+
+<FeeComparison
+  onlineSubtitle="Courtier en ligne spécialisé — interface moderne, frais réduits, exécution rapide"
+  bankSubtitle="PEA ouvert dans votre banque — conseiller en agence, mais frais plus élevés"
+  rows={[
+    { label: "Frais par opération d'achat ou vente", online: "0,50 € par ordre", bank: "5 à 12 € par ordre" },
+    { label: "Frais de garde annuels", online: "0 €/an", bank: "0,20 – 0,40 %/an" },
+    { label: "Frais d'inactivité", online: "0 €", bank: "Variable" },
+    { label: "Frais de transfert", online: "Remboursés (souvent)", bank: "15 € par ligne" }
+  ]}
+/>
+
+<p className="mt-8 text-center text-sm text-ep-text-muted">Les frais de gestion des fonds indiciels (0,20 à 0,40 %/an) sont les mêmes chez tous les courtiers. <strong className="text-ep-text-primary">C'est sur les frais par opération et les frais de garde que la différence se fait.</strong></p>
+
+</ProductSection>
+
+{/* Écran 8 — Parcours 8 ans */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="8 ans d'investissement, étape par étape."
+  subtitle="Un scénario possible parmi d'autres. Suivez le parcours de Lucas — avec ses bons moments et ses doutes."
+  gradient
+/>
+
+<PeaJourneyTimeline />
+
+</ProductSection>
+
+{/* Écran 9 — Self-sélection */}
+
+<ProductSection>
+
+<StrongPhrase title="Le PEA est-il fait pour vous ?" />
+
+<SplitComparison>
+
+<SplitItem icon="CircleCheck" title="Souvent un bon choix si…" variant="green">
+
+- Vous avez un **horizon de 5 ans ou plus** et pouvez laisser votre argent travailler
+- Vous acceptez que la valeur de votre placement **varie** à court terme
+- Vous voulez investir en Bourse **simplement** (un seul fonds diversifié peut suffire)
+- Vous avez déjà un <GlossaryTooltip term="Livret A">Livret A</GlossaryTooltip> rempli et cherchez à **aller plus loin**
+
+</SplitItem>
+
+<SplitItem icon="AlertTriangle" title="Pas toujours adapté si…" variant="red">
+
+- Vous avez besoin de cet argent **dans moins de 5 ans**
+- Vous ne supportez **aucune baisse**, même temporaire
+- Vous préférez un placement avec **capital garanti** (le Livret A ou le fonds en euros de l'<GlossaryTooltip term="Assurance-vie">assurance-vie</GlossaryTooltip> sont mieux adaptés)
+- Vous voulez investir dans des **actions américaines directement** (le compte-titres classique est plus adapté)
+
+</SplitItem>
+
+</SplitComparison>
+
+</ProductSection>
+
+{/* Écran 10 — Closing */}
+
+<ProductSection background="dark">
+
+<ProductClosing
+  phrase="Investir, ce n'est pas jouer. C'est faire travailler le temps pour vous."
+  nextSlug="scpi"
+  nextTitle="SCPI"
+>
+
+- [AMF — Comprendre le PEA](https://www.amf-france.org)
+- [Service-Public.fr — Plan d'épargne en actions](https://www.service-public.fr/particuliers/vosdroits/F2385)
+- [Code monétaire et financier — Legifrance](https://www.legifrance.gouv.fr)
+- [Euronext — Bourse de Paris](https://www.euronext.com/fr)
+
+</ProductClosing>
+
+<DisclaimerBanner variant="fiche-produit" className="mt-8" />
+
+</ProductSection>
