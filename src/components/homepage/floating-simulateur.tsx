@@ -65,7 +65,7 @@ export function FloatingSimulateur() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent
           showCloseButton={false}
-          className="mx-4 flex h-[85vh] max-h-[700px] w-[calc(100%-2rem)] max-w-2xl flex-col gap-0 overflow-hidden p-0 sm:mx-auto sm:w-full"
+          className="flex h-[85vh] max-h-[700px] max-w-[calc(100%-1rem)] flex-col gap-0 overflow-hidden p-0 sm:max-w-2xl"
         >
           {/* Header */}
           <div className="flex items-center justify-between border-b border-ep-separator px-5 py-3">
