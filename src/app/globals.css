@@ -179,3 +179,53 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Inflation slider */
+.inflation-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #2563EB 0%,
+    #2563EB var(--slider-percent, 50%),
+    #E5E7EB var(--slider-percent, 50%),
+    #E5E7EB 100%
+  );
+  outline: none;
+}
+.inflation-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.inflation-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 0.25);
+}
+.inflation-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  cursor: pointer;
+}
+.inflation-slider:focus-visible {
+  outline: none;
+}
+.inflation-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #2563EB40;
+}
+.inflation-slider:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 3px #2563EB40;
+}

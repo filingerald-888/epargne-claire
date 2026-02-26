@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/homepage/hero-section'
 import { FounderSection } from '@/components/homepage/founder-section'
+import { InflationLossSection } from '@/components/homepage/inflation-loss-section'
 import { ObjectifsSection } from '@/components/homepage/objectifs-section'
 import { ProduitsSection } from '@/components/homepage/produits-section'
 import { RdvSection } from '@/components/homepage/rdv-section'
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <FounderSection />
+      <InflationLossSection />
       <ObjectifsSection />
       <ProduitsSection />
       <RdvSection />
