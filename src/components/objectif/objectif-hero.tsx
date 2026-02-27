@@ -51,7 +51,7 @@ export function ObjectifHero({ emoji, title, subtitle, body, colorKey, heroImage
     return (
       <div
         ref={ref}
-        className="relative mx-[calc(-50vw+50%)] flex min-h-[70vh] w-screen items-center overflow-hidden"
+        className="relative mx-[calc(-50vw+50%)] flex h-[70vh] w-screen items-center overflow-hidden"
       >
         {/* Parallax background */}
         <motion.div

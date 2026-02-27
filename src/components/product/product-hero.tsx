@@ -54,7 +54,7 @@ export function ProductHero({ frontmatter }: ProductHeroProps) {
   return (
     <div
       ref={ref}
-      className="relative mx-[calc(-50vw+50%)] flex min-h-[70vh] w-screen items-center overflow-hidden"
+      className="relative mx-[calc(-50vw+50%)] flex h-[70vh] w-screen items-center overflow-hidden"
     >
       {/* Parallax background — photo + dark overlay */}
       <motion.div
