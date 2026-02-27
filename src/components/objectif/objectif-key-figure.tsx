@@ -35,7 +35,7 @@ export function ObjectifKeyFigure({
   const prefersReduced = useReducedMotion()
 
   return (
-    <section className="pb-2 md:pb-4">
+    <section className="pb-8 md:pb-6">
       <motion.div
         initial={prefersReduced ? undefined : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
