@@ -1,60 +1,34 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
-
-import { useHeroVisibility } from '@/lib/hero-context'
 
 export function AProposHero() {
-  const ref = useRef<HTMLDivElement>(null)
   const prefersReduced = useReducedMotion()
   const dur = prefersReduced ? 0 : 0.4
-  const { setHeroVisible } = useHeroVisibility()
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeroVisible(entry.isIntersecting),
-      { threshold: 0 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [setHeroVisible])
 
   return (
-    <div
-      ref={ref}
-      className="relative mx-[calc(-50vw+50%)] flex min-h-[80vh] w-screen items-center overflow-hidden"
-    >
-      {/* Parallax background */}
-      <motion.div
-        className="absolute inset-0"
-        style={prefersReduced ? undefined : { y: bgY }}
-        aria-hidden
-      >
-        <Image
-          src="/images/fondateur-v2.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-      </motion.div>
-
+    <div className="mx-[calc(-50vw+50%)] flex min-h-[60vh] w-screen items-center overflow-hidden bg-blue-50">
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
+      <div className="mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: dur, delay: 0.05 }}
+        >
+          <Image
+            src="/logo-bleu.svg"
+            alt="EpargneClaire"
+            width={56}
+            height={60}
+            className="mx-auto"
+          />
+        </motion.div>
+
         <motion.h1
-          className="font-sans text-3xl font-bold text-white md:text-5xl"
+          className="mt-6 font-sans text-3xl font-bold text-ep-primary md:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.1 }}
@@ -63,7 +37,7 @@ export function AProposHero() {
         </motion.h1>
 
         <motion.p
-          className="mx-auto mt-4 max-w-2xl text-base text-white/80 md:text-lg"
+          className="mx-auto mt-4 max-w-2xl text-base text-ep-primary/70 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.2 }}
@@ -82,7 +56,7 @@ export function AProposHero() {
             animate={prefersReduced ? undefined : { y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
           >
-            <ChevronDown className="mx-auto size-8 text-white/40" />
+            <ChevronDown className="mx-auto size-8 text-ep-primary/40" />
           </motion.div>
         </motion.div>
       </div>

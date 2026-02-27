@@ -1,6 +1,8 @@
 'use client'
 
+import { Award, Briefcase, Globe, GraduationCap } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
+import Image from 'next/image'
 
 import {
   fadeInVariants,
@@ -24,6 +26,25 @@ export function AProposParcours() {
 
   return (
     <ProductSection background="primary-subtle">
+      {/* Portrait arrondi */}
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-6 flex justify-center"
+      >
+        <div className="relative size-28 overflow-hidden rounded-full border-4 border-white shadow-lg md:size-32">
+          <Image
+            src="/images/fondateur-v2.jpg"
+            alt="Gérald, fondateur d'EpargneClaire"
+            fill
+            className="object-cover"
+            sizes="128px"
+          />
+        </div>
+      </motion.div>
+
       <StrongPhrase
         title="Parcours"
         subtitle="13 ans de Product Management"
@@ -63,8 +84,9 @@ export function AProposParcours() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-8 text-center text-xl font-bold text-ep-text-primary"
+          className="mb-8 flex items-center justify-center gap-2 text-xl font-bold text-ep-text-primary"
         >
+          <Briefcase className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Compétences
         </motion.h3>
         <motion.div
@@ -105,8 +127,9 @@ export function AProposParcours() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-8 text-center text-xl font-bold text-ep-text-primary"
+          className="mb-8 flex items-center justify-center gap-2 text-xl font-bold text-ep-text-primary"
         >
+          <GraduationCap className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Formation
         </motion.h3>
         <motion.div
@@ -122,8 +145,7 @@ export function AProposParcours() {
               variants={itemVariants}
               className="rounded-xl border border-ep-separator bg-white p-5 shadow-[0_2px_8px_rgb(0,0,0,0.06)]"
             >
-              <span className="text-2xl">🎓</span>
-              <p className="mt-2 text-sm font-bold text-ep-text-primary">
+              <p className="text-sm font-bold text-ep-text-primary">
                 {d.title}
               </p>
               <p className="mt-1 text-xs text-ep-text-muted">
@@ -142,8 +164,9 @@ export function AProposParcours() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-8 text-center text-xl font-bold text-ep-text-primary"
+          className="mb-8 flex items-center justify-center gap-2 text-xl font-bold text-ep-text-primary"
         >
+          <Award className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Certifications
         </motion.h3>
         <motion.div
@@ -159,8 +182,7 @@ export function AProposParcours() {
               variants={itemVariants}
               className="rounded-xl border border-ep-separator bg-white p-5 shadow-[0_2px_8px_rgb(0,0,0,0.06)]"
             >
-              <span className="text-2xl">📜</span>
-              <p className="mt-2 text-sm font-bold text-ep-text-primary">
+              <p className="text-sm font-bold text-ep-text-primary">
                 {c.title}
               </p>
               <p className="mt-1 text-xs text-ep-text-muted">{c.issuer}</p>
@@ -179,8 +201,9 @@ export function AProposParcours() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-8 text-center text-xl font-bold text-ep-text-primary"
+          className="mb-8 flex items-center justify-center gap-2 text-xl font-bold text-ep-text-primary"
         >
+          <Globe className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Langues
         </motion.h3>
         <motion.div

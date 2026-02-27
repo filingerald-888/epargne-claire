@@ -1,5 +1,6 @@
 'use client'
 
+import { Ban, BookOpen, Bot, LockOpen, type LucideIcon } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 
 import { fadeInVariants, reducedFadeInVariants, staggerContainerVariants } from '@/lib/motion'
@@ -7,6 +8,13 @@ import { pillars } from '@/lib/a-propos-data'
 
 import { ProductSection } from '@/components/content/product-section'
 import { StrongPhrase } from '@/components/product/strong-phrase'
+
+const iconMap: Record<string, LucideIcon> = {
+  '📖': BookOpen,
+  '🚫': Ban,
+  '🔓': LockOpen,
+  '🤖': Bot,
+}
 
 export function AProposDemarche() {
   const prefersReduced = useReducedMotion()
@@ -23,23 +31,30 @@ export function AProposDemarche() {
         viewport={{ once: true, margin: '-100px' }}
         className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
-        {pillars.map((pillar) => (
-          <motion.div
-            key={pillar.title}
-            variants={itemVariants}
-            className="rounded-2xl border border-ep-separator bg-white p-6 shadow-[0_2px_8px_rgb(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)]"
-          >
-            <span className="text-4xl" role="img" aria-hidden>
-              {pillar.icon}
-            </span>
-            <h3 className="mt-4 text-lg font-bold text-ep-text-primary">
-              {pillar.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
-              {pillar.description}
-            </p>
-          </motion.div>
-        ))}
+        {pillars.map((pillar) => {
+          const Icon = iconMap[pillar.icon]
+          return (
+            <motion.div
+              key={pillar.title}
+              variants={itemVariants}
+              className="rounded-2xl border border-ep-separator bg-white p-6 shadow-[0_2px_8px_rgb(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)]"
+            >
+              {Icon && (
+                <Icon
+                  className="size-8 text-ep-primary"
+                  strokeWidth={1.5}
+                  aria-hidden
+                />
+              )}
+              <h3 className="mt-4 text-lg font-bold text-ep-text-primary">
+                {pillar.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
+                {pillar.description}
+              </p>
+            </motion.div>
+          )
+        })}
       </motion.div>
     </ProductSection>
   )
