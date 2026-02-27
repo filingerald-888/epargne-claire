@@ -228,9 +228,14 @@ export function JourneyTimeline() {
               variants={itemVariants}
               className="flex gap-3"
             >
-              {/* Icon + line segment */}
+              {/* Icon + line segments */}
               <div className="flex flex-col items-center">
-                <div className="mt-3 flex size-6 shrink-0 items-center justify-center rounded-full border border-ep-primary/30 bg-white shadow-sm">
+                {i === 0 ? (
+                  <div className="h-3 shrink-0" />
+                ) : (
+                  <div className="h-3 w-0.5 shrink-0 bg-gray-200" />
+                )}
+                <div className="flex size-6 shrink-0 items-center justify-center rounded-full border border-ep-primary/30 bg-white shadow-sm">
                   {Icon && <Icon className="size-3 text-ep-primary" />}
                 </div>
                 {!isLast && <div className="w-0.5 flex-1 bg-gray-200" />}
