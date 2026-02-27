@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 import { AppTooltipProvider } from "@/components/layout/tooltip-provider"
 import { HeroProvider } from "@/lib/hero-context"
 import { FloatingSimulateur } from "@/components/homepage/floating-simulateur"
+import { ScrollToTop } from "@/components/layout/scroll-to-top"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <AppTooltipProvider>
           <HeroProvider>
+            <ScrollToTop />
             <SkipLink />
             <StickyHeader />
             <main id="main-content" className="mx-auto max-w-[1200px] px-6 md:px-8">

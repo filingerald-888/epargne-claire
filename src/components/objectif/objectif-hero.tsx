@@ -124,6 +124,7 @@ export function ObjectifHero({ emoji, title, subtitle, body, colorKey, heroImage
   /* --- Variante gradient coloré (fallback) --- */
   return (
     <div
+      ref={ref}
       className={cn(
         'mx-[calc(-50vw+50%)] w-screen bg-gradient-to-b py-20 md:py-32',
         colorGradients[colorKey] ?? colorGradients.retraite

@@ -1,6 +1,16 @@
 'use client'
 
-import { Landmark, PiggyBank, RefreshCw, Telescope, type LucideIcon } from 'lucide-react'
+import {
+  Banknote,
+  Clock,
+  Landmark,
+  Lock,
+  PiggyBank,
+  RefreshCw,
+  Shield,
+  Telescope,
+  type LucideIcon,
+} from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 
 import {
@@ -14,6 +24,10 @@ const iconMap: Record<string, LucideIcon> = {
   'piggy-bank': PiggyBank,
   landmark: Landmark,
   'refresh-cw': RefreshCw,
+  shield: Shield,
+  clock: Clock,
+  banknote: Banknote,
+  lock: Lock,
 }
 
 interface Lever {
@@ -22,11 +36,19 @@ interface Lever {
   description: string
 }
 
-interface ObjectifLeversProps {
-  levers: Lever[]
+const iconColors: Record<string, string> = {
+  securiser: 'text-emerald-500',
+  projets: 'text-blue-500',
+  retraite: 'text-amber-500',
+  transmission: 'text-purple-500',
 }
 
-export function ObjectifLevers({ levers }: ObjectifLeversProps) {
+interface ObjectifLeversProps {
+  levers: Lever[]
+  colorKey?: string
+}
+
+export function ObjectifLevers({ levers, colorKey = 'retraite' }: ObjectifLeversProps) {
   const prefersReduced = useReducedMotion()
   const itemVariants = prefersReduced ? reducedFadeInVariants : fadeInVariants
 
@@ -48,7 +70,7 @@ export function ObjectifLevers({ levers }: ObjectifLeversProps) {
           >
             {Icon && (
               <Icon
-                className="size-7 text-amber-500"
+                className={`size-7 ${iconColors[colorKey] ?? 'text-amber-500'}`}
                 strokeWidth={1.5}
                 aria-hidden
               />

@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 
 import { ProductSection } from '@/components/content/product-section'
+import { ObjectifChecklist } from '@/components/objectif/objectif-checklist'
 import { ObjectifClosing } from '@/components/objectif/objectif-closing'
 import { ObjectifHero } from '@/components/objectif/objectif-hero'
+import { ObjectifKeyFigure } from '@/components/objectif/objectif-key-figure'
 import { ObjectifLevers } from '@/components/objectif/objectif-levers'
 import { ObjectifNav } from '@/components/objectif/objectif-nav'
 import { ObjectifProducts } from '@/components/objectif/objectif-products'
@@ -21,14 +24,27 @@ interface ObjectifData {
   body: string
   heroImage?: string
   questionTitle: string
-  explanation: string
-  explanationSecond: string
+  explanation: ReactNode
+  explanationSecond: ReactNode
+  /* Optionnel — chiffre clé impactant (entre compréhension et leviers) */
+  keyFigure?: {
+    figure: string
+    label: string
+    description: ReactNode
+    source?: string
+  }
+  /* Optionnel — guide étape par étape (entre compréhension et leviers) */
+  checklist?: {
+    title: string
+    subtitle?: string
+    steps: { title: string; description: ReactNode }[]
+  }
   leversSubtitle: string
   levers: { icon: string; title: string; description: string }[]
   productsSubtitle: string
   products: {
     title: string
-    description: string
+    description: ReactNode
     image: string
     tags: { label: string; colorKey: string }[]
     href: string
@@ -39,6 +55,111 @@ interface ObjectifData {
 }
 
 const objectifData: Record<string, ObjectifData> = {
+  securiser: {
+    emoji: '🛡️',
+    title: 'Sécuriser mon quotidien',
+    colorKey: 'securiser',
+    heroImage: '/images/hero-objectif-securiser.jpg',
+    subtitle:
+      'L\u2019épargne de précaution est la première pierre de tout patrimoine.',
+    body: 'Combien mettre de côté ? Où placer cet argent ? On vous explique tout.',
+    questionTitle: 'Pourquoi une épargne de précaution ?',
+    explanation:
+      <>La vie réserve des imprévus : perte d{'\u2019'}emploi, réparation urgente, problème de santé. L{'\u2019'}épargne de précaution est <strong>un matelas financier disponible immédiatement, sans risque de perte</strong>, pour faire face sereinement à ces aléas.</>,
+    explanationSecond:
+      <>Sans ce filet de sécurité, un imprévu peut entraîner <strong>un crédit coûteux</strong> ou <strong>la vente précipitée d{'\u2019'}un placement à perte</strong>.</>,
+    keyFigure: {
+      figure: '3 à 6 mois',
+      label: 'de dépenses courantes',
+      description:
+        <>C{'\u2019'}est le montant d{'\u2019'}épargne de précaution <strong>généralement recommandé</strong> pour faire face aux imprévus sans stress.</>,
+      source: 'Recommandation courante — Banque de France',
+    },
+    checklist: {
+      title: 'Les étapes essentielles',
+      subtitle: 'Un plan simple pour constituer votre matelas de sécurité.',
+      steps: [
+        {
+          title: 'Évaluez vos dépenses mensuelles',
+          description:
+            <>Additionnez loyer, charges, alimentation, transport, abonnements pour connaître <strong>votre budget mensuel</strong>.</>,
+        },
+        {
+          title: 'Fixez votre objectif',
+          description:
+            <>Multipliez ce montant par <strong>3 (minimum) à 6 (confortable)</strong>. C{'\u2019'}est votre cible d{'\u2019'}épargne de précaution.</>,
+        },
+        {
+          title: 'Automatisez l\u2019épargne',
+          description:
+            <>Mettez en place <strong>un virement automatique en début de mois</strong> vers votre livret. L{'\u2019'}effort devient invisible.</>,
+        },
+        {
+          title: 'Choisissez le bon support',
+          description:
+            <><strong>Livret A en priorité</strong> (disponible, garanti, exonéré). Assurance-vie fonds euros en complément une fois le plafond atteint.</>,
+        },
+      ],
+    },
+    leversSubtitle: 'Ce qui caractérise cet objectif.',
+    levers: [
+      {
+        icon: 'shield',
+        title: 'Capital garanti',
+        description: 'Votre argent ne peut pas perdre de valeur',
+      },
+      {
+        icon: 'clock',
+        title: 'Disponibilité immédiate',
+        description: 'Retirez à tout moment sans pénalité',
+      },
+      {
+        icon: 'banknote',
+        title: 'Exonération fiscale',
+        description:
+          'Les intérêts du Livret A sont nets d\u2019impôts',
+      },
+      {
+        icon: 'lock',
+        title: 'Simplicité',
+        description:
+          'Pas de choix d\u2019investissement, pas de risque à gérer',
+      },
+    ],
+    productsSubtitle:
+      'Explorer les solutions qui correspondent à cet objectif.',
+    products: [
+      {
+        title: 'Livret A (& LDDS)',
+        description:
+          <><strong>Capital garanti, disponible à tout moment.</strong> Taux fixé par l{'\u2019'}État. Exonéré d{'\u2019'}impôts. Idéal comme socle d{'\u2019'}épargne de précaution.</>,
+        image: '/images/hero-livret-a.jpg',
+        tags: [
+          { label: 'Sécuriser', colorKey: 'securiser' },
+          { label: 'Garanti', colorKey: 'securiser' },
+        ],
+        href: '/produits/livret-a-ldds',
+      },
+      {
+        title: 'Assurance-vie (fonds euros)',
+        description:
+          <><strong>Capital garanti sur le fonds en euros.</strong> Rendement légèrement supérieur aux livrets. Complément idéal une fois les livrets au plafond.</>,
+        image: '/images/hero-assurance-vie-v2.jpg',
+        tags: [
+          { label: 'Flexible', colorKey: 'flexible' },
+          { label: 'Sécuriser', colorKey: 'securiser' },
+        ],
+        href: '/produits/assurance-vie',
+      },
+    ],
+    nextObjectifSlug: 'projets-de-vie',
+    nextObjectifTitle: 'Préparer mes projets de vie',
+    seo: {
+      title: 'Sécuriser mon quotidien — EpargneClaire',
+      description:
+        'Comment constituer son épargne de précaution : combien mettre de côté, où placer, quels produits. Guide neutre et gratuit.',
+    },
+  },
   retraite: {
     emoji: '⏳',
     title: 'Préparer ma retraite',
@@ -123,7 +244,6 @@ const objectifData: Record<string, ObjectifData> = {
 
 /* Placeholder pour les objectifs non encore remplis */
 const placeholderObjectifs = [
-  { slug: 'securiser', title: 'Sécuriser mon quotidien' },
   { slug: 'projets-de-vie', title: 'Préparer mes projets de vie' },
   { slug: 'transmission', title: 'Transmettre mon patrimoine' },
 ]
@@ -181,7 +301,7 @@ export default async function ObjectivePage({
         />
 
         {/* O1 — Compréhension */}
-        <section className="py-16 md:py-24">
+        <section className="pt-16 pb-8 md:pt-24 md:pb-10">
           <StrongPhrase title={data.questionTitle} />
           <div className="mx-auto max-w-2xl space-y-4 text-center">
             <p className="text-lg leading-relaxed text-ep-text-primary">
@@ -193,17 +313,39 @@ export default async function ObjectivePage({
           </div>
         </section>
 
+        {/* O1b — Chiffre clé (optionnel) */}
+        {data.keyFigure && (
+          <ObjectifKeyFigure
+            figure={data.keyFigure.figure}
+            label={data.keyFigure.label}
+            description={data.keyFigure.description}
+            source={data.keyFigure.source}
+            colorKey={data.colorKey}
+          />
+        )}
+
+        {/* O1c — Checklist étapes (optionnel) */}
+        {data.checklist && (
+          <ProductSection background="primary-subtle">
+            <StrongPhrase
+              title={data.checklist.title}
+              subtitle={data.checklist.subtitle}
+            />
+            <ObjectifChecklist steps={data.checklist.steps} />
+          </ProductSection>
+        )}
+
         {/* O2 — Leviers clés */}
-        <ProductSection background="primary-subtle">
+        <ProductSection background={data.checklist ? undefined : 'primary-subtle'} compact>
           <StrongPhrase
             title="Les leviers clés"
             subtitle={data.leversSubtitle}
           />
-          <ObjectifLevers levers={data.levers} />
+          <ObjectifLevers levers={data.levers} colorKey={data.colorKey} />
         </ProductSection>
 
         {/* O3 — Produits adaptés */}
-        <section className="py-16 md:py-24">
+        <section className="pt-8 pb-16 md:pt-12 md:pb-24">
           <StrongPhrase
             title="Les produits adaptés"
             subtitle={data.productsSubtitle}
