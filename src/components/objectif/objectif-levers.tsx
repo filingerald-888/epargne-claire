@@ -4,14 +4,18 @@ import {
   Banknote,
   Calendar,
   Clock,
+  FileText,
+  Heart,
   Landmark,
   Lock,
   PiggyBank,
   RefreshCw,
+  Scale,
   Shield,
   Target,
   Telescope,
   TrendingUp,
+  Users,
   type LucideIcon,
 } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
@@ -34,6 +38,10 @@ const iconMap: Record<string, LucideIcon> = {
   target: Target,
   'trending-up': TrendingUp,
   calendar: Calendar,
+  heart: Heart,
+  scale: Scale,
+  users: Users,
+  'file-text': FileText,
 }
 
 interface Lever {

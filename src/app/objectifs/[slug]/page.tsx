@@ -387,12 +387,113 @@ const objectifData: Record<string, ObjectifData> = {
         'Comment épargner pour ses projets de vie : immobilier, études, voyages. Horizon, supports, stratégie. Guide neutre et gratuit.',
     },
   },
+  transmission: {
+    emoji: '🤝',
+    title: 'Transmettre mon patrimoine',
+    colorKey: 'transmission',
+    heroImage: '/images/hero-objectif-transmission.jpg',
+    subtitle:
+      'Protéger ses proches et organiser la transmission de son vivant.',
+    body: 'Assurance-vie, donation, clause bénéficiaire : les clés pour anticiper.',
+    questionTitle: 'Pourquoi anticiper sa transmission ?',
+    explanation:
+      <>En France, <strong>les droits de succession peuvent atteindre 45 % en ligne directe</strong>. Anticiper la transmission permet de réduire cette charge et de protéger ses proches selon ses volontés.</>,
+    explanationSecond:
+      <>Sans préparation, c{'\u2019'}est <strong>la loi qui décide de la répartition</strong> — et la fiscalité peut amputer fortement le patrimoine transmis.</>,
+    keyFigure: {
+      figure: '152 500 €',
+      label: 'exonérés par bénéficiaire',
+      description:
+        <>L{'\u2019'}assurance-vie permet de transmettre <strong>jusqu{'\u2019'}à 152 500 € par bénéficiaire sans droits de succession</strong> (versements avant 70 ans).</>,
+      source: 'Article 990 I du Code général des impôts',
+    },
+    checklist: {
+      title: 'Les étapes essentielles',
+      subtitle: 'Un plan clair pour organiser la transmission de votre patrimoine.',
+      steps: [
+        {
+          title: 'Faites le point sur votre patrimoine',
+          description:
+            <>Listez <strong>tous vos actifs</strong> : immobilier, épargne, assurance-vie, comptes bancaires. C{'\u2019'}est la base de toute stratégie.</>,
+        },
+        {
+          title: 'Rédigez ou mettez à jour vos clauses bénéficiaires',
+          description:
+            <>La clause bénéficiaire de l{'\u2019'}assurance-vie est <strong>le levier le plus puissant</strong> : elle permet de transmettre hors succession, avec une fiscalité allégée.</>,
+        },
+        {
+          title: 'Utilisez les abattements de donation',
+          description:
+            <><strong>Chaque parent peut donner 100 000 € par enfant tous les 15 ans</strong> sans droits. Anticiper permet de transmettre progressivement.</>,
+        },
+        {
+          title: 'Consultez un notaire ou un CGP',
+          description:
+            <>La transmission touche au droit civil et fiscal. <strong>Un professionnel vous aide à optimiser</strong> tout en respectant la réserve héréditaire.</>,
+        },
+      ],
+    },
+    leversSubtitle: 'Ce qui caractérise cet objectif.',
+    levers: [
+      {
+        icon: 'heart',
+        title: 'Protéger ses proches',
+        description: 'Organiser la répartition selon ses volontés',
+      },
+      {
+        icon: 'scale',
+        title: 'Fiscalité optimisée',
+        description: 'Réduire les droits de succession légalement',
+      },
+      {
+        icon: 'users',
+        title: 'Choix des bénéficiaires',
+        description: 'Désigner librement qui reçoit quoi',
+      },
+      {
+        icon: 'file-text',
+        title: 'Anticipation',
+        description: 'Donations et clauses préparées de son vivant',
+      },
+    ],
+    productsSubtitle:
+      'Explorer les solutions qui correspondent à cet objectif.',
+    products: [
+      {
+        title: 'Assurance-vie',
+        description:
+          <><strong>Outil de transmission par excellence.</strong> Abattement de 152 500 € par bénéficiaire. Clause bénéficiaire libre et modifiable à tout moment.</>,
+        image: '/images/hero-assurance-vie-v2.jpg',
+        tags: [
+          { label: 'Transmission', colorKey: 'transmission' },
+          { label: 'Flexible', colorKey: 'flexible' },
+        ],
+        href: '/produits/assurance-vie',
+      },
+      {
+        title: 'PER',
+        description:
+          <>En cas de décès, le PER est transmis aux bénéficiaires désignés. <strong>Fiscalité avantageuse similaire à l{'\u2019'}assurance-vie</strong> pour les versements avant 70 ans.</>,
+        image: '/images/hero-per-v2.jpg',
+        tags: [
+          { label: 'Retraite', colorKey: 'retraite' },
+          { label: 'Transmission', colorKey: 'transmission' },
+        ],
+        href: '/produits/per',
+      },
+    ],
+    nextObjectifSlug: 'securiser',
+    nextObjectifTitle: 'Sécuriser mon quotidien',
+    seo: {
+      title: 'Transmettre mon patrimoine — EpargneClaire',
+      description:
+        'Comment organiser la transmission de son patrimoine : assurance-vie, donation, clause bénéficiaire, fiscalité. Guide neutre et gratuit.',
+    },
+  },
 }
 
 /* Placeholder pour les objectifs non encore remplis */
-const placeholderObjectifs = [
-  { slug: 'transmission', title: 'Transmettre mon patrimoine' },
-]
+const placeholderObjectifs: { slug: string; title: string }[] = []
 
 const allSlugs = ['securiser', 'projets-de-vie', 'retraite', 'transmission']
 
