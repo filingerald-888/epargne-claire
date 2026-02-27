@@ -1,6 +1,6 @@
 'use client'
 
-import { Award, Briefcase, Globe, GraduationCap } from 'lucide-react'
+import { Award, Briefcase, Globe, GraduationCap, Mail, Phone } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
 
@@ -49,6 +49,30 @@ export function AProposParcours() {
         title="Parcours"
         subtitle="13 ans de Product Management"
       />
+
+      {/* Contact */}
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-12 flex flex-wrap items-center justify-center gap-4 text-sm"
+      >
+        <a
+          href="tel:+33699169478"
+          className="inline-flex items-center gap-2 rounded-full border border-ep-separator bg-white px-4 py-2 text-ep-text-primary transition-colors hover:border-ep-primary hover:text-ep-primary"
+        >
+          <Phone className="size-4 text-ep-primary" strokeWidth={1.5} />
+          06 99 16 94 78
+        </a>
+        <a
+          href="mailto:filingerald@gmail.com"
+          className="inline-flex items-center gap-2 rounded-full border border-ep-separator bg-white px-4 py-2 text-ep-text-primary transition-colors hover:border-ep-primary hover:text-ep-primary"
+        >
+          <Mail className="size-4 text-ep-primary" strokeWidth={1.5} />
+          filingerald@gmail.com
+        </a>
+      </motion.div>
 
       {/* Timeline — Expériences */}
       <motion.div
