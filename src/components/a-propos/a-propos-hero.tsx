@@ -2,33 +2,17 @@
 
 import { ChevronDown } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
-import Image from 'next/image'
 
 export function AProposHero() {
   const prefersReduced = useReducedMotion()
   const dur = prefersReduced ? 0 : 0.4
 
   return (
-    <div className="mx-[calc(-50vw+50%)] flex min-h-[60vh] w-screen items-center overflow-hidden bg-blue-50">
+    <div className="mx-[calc(-50vw+50%)] flex min-h-[60vh] w-screen items-center overflow-hidden bg-blue-100">
       {/* Content */}
       <div className="mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: dur, delay: 0.05 }}
-        >
-          <Image
-            src="/logo-bleu.svg"
-            alt="EpargneClaire"
-            width={56}
-            height={60}
-            className="mx-auto"
-          />
-        </motion.div>
-
         <motion.h1
-          className="mt-6 font-sans text-3xl font-bold text-ep-primary md:text-5xl"
+          className="font-sans text-3xl font-bold text-blue-900 md:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.1 }}
@@ -37,7 +21,7 @@ export function AProposHero() {
         </motion.h1>
 
         <motion.p
-          className="mx-auto mt-4 max-w-2xl text-base text-ep-primary/70 md:text-lg"
+          className="mx-auto mt-4 max-w-2xl text-base text-blue-800/70 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.2 }}
@@ -56,7 +40,7 @@ export function AProposHero() {
             animate={prefersReduced ? undefined : { y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
           >
-            <ChevronDown className="mx-auto size-8 text-ep-primary/40" />
+            <ChevronDown className="mx-auto size-8 text-blue-900/30" />
           </motion.div>
         </motion.div>
       </div>
