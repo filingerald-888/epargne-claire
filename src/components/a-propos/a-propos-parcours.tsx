@@ -87,7 +87,7 @@ export function AProposParcours() {
             <motion.div
               key={exp.period}
               variants={itemVariants}
-              className="flex gap-4 pb-6 last:pb-0"
+              className="flex gap-4"
             >
               {/* Dot + line segment */}
               <div className="flex flex-col items-center">
@@ -96,7 +96,7 @@ export function AProposParcours() {
               </div>
 
               {/* Content */}
-              <div className="pb-4">
+              <div className={isLast ? undefined : 'pb-8'}>
                 <p className="text-xs font-medium uppercase tracking-wider text-ep-text-muted">
                   {exp.period}
                 </p>
