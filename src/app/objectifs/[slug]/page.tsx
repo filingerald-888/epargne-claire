@@ -169,9 +169,9 @@ const objectifData: Record<string, ObjectifData> = {
     body: "PER, Assurance-vie, Immobilier : comparez selon votre situation.",
     questionTitle: "Concrètement, qu'est-ce que ça veut dire ?",
     explanation:
-      'Anticiper la baisse de revenus à la retraite en construisant un capital sur le long terme.',
+      <>Anticiper la baisse de revenus à la retraite en construisant <strong>un capital sur le long terme</strong>.</>,
     explanationSecond:
-      "Chaque euro placé aujourd'hui travaille pour votre avenir.",
+      <><strong>Chaque euro placé aujourd{'\u2019'}hui travaille pour votre avenir.</strong></>,
     leversSubtitle: 'Ce qui caractérise cet objectif.',
     levers: [
       {
@@ -201,7 +201,7 @@ const objectifData: Record<string, ObjectifData> = {
       {
         title: 'PER',
         description:
-          "Dédié à la retraite. Versements déductibles du revenu imposable. Bloqué jusqu'à la retraite (sauf exceptions).",
+          <><strong>Dédié à la retraite. Versements déductibles du revenu imposable.</strong> Bloqué jusqu{'\u2019'}à la retraite (sauf exceptions).</>,
         image: '/images/hero-per-v2.jpg',
         tags: [
           { label: 'Retraite', colorKey: 'retraite' },
@@ -212,7 +212,7 @@ const objectifData: Record<string, ObjectifData> = {
       {
         title: 'Assurance-vie',
         description:
-          'Enveloppe complémentaire au PER. Plus souple sur les retraits. Transmission avantageuse.',
+          <>Enveloppe complémentaire au PER. <strong>Plus souple sur les retraits.</strong> Transmission avantageuse.</>,
         image: '/images/hero-assurance-vie-v2.jpg',
         tags: [
           { label: 'Flexible', colorKey: 'flexible' },
@@ -223,7 +223,7 @@ const objectifData: Record<string, ObjectifData> = {
       {
         title: 'PEA',
         description:
-          'Investir en actions sur le long terme. Exonération après 5 ans. Idéal en complément.',
+          <>Investir en actions sur le long terme. <strong>Exonération après 5 ans.</strong> Idéal en complément.</>,
         image: '/images/hero-per-v2.jpg',
         tags: [
           { label: 'Actions', colorKey: 'actions' },
@@ -240,11 +240,124 @@ const objectifData: Record<string, ObjectifData> = {
         'Comprendre comment préparer sa retraite : PER, assurance-vie, capitalisation. Guide neutre et gratuit.',
     },
   },
+  'projets-de-vie': {
+    emoji: '🎯',
+    title: 'Préparer mes projets de vie',
+    colorKey: 'projets',
+    heroImage: '/images/hero-objectif-projets.jpg',
+    subtitle:
+      'Achat immobilier, études des enfants, voyage… chaque projet mérite une stratégie.',
+    body: 'Quel horizon ? Quel niveau de risque ? On vous aide à y voir clair.',
+    questionTitle: 'Pourquoi anticiper ses projets ?',
+    explanation:
+      <>Un projet de vie se prépare <strong>plusieurs années à l{'\u2019'}avance</strong>. Épargner régulièrement sur le bon support permet de constituer un capital sans effort brutal, tout en faisant travailler son argent.</>,
+    explanationSecond:
+      <>Sans anticipation, le recours au crédit devient souvent la seule option — avec <strong>un coût total bien plus élevé</strong> que l{'\u2019'}effort d{'\u2019'}épargne initial.</>,
+    keyFigure: {
+      figure: '2 à 10 ans',
+      label: 'd\u2019horizon selon le projet',
+      description:
+        <>L{'\u2019'}horizon de placement est <strong>la clé du choix</strong> : plus il est long, plus vous pouvez accepter de risque pour viser un meilleur rendement.</>,
+      source: 'Principe fondamental de la gestion patrimoniale',
+    },
+    checklist: {
+      title: 'Les étapes essentielles',
+      subtitle: 'Un plan simple pour financer vos projets.',
+      steps: [
+        {
+          title: 'Définissez votre projet',
+          description:
+            <>Estimez <strong>le montant nécessaire</strong> et la date cible. Plus le projet est précis, plus la stratégie sera efficace.</>,
+        },
+        {
+          title: 'Déterminez votre horizon',
+          description:
+            <>Moins de 3 ans ? Privilégiez la sécurité. <strong>Plus de 5 ans ? Vous pouvez diversifier</strong> pour viser un meilleur rendement.</>,
+        },
+        {
+          title: 'Choisissez le bon support',
+          description:
+            <><strong>Assurance-vie pour la souplesse</strong>, PEA pour le long terme en actions, livrets pour la poche sécurisée.</>,
+        },
+        {
+          title: 'Épargnez régulièrement',
+          description:
+            <>Mettez en place <strong>un versement programmé</strong> : même modeste, la régularité fait la différence grâce aux intérêts composés.</>,
+        },
+      ],
+    },
+    leversSubtitle: 'Ce qui caractérise cet objectif.',
+    levers: [
+      {
+        icon: 'target',
+        title: 'Objectif daté',
+        description: 'Un montant cible et une échéance claire',
+      },
+      {
+        icon: 'trending-up',
+        title: 'Rendement adapté',
+        description: 'Dosez risque et performance selon l\u2019horizon',
+      },
+      {
+        icon: 'calendar',
+        title: 'Épargne programmée',
+        description: 'Des versements réguliers pour lisser l\u2019effort',
+      },
+      {
+        icon: 'refresh-cw',
+        title: 'Souplesse',
+        description: 'Ajustez votre stratégie au fil du temps',
+      },
+    ],
+    productsSubtitle:
+      'Explorer les solutions qui correspondent à cet objectif.',
+    products: [
+      {
+        title: 'Assurance-vie',
+        description:
+          <><strong>Enveloppe polyvalente par excellence.</strong> Fonds euros sécurisé + unités de compte pour dynamiser. Retraits possibles à tout moment.</>,
+        image: '/images/hero-assurance-vie-v2.jpg',
+        tags: [
+          { label: 'Flexible', colorKey: 'flexible' },
+          { label: 'Projets', colorKey: 'projets' },
+        ],
+        href: '/produits/assurance-vie',
+      },
+      {
+        title: 'PEA',
+        description:
+          <><strong>Idéal pour un horizon de 5 ans ou plus.</strong> Investir en actions européennes avec une fiscalité allégée après 5 ans.</>,
+        image: '/images/hero-pea.jpg',
+        tags: [
+          { label: 'Actions', colorKey: 'actions' },
+          { label: 'Long terme', colorKey: 'longterme' },
+        ],
+        href: '/produits/pea',
+      },
+      {
+        title: 'Livret A (& LDDS)',
+        description:
+          <><strong>Poche sécurisée de votre projet.</strong> Capital garanti et disponible. Idéal pour la part à court terme ou l{'\u2019'}apport immobilier en attente.</>,
+        image: '/images/hero-livret-a.jpg',
+        tags: [
+          { label: 'Sécuriser', colorKey: 'securiser' },
+          { label: 'Garanti', colorKey: 'securiser' },
+        ],
+        href: '/produits/livret-a-ldds',
+      },
+    ],
+    nextObjectifSlug: 'retraite',
+    nextObjectifTitle: 'Préparer ma retraite',
+    seo: {
+      title: 'Préparer mes projets de vie — EpargneClaire',
+      description:
+        'Comment épargner pour ses projets de vie : immobilier, études, voyages. Horizon, supports, stratégie. Guide neutre et gratuit.',
+    },
+  },
 }
 
 /* Placeholder pour les objectifs non encore remplis */
 const placeholderObjectifs = [
-  { slug: 'projets-de-vie', title: 'Préparer mes projets de vie' },
   { slug: 'transmission', title: 'Transmettre mon patrimoine' },
 ]
 

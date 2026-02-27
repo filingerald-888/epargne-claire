@@ -2,13 +2,16 @@
 
 import {
   Banknote,
+  Calendar,
   Clock,
   Landmark,
   Lock,
   PiggyBank,
   RefreshCw,
   Shield,
+  Target,
   Telescope,
+  TrendingUp,
   type LucideIcon,
 } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
@@ -28,6 +31,9 @@ const iconMap: Record<string, LucideIcon> = {
   clock: Clock,
   banknote: Banknote,
   lock: Lock,
+  target: Target,
+  'trending-up': TrendingUp,
+  calendar: Calendar,
 }
 
 interface Lever {
