@@ -3,11 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { motion, useReducedMotion } from 'motion/react'
-import { Calculator, RotateCcw, User } from 'lucide-react'
+import { AlertTriangle, Calculator, HelpCircle, RotateCcw, User } from 'lucide-react'
 
 import {
   calculateFiscalResult,
-  type FiscalInput,
   type FiscalResult,
   type ProductType,
 } from '@/lib/fiscal-rules'
@@ -115,13 +114,44 @@ function ChoiceButtons({
   )
 }
 
+// --- Help tooltip ---
+function HelpText({ text }: { text: string }) {
+  return (
+    <p className="mt-1 flex items-start gap-1 text-[11px] leading-snug text-ep-text-muted/70">
+      <HelpCircle className="mt-0.5 size-3 shrink-0" aria-hidden />
+      <span>{text}</span>
+    </p>
+  )
+}
+
+// --- Inline validation message ---
+function InlineWarning({ text }: { text: string }) {
+  return (
+    <p className="mt-1 flex items-start gap-1 text-[11px] leading-snug text-amber-600" role="alert">
+      <AlertTriangle className="mt-0.5 size-3 shrink-0" aria-hidden />
+      <span>{text}</span>
+    </p>
+  )
+}
+
+function InlineError({ text }: { text: string }) {
+  return (
+    <p className="mt-1 flex items-start gap-1 text-[11px] leading-snug text-red-500" role="alert">
+      <AlertTriangle className="mt-0.5 size-3 shrink-0" aria-hidden />
+      <span>{text}</span>
+    </p>
+  )
+}
+
 // --- Amount form ---
 function AmountForm({
   onSubmit,
   product,
+  holdingYears,
 }: {
   onSubmit: (invested: number, current: number, withdrawal: number) => void
   product: ProductType
+  holdingYears: number
 }) {
   const [invested, setInvested] = useState('')
   const [current, setCurrent] = useState('')
@@ -130,18 +160,79 @@ function AmountForm({
 
   const isLivret = product === 'livret-a'
 
+  // Computed values for validation
+  const inv = Number(invested) || 0
+  const cur = isLivret ? inv : (Number(current) || 0)
+  const w = useTotal ? cur : (Number(withdrawal) || 0)
+
+  // Live validation
+  const liveValidation = (() => {
+    const errors: string[] = []
+    const warnings: string[] = []
+
+    if (isLivret) {
+      // Livret A: plafond
+      if (inv > 22_950) {
+        warnings.push(
+          'Le plafond du Livret A est de 22\u00A0950\u00A0€ (hors intérêts). Un solde supérieur est possible grâce aux intérêts capitalisés.'
+        )
+      }
+      return { errors, warnings }
+    }
+
+    // Retrait > valeur actuelle
+    if (cur > 0 && !useTotal && w > cur) {
+      errors.push('Le retrait ne peut pas dépasser la valeur actuelle.')
+    }
+
+    // Perte en capital
+    if (inv > 0 && cur > 0 && cur < inv) {
+      warnings.push(
+        'Votre placement est en moins-value (valeur inférieure aux versements). Il n\u2019y aura pas d\u2019impôt sur les gains.'
+      )
+    }
+
+    // Plafond PEA
+    if (product === 'pea' && inv > 150_000) {
+      warnings.push(
+        'Le plafond de versement du PEA est de 150\u00A0000\u00A0€. Vérifiez que ce montant n\u2019inclut pas les plus-values.'
+      )
+    }
+
+    // Rendement irréaliste
+    if (inv > 0 && cur > inv && holdingYears > 0) {
+      const annualReturn = Math.pow(cur / inv, 1 / holdingYears) - 1
+      const maxReturns: Record<ProductType, number> = {
+        'assurance-vie': 0.15,
+        'pea': 0.25,
+        'per': 0.15,
+        'livret-a': 0.05,
+      }
+      if (annualReturn > maxReturns[product]) {
+        const pct = (annualReturn * 100).toFixed(0)
+        warnings.push(
+          `Ces montants impliquent un rendement annuel moyen de ~${pct}\u00A0%, ce qui est inhabituellement élevé. Vérifiez que le « montant total versé » inclut bien tous vos versements successifs.`
+        )
+      }
+    }
+
+    return { errors, warnings }
+  })()
+
+  const hasBlockingErrors = liveValidation.errors.length > 0
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const inv = Number(invested) || 0
-    const cur = isLivret ? inv : (Number(current) || 0)
-    const w = useTotal ? cur : (Number(withdrawal) || 0)
     if (inv <= 0) return
     if (!isLivret && cur <= 0) return
+    if (hasBlockingErrors) return
     onSubmit(inv, cur, w)
   }
 
   const inputClass =
     'h-11 w-full rounded-lg border border-ep-separator bg-white px-3 text-sm text-ep-text-primary transition-colors focus:border-ep-primary focus:outline-none focus:ring-1 focus:ring-ep-primary'
+  const inputErrorClass =
+    'h-11 w-full rounded-lg border border-red-300 bg-white px-3 text-sm text-ep-text-primary transition-colors focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500'
 
   return (
     <form onSubmit={handleSubmit} className="mt-3 space-y-3">
@@ -163,6 +254,17 @@ function AmountForm({
           />
           <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ep-text-muted">€</span>
         </div>
+        {isLivret ? (
+          <HelpText text="Indiquez le montant que vous souhaitez retirer de votre Livret A." />
+        ) : (
+          <HelpText text="Additionnez tous vos versements depuis l'ouverture du contrat (pas uniquement le versement initial)." />
+        )}
+        {isLivret && inv > 22_950 && (
+          <InlineWarning text={liveValidation.warnings[0]} />
+        )}
+        {!isLivret && product === 'pea' && inv > 150_000 && (
+          <InlineWarning text="Le plafond de versement du PEA est de 150\u00A0000\u00A0€. Vérifiez que ce montant n\u2019inclut pas les plus-values." />
+        )}
       </div>
 
       {!isLivret && (
@@ -185,6 +287,23 @@ function AmountForm({
               />
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ep-text-muted">€</span>
             </div>
+            <HelpText text="Consultez votre dernier relevé de compte ou l'espace en ligne de votre assureur/banque." />
+            {inv > 0 && cur > 0 && cur < inv && (
+              <InlineWarning text="Votre placement est en moins-value. Il n\u2019y aura pas d\u2019impôt sur les gains." />
+            )}
+            {inv > 0 && cur > inv && holdingYears > 0 && (() => {
+              const annualReturn = Math.pow(cur / inv, 1 / holdingYears) - 1
+              const maxReturns: Record<ProductType, number> = {
+                'assurance-vie': 0.15, 'pea': 0.25, 'per': 0.15, 'livret-a': 0.05,
+              }
+              if (annualReturn > maxReturns[product]) {
+                const pct = (annualReturn * 100).toFixed(0)
+                return (
+                  <InlineWarning text={`Rendement implicite de ~${pct}\u00A0%/an, inhabituellement élevé. Vérifiez que « montant total versé » inclut bien tous vos versements.`} />
+                )
+              }
+              return null
+            })()}
           </div>
 
           <div>
@@ -216,27 +335,46 @@ function AmountForm({
               </button>
             </div>
             {!useTotal && (
-              <div className="relative mt-2">
-                <input
-                  type="number"
-                  min={1}
-                  step="any"
-                  placeholder="Ex : 10 000"
-                  value={withdrawal}
-                  onChange={(e) => setWithdrawal(e.target.value)}
-                  className={inputClass}
-                  required
-                />
-                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ep-text-muted">€</span>
-              </div>
+              <>
+                <div className="relative mt-2">
+                  <input
+                    type="number"
+                    min={1}
+                    step="any"
+                    placeholder="Ex : 10 000"
+                    value={withdrawal}
+                    onChange={(e) => setWithdrawal(e.target.value)}
+                    className={w > 0 && cur > 0 && w > cur ? inputErrorClass : inputClass}
+                    required
+                  />
+                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-ep-text-muted">€</span>
+                </div>
+                {w > 0 && cur > 0 && w > cur && (
+                  <InlineError text="Le montant à retirer ne peut pas dépasser la valeur actuelle du placement." />
+                )}
+              </>
             )}
           </div>
         </>
       )}
 
+      {/* Résumé des avertissements non encore affichés inline */}
+      {liveValidation.warnings.length > 0 && !isLivret && (
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
+          <p className="text-[11px] font-medium text-amber-700">
+            {liveValidation.warnings.length === 1 ? 'Point d\u2019attention' : 'Points d\u2019attention'}
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-ep-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-ep-primary-hover hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2"
+        disabled={hasBlockingErrors}
+        className={`inline-flex min-h-[44px] w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2 ${
+          hasBlockingErrors
+            ? 'cursor-not-allowed bg-ep-separator text-ep-text-muted'
+            : 'bg-ep-primary text-white hover:bg-ep-primary-hover hover:shadow-lg'
+        }`}
       >
         Calculer
       </button>
@@ -318,6 +456,23 @@ function ResultCard({ result }: { result: FiscalResult }) {
           </div>
         </div>
       </div>
+
+      {/* Warnings */}
+      {result.warnings.length > 0 && (
+        <div className="border-t border-amber-200 bg-amber-50 px-5 py-3">
+          <p className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-amber-700">
+            <AlertTriangle className="size-3.5" aria-hidden />
+            {result.warnings.length === 1 ? 'Point d\u2019attention' : 'Points d\u2019attention'}
+          </p>
+          <ul className="space-y-1.5">
+            {result.warnings.map((warning, i) => (
+              <li key={i} className="text-[11px] leading-relaxed text-amber-700">
+                {warning}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Disclaimer */}
       <div className="border-t border-ep-separator px-5 py-3">
@@ -646,6 +801,7 @@ export function SimulateurFiscal() {
               <AmountForm
                 onSubmit={handleAmountsWithStore}
                 product={product!}
+                holdingYears={holdingYears}
               />
             </motion.div>
           )}

@@ -45,6 +45,107 @@ export interface FiscalResult {
   netAmount: number
   steps: FiscalStep[]
   summary: string
+  warnings: string[]
+}
+
+// --- Plafonds réglementaires ---
+const PEA_MAX_DEPOSIT = 150_000
+const LIVRET_A_MAX_BALANCE = 22_950
+
+// --- Validation ---
+export interface ValidationResult {
+  errors: string[]     // Bloquants — empêchent le calcul
+  warnings: string[]   // Non-bloquants — affichés dans le résultat
+}
+
+/** Rendement annualisé moyen implicite */
+function impliedAnnualReturn(invested: number, current: number, years: number): number {
+  if (invested <= 0 || years <= 0) return 0
+  return Math.pow(current / invested, 1 / years) - 1
+}
+
+/** Seuils de rendement réaliste par produit */
+const MAX_PLAUSIBLE_RETURN: Record<ProductType, number> = {
+  'assurance-vie': 0.15, // 15%/an max (fonds UC très dynamiques)
+  'pea': 0.25,           // 25%/an max (actions très performantes)
+  'per': 0.15,           // 15%/an max (similaire AV)
+  'livret-a': 0.05,      // 5%/an max (taux réglementé)
+}
+
+export function validateInput(input: FiscalInput): ValidationResult {
+  const errors: string[] = []
+  const warnings: string[] = []
+
+  // --- Erreurs bloquantes ---
+  if (input.totalInvested <= 0) {
+    errors.push('Le montant versé doit être supérieur à 0\u00A0€.')
+  }
+  if (input.product !== 'livret-a' && input.currentValue <= 0) {
+    errors.push('La valeur actuelle doit être supérieure à 0\u00A0€.')
+  }
+  if (input.withdrawalAmount <= 0) {
+    errors.push('Le montant à retirer doit être supérieur à 0\u00A0€.')
+  }
+  if (input.product !== 'livret-a' && input.withdrawalAmount > input.currentValue) {
+    errors.push('Le montant à retirer ne peut pas dépasser la valeur actuelle de votre placement.')
+  }
+
+  // --- Avertissements ---
+
+  // Perte en capital (valeur < versé)
+  if (input.product !== 'livret-a' && input.currentValue < input.totalInvested) {
+    warnings.push(
+      'La valeur actuelle est inférieure aux versements : votre placement est en moins-value. ' +
+      'Dans ce cas, il n\u2019y a pas de plus-values, donc pas d\u2019imposition sur les gains.'
+    )
+  }
+
+  // Plafond PEA
+  if (input.product === 'pea' && input.totalInvested > PEA_MAX_DEPOSIT) {
+    warnings.push(
+      `Le plafond de versement du PEA est de ${PEA_MAX_DEPOSIT.toLocaleString('fr-FR')}\u00A0€. ` +
+      'Si votre montant est correct, vérifiez qu\u2019il n\u2019inclut pas les plus-values.'
+    )
+  }
+
+  // Plafond Livret A
+  if (input.product === 'livret-a' && input.totalInvested > LIVRET_A_MAX_BALANCE) {
+    warnings.push(
+      `Le plafond du Livret A est de ${LIVRET_A_MAX_BALANCE.toLocaleString('fr-FR')}\u00A0€ (hors intérêts capitalisés). ` +
+      'Un solde supérieur est possible grâce aux intérêts, mais vérifiez votre relevé.'
+    )
+  }
+
+  // Rendement irréaliste
+  if (
+    input.product !== 'livret-a' &&
+    input.currentValue > input.totalInvested &&
+    input.holdingYears > 0
+  ) {
+    const annualReturn = impliedAnnualReturn(
+      input.totalInvested, input.currentValue, input.holdingYears
+    )
+    const maxReturn = MAX_PLAUSIBLE_RETURN[input.product]
+    if (annualReturn > maxReturn) {
+      const pct = (annualReturn * 100).toFixed(0)
+      warnings.push(
+        `Les montants saisis impliquent un rendement annuel moyen de ~${pct}\u00A0%, ` +
+        'ce qui est inhabituellement élevé pour ce type de placement. ' +
+        'Vérifiez que le « montant total versé » inclut bien tous vos versements (pas uniquement le versement initial).'
+      )
+    }
+  }
+
+  // PER : rappel conditions de sortie
+  if (input.product === 'per') {
+    warnings.push(
+      'Rappel : le PER est en principe bloqué jusqu\u2019à la retraite. ' +
+      'Un retrait anticipé n\u2019est possible que dans certains cas (achat de résidence principale, accidents de la vie). ' +
+      'Cette simulation calcule la fiscalité applicable en cas de sortie.'
+    )
+  }
+
+  return { errors, warnings }
 }
 
 // --- Helpers ---
@@ -194,6 +295,7 @@ function calculateAV(input: FiscalInput): FiscalResult {
     netAmount,
     steps,
     summary: `Sur un retrait de ${fmt(withdrawalAmount)} ${durationLabel}, vous serez prélevé(e) de ${fmt(totalTax)}. Vous récupérez ${fmt(netAmount)}.`,
+    warnings: [],
   }
 }
 
@@ -286,6 +388,7 @@ function calculatePEA(input: FiscalInput): FiscalResult {
     netAmount,
     steps,
     summary: `Sur un retrait de ${fmt(withdrawalAmount)} ${durationLabel}, vous serez prélevé(e) de ${fmt(totalTax)}. Vous récupérez ${fmt(netAmount)}.`,
+    warnings: [],
   }
 }
 
@@ -382,6 +485,7 @@ function calculatePER(input: FiscalInput): FiscalResult {
     netAmount,
     steps,
     summary: `Sur un retrait de ${fmt(withdrawalAmount)} (${deductedLabel}), vous serez prélevé(e) de ${fmt(totalTax)}. Vous récupérez ${fmt(netAmount)}.`,
+    warnings: [],
   }
 }
 
@@ -410,19 +514,38 @@ function calculateLivretA(input: FiscalInput): FiscalResult {
     netAmount: withdrawalAmount,
     steps,
     summary: `Votre retrait de ${fmt(withdrawalAmount)} est totalement exonéré. Vous récupérez ${fmt(withdrawalAmount)}.`,
+    warnings: [],
   }
 }
 
 // --- Point d'entrée ---
 export function calculateFiscalResult(input: FiscalInput): FiscalResult {
-  switch (input.product) {
-    case 'assurance-vie':
-      return calculateAV(input)
-    case 'pea':
-      return calculatePEA(input)
-    case 'per':
-      return calculatePER(input)
-    case 'livret-a':
-      return calculateLivretA(input)
+  // Clamp withdrawal to currentValue to prevent impossible scenarios
+  const safeInput: FiscalInput = {
+    ...input,
+    withdrawalAmount: Math.min(input.withdrawalAmount, input.currentValue),
   }
+
+  // Validate and collect warnings
+  const { warnings } = validateInput(safeInput)
+
+  let result: FiscalResult
+  switch (safeInput.product) {
+    case 'assurance-vie':
+      result = calculateAV(safeInput)
+      break
+    case 'pea':
+      result = calculatePEA(safeInput)
+      break
+    case 'per':
+      result = calculatePER(safeInput)
+      break
+    case 'livret-a':
+      result = calculateLivretA(safeInput)
+      break
+  }
+
+  // Merge warnings from validation into result
+  result.warnings = [...warnings, ...result.warnings]
+  return result
 }
