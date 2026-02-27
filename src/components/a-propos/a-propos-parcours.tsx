@@ -80,8 +80,14 @@ export function AProposParcours() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
-        className="relative ml-4 border-l-2 border-ep-primary/30 pl-8"
+        className="relative ml-4 pl-8"
       >
+        {/* Vertical line — starts at first dot, ends at last dot */}
+        <div
+          className="absolute left-[calc(1rem-1px)] top-[7px] bottom-[7px] w-0.5 bg-ep-primary/30"
+          aria-hidden
+        />
+
         {experiences.map((exp) => (
           <motion.div
             key={exp.period}
@@ -89,7 +95,7 @@ export function AProposParcours() {
             className="relative pb-10 last:pb-0"
           >
             {/* Dot */}
-            <div className="absolute -left-[calc(2rem+5px)] top-1 size-2.5 rounded-full bg-ep-primary" />
+            <div className="absolute -left-[calc(2rem+5px)] top-[5px] z-10 size-2.5 rounded-full bg-ep-primary" />
             <p className="text-xs font-medium uppercase tracking-wider text-ep-text-muted">
               {exp.period}
             </p>

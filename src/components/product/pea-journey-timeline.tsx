@@ -243,8 +243,8 @@ export function PeaJourneyTimeline() {
         className="md:hidden"
       >
         <div className="relative pl-8">
-          {/* Vertical line */}
-          <div className="absolute bottom-0 left-3 top-0 w-0.5 bg-gray-200">
+          {/* Vertical line — starts at first icon, ends at last icon */}
+          <div className="absolute left-3 top-[15px] bottom-[15px] w-0.5 bg-gray-200">
             <motion.div
               className="w-full rounded-full bg-gradient-to-b from-ep-primary to-ep-secondary"
               initial={{ height: '0%' }}
