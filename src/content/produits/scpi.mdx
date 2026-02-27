@@ -1,0 +1,232 @@
+export const frontmatter = {
+  title: 'SCPI',
+  slug: 'scpi',
+  subtitle: "Investissez dans l'immobilier sans acheter de bien. Revenus réguliers, gestion déléguée, à partir de quelques centaines d'euros.",
+  readingTime: 8,
+  lastUpdated: '2026-02-27',
+  objectifs: ['projets-de-vie', 'transmission'],
+  labelCouleur: ['Projets de vie', 'Transmission'],
+  heroImage: '/images/hero-scpi.jpg',
+  disclaimer: 'fiche-produit',
+  seo: {
+    title: 'SCPI : tout comprendre en 8 minutes | EpargneClaire',
+    description: "Guide complet et neutre sur les SCPI : fonctionnement, types, frais, fiscalité et exemples concrets pour investir dans l'immobilier sans acheter.",
+  },
+}
+
+{/* Écran 1 — Intro */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Investir dans l'immobilier sans acheter de bien."
+  subtitle="La SCPI (Société Civile de Placement Immobilier) vous permet de devenir co-propriétaire d'un parc immobilier géré par des professionnels. Vous touchez votre part des loyers, sans aucune gestion."
+/>
+
+<p className="mt-2 text-center text-sm text-ep-text-muted">Vérifié avec les données de l'<strong className="text-ep-text-primary">AMF</strong> et de l'<strong className="text-ep-text-primary">ASPIM</strong>.</p>
+
+<SplitComparison>
+
+<SplitItem icon="Shield" title="Immobilier sans contraintes">
+
+Pas de recherche de locataire, pas de travaux, pas de gestion. La SCPI s'occupe de **tout** : achat des immeubles, gestion locative, entretien. Vous recevez votre part des loyers chaque trimestre.
+
+</SplitItem>
+
+<SplitItem icon="TrendingUp" title="Un rendement attractif">
+
+Les SCPI distribuent en moyenne **4 à 6 % par an** de rendement. C'est plus que le Livret A ou le fonds euros — mais le capital **n'est pas garanti** et la revente n'est pas immédiate.
+
+</SplitItem>
+
+</SplitComparison>
+
+<KeyFigure
+  value="4,5 %"
+  label="rendement moyen des SCPI en 2024"
+  description={<>Le taux de distribution moyen des SCPI était de <strong>4,52 %</strong> en 2024 selon l'ASPIM. Ce rendement varie fortement selon les SCPI : de 3 % à plus de 7 %. <strong>Les performances passées ne garantissent pas les résultats futurs.</strong></>}
+/>
+
+</ProductSection>
+
+{/* Écran 2 — Comment ça marche */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="Comment fonctionne une SCPI ?"
+  subtitle="En 4 étapes simples, de votre investissement à la perception des loyers."
+  gradient
+/>
+
+<ScpiHowItWorks />
+
+</ProductSection>
+
+{/* Écran 3 — Types de SCPI */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="Toutes les SCPI ne se ressemblent pas."
+  subtitle="Il existe plusieurs familles de SCPI, selon le type d'immobilier dans lequel elles investissent."
+/>
+
+<ScpiTypeCards />
+
+</ProductSection>
+
+{/* Écran 4 — Personas */}
+
+<ProductSection>
+
+<StrongPhrase
+  title="À qui s'adresse la SCPI ?"
+  subtitle="La SCPI intéresse des profils variés, du jeune épargnant au retraité. Le point commun : un horizon long terme."
+/>
+
+<ScpiPersonaCards />
+
+</ProductSection>
+
+{/* Écran 5 — Idées reçues */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="5 idées reçues sur les SCPI."
+  gradient
+/>
+
+<ScpiMythBuster />
+
+</ProductSection>
+
+{/* Écran 6 — Risques */}
+
+<ProductSection>
+
+<StrongPhrase title="Les risques réels des SCPI." />
+
+<ScpiRiskGrid />
+
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">La SCPI n'est pas un placement sans risque.</strong> Avant d'investir, vérifiez que vous n'aurez pas besoin de cet argent dans les 8 à 10 prochaines années.</p>
+
+</ProductSection>
+
+{/* Écran 7 — Frais */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase title="Les frais : le prix de la gestion déléguée." />
+
+<KeyFigure
+  value="8 à 12 %"
+  label="frais de souscription (selon les SCPI)"
+  description={<>Les frais de souscription sont prélevés à l'entrée. Ils couvrent la recherche d'immeubles et la commercialisation. <strong>Certaines nouvelles SCPI proposent 0 % de frais d'entrée</strong>, mais compensent souvent par des frais de gestion plus élevés.</>}
+/>
+
+<FeeComparison
+  onlineSubtitle="SCPI sans frais d'entrée — nouvelle génération de SCPI avec frais de souscription réduits ou nuls"
+  bankSubtitle="SCPI traditionnelle — frais de souscription classiques, souvent distribuées via les banques ou les CGP"
+  rows={[
+    { label: "Frais de souscription", online: "0 %", bank: "8 à 12 %" },
+    { label: "Frais de gestion annuels", online: "14 à 18 % des loyers", bank: "8 à 12 % des loyers" },
+    { label: "Délai de jouissance", online: "3 à 6 mois", bank: "3 à 6 mois" },
+    { label: "Frais de retrait", online: "Souvent 0 %", bank: "Souvent 0 %" }
+  ]}
+/>
+
+<p className="mt-8 text-center text-sm text-ep-text-muted">Le <strong className="text-ep-text-primary">délai de jouissance</strong> est la période entre l'achat de vos parts et le début de perception des loyers. Il est généralement de 3 à 6 mois.</p>
+
+</ProductSection>
+
+{/* Écran 8 — Fiscalité */}
+
+<ProductSection>
+
+<StrongPhrase title="SCPI et impôts : ce qu'il faut savoir." />
+
+<FiscalTimeline
+  milestone="Revenus fonciers"
+  before={{ label: "Les loyers perçus", description: <>Les revenus distribués par la SCPI sont imposés comme des <strong>revenus fonciers</strong>. Ils s'ajoutent à vos autres revenus et sont soumis à votre tranche marginale d'imposition + <strong>17,2 % de prélèvements sociaux</strong>.</> }}
+  after={{ label: "Le régime micro-foncier", description: <>Si vos revenus fonciers totaux sont inférieurs à <strong>15 000 €/an</strong>, vous pouvez opter pour le micro-foncier : un <strong>abattement de 30 %</strong> est appliqué automatiquement. Au-delà, vous déduisez vos charges réelles (régime réel).</> }}
+  detail={<>En clair : la fiscalité des SCPI est <strong>identique à celle de l'immobilier locatif direct</strong>. C'est l'un des inconvénients de ce placement. Pour l'optimiser, certains investisseurs achètent des SCPI via une <strong>assurance-vie</strong> ou en <strong>démembrement</strong>.</>}
+/>
+
+<ExampleBlock title="Exemple : fiscalité d'un investissement SCPI">
+
+Sophie perçoit **1 000 € de loyers annuels** de ses SCPI. Elle est imposée à la tranche marginale de **30 %**.
+
+- **Impôt sur le revenu** : 1 000 × 30 % = **300 €**
+- **Prélèvements sociaux** : 1 000 × 17,2 % = **172 €**
+- **Net après impôts** : 1 000 – 300 – 172 = **528 €**
+
+En passant par une **assurance-vie**, les revenus SCPI seraient fiscalisés différemment, avec un abattement après 8 ans.
+
+</ExampleBlock>
+
+</ProductSection>
+
+{/* Écran 9 — Parcours 10 ans */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="10 ans d'investissement SCPI, étape par étape."
+  subtitle="Un scénario possible parmi d'autres. Suivez le parcours de Sophie — avec ses revenus réguliers et ses moments de doute."
+  gradient
+/>
+
+<ScpiJourneyTimeline />
+
+</ProductSection>
+
+{/* Écran 10 — Self-sélection */}
+
+<ProductSection>
+
+<StrongPhrase title="La SCPI est-elle faite pour vous ?" />
+
+<SplitComparison>
+
+<SplitItem icon="CircleCheck" title="Souvent un bon choix si..." variant="green">
+
+- Vous cherchez des **revenus complémentaires réguliers** sans gérer de bien
+- Vous avez un horizon d'investissement de **8 à 10 ans minimum**
+- Vous souhaitez **diversifier** votre patrimoine avec de l'immobilier
+- Vous acceptez une **liquidité limitée** en échange d'un rendement attractif
+
+</SplitItem>
+
+<SplitItem icon="AlertTriangle" title="Pas toujours adapté si..." variant="red">
+
+- Vous avez besoin de **récupérer votre argent rapidement** (préférez le Livret A)
+- Vous ne supportez **aucune perte en capital** (le prix des parts peut baisser)
+- Vous investissez sur un **horizon court** (moins de 5 ans)
+- Vous cherchez un placement **totalement liquide** (préférez le PEA ou l'assurance-vie)
+
+</SplitItem>
+
+</SplitComparison>
+
+</ProductSection>
+
+{/* Écran 11 — Closing */}
+
+<ProductSection background="dark">
+
+<ProductClosing
+  phrase="L'immobilier pour tous, sans les contraintes de la pierre."
+  nextSlug="livret-a-ldds"
+  nextTitle="Livret A / LDDS"
+>
+
+- [AMF — Les SCPI](https://www.amf-france.org)
+- [ASPIM — Chiffres clés des SCPI](https://www.aspim.fr)
+- [Service-Public.fr — Revenus fonciers](https://www.service-public.fr/particuliers/vosdroits/F1991)
+- [Legifrance — Code monétaire et financier](https://www.legifrance.gouv.fr)
+
+</ProductClosing>
+
+</ProductSection>

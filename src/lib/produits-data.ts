@@ -108,7 +108,7 @@ export const produitsListing: ProduitListing[] = [
       horizon: '8-10 ans',
       liquidite: 'Faible',
     },
-    comingSoon: true,
+    comingSoon: false,
   },
   {
     slug: 'livret-a-ldds',

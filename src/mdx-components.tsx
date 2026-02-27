@@ -40,6 +40,12 @@ import { PeaJourneyTimeline } from "@/components/product/pea-journey-timeline"
 import { PeaMythBuster } from "@/components/product/pea-myth-buster"
 import { PeaRiskGrid } from "@/components/product/pea-risk-grid"
 import { PeaPersonaCards } from "@/components/product/pea-persona-cards"
+import { ScpiHowItWorks } from "@/components/product/scpi-how-it-works"
+import { ScpiTypeCards } from "@/components/product/scpi-type-cards"
+import { ScpiPersonaCards } from "@/components/product/scpi-persona-cards"
+import { ScpiMythBuster } from "@/components/product/scpi-myth-buster"
+import { ScpiRiskGrid } from "@/components/product/scpi-risk-grid"
+import { ScpiJourneyTimeline } from "@/components/product/scpi-journey-timeline"
 import { RdvQuestionCard } from "@/components/rdv/rdv-question-card"
 import { RdvAlertCard } from "@/components/rdv/rdv-alert-card"
 import { RdvChecklistCard } from "@/components/rdv/rdv-checklist-card"
@@ -108,6 +114,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     PeaMythBuster,
     PeaRiskGrid,
     PeaJourneyTimeline,
+    ScpiHowItWorks,
+    ScpiTypeCards,
+    ScpiPersonaCards,
+    ScpiMythBuster,
+    ScpiRiskGrid,
+    ScpiJourneyTimeline,
     RdvQuestionCard,
     RdvAlertCard,
     RdvChecklistCard,

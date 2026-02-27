@@ -146,6 +146,18 @@ export function ProductHero({ frontmatter }: ProductHeroProps) {
             <ChevronDown className="mx-auto size-8 text-white/40" />
           </motion.div>
         </motion.div>
+
+        {/* Disclaimer */}
+        {frontmatter.disclaimer && (
+          <motion.p
+            className="mt-4 text-center text-[11px] text-white/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: prefersReduced ? 0 : 0.4, delay: 0.9 }}
+          >
+            Cette fiche est à vocation informative. Elle ne constitue pas une recommandation d'investissement.
+          </motion.p>
+        )}
       </div>
     </div>
   )

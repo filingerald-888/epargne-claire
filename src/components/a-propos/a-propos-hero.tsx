@@ -12,7 +12,7 @@ export function AProposHero() {
       {/* Content */}
       <div className="mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
         <motion.h1
-          className="font-sans text-3xl font-bold text-blue-900 md:text-5xl"
+          className="font-sans text-3xl font-bold text-ep-primary md:text-5xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.1 }}
@@ -21,7 +21,7 @@ export function AProposHero() {
         </motion.h1>
 
         <motion.p
-          className="mx-auto mt-4 max-w-2xl text-base text-blue-800/70 md:text-lg"
+          className="mx-auto mt-4 max-w-2xl text-base text-ep-primary/70 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.2 }}

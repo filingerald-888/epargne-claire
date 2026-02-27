@@ -11,6 +11,7 @@ const productModules: Record<string, () => Promise<{ default: ComponentType; fro
   'assurance-vie': () => import('@/content/produits/assurance-vie.mdx'),
   'pea': () => import('@/content/produits/pea.mdx'),
   'per': () => import('@/content/produits/per.mdx'),
+  'scpi': () => import('@/content/produits/scpi.mdx'),
   'livret-a-ldds': () => import('@/content/produits/livret-a-ldds.mdx'),
 }
 
@@ -25,7 +26,6 @@ const allSlugs = [
 
 /** Placeholder titles for products without MDX content */
 const placeholderTitles: Record<string, string> = {
-  scpi: 'SCPI',
 }
 
 export async function getProduct(slug: string): Promise<ProductModule | null> {
