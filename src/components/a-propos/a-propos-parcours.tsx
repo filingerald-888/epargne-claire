@@ -89,9 +89,14 @@ export function AProposParcours() {
               variants={itemVariants}
               className="flex gap-4"
             >
-              {/* Dot + line segment */}
+              {/* Dot + line segments */}
               <div className="flex flex-col items-center">
-                <div className="mt-[3px] size-3 shrink-0 rounded-full bg-ep-primary" />
+                {i === 0 ? (
+                  <div className="h-[3px] shrink-0" />
+                ) : (
+                  <div className="h-[3px] w-0.5 shrink-0 bg-ep-primary/30" />
+                )}
+                <div className="size-3 shrink-0 rounded-full bg-ep-primary" />
                 {!isLast && <div className="w-0.5 flex-1 bg-ep-primary/30" />}
               </div>
 
