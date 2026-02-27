@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
@@ -25,7 +26,7 @@ const tagColors: Record<string, { bg: string; text: string }> = {
 
 interface ObjectifProduct {
   title: string
-  description: string
+  description: ReactNode
   image: string
   tags: { label: string; colorKey: string }[]
   href: string

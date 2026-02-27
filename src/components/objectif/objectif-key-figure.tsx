@@ -1,11 +1,12 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
 interface ObjectifKeyFigureProps {
   figure: string
   label: string
-  description: string
+  description: ReactNode
   source?: string
   colorKey?: string
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
 import {
@@ -10,7 +11,7 @@ import {
 
 interface ChecklistStep {
   title: string
-  description: string
+  description: ReactNode
 }
 
 interface ObjectifChecklistProps {
