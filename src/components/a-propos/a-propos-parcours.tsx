@@ -80,31 +80,34 @@ export function AProposParcours() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
-        className="relative ml-4 pl-8"
       >
-        {/* Vertical line — starts at first dot, ends at last dot */}
-        <div
-          className="absolute left-[calc(1rem-1px)] top-[7px] bottom-[7px] w-0.5 bg-ep-primary/30"
-          aria-hidden
-        />
+        {experiences.map((exp, i) => {
+          const isLast = i === experiences.length - 1
+          return (
+            <motion.div
+              key={exp.period}
+              variants={itemVariants}
+              className="flex gap-4 pb-6 last:pb-0"
+            >
+              {/* Dot + line segment */}
+              <div className="flex flex-col items-center">
+                <div className="mt-[3px] size-3 shrink-0 rounded-full bg-ep-primary" />
+                {!isLast && <div className="w-0.5 flex-1 bg-ep-primary/30" />}
+              </div>
 
-        {experiences.map((exp) => (
-          <motion.div
-            key={exp.period}
-            variants={itemVariants}
-            className="relative pb-10 last:pb-0"
-          >
-            {/* Dot */}
-            <div className="absolute -left-[calc(2rem+5px)] top-[5px] z-10 size-2.5 rounded-full bg-ep-primary" />
-            <p className="text-xs font-medium uppercase tracking-wider text-ep-text-muted">
-              {exp.period}
-            </p>
-            <p className="mt-1 text-base font-bold text-ep-text-primary">
-              {exp.role}
-            </p>
-            <p className="mt-0.5 text-sm text-ep-primary">{exp.company}</p>
-          </motion.div>
-        ))}
+              {/* Content */}
+              <div className="pb-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-ep-text-muted">
+                  {exp.period}
+                </p>
+                <p className="mt-1 text-base font-bold text-ep-text-primary">
+                  {exp.role}
+                </p>
+                <p className="mt-0.5 text-sm text-ep-primary">{exp.company}</p>
+              </div>
+            </motion.div>
+          )
+        })}
       </motion.div>
 
       {/* Compétences */}

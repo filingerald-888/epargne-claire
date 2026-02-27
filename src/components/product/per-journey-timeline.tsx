@@ -228,60 +228,50 @@ export function PerJourneyTimeline() {
         viewport={{ once: true, margin: '-50px' }}
         className="md:hidden"
       >
-        <div className="relative pl-8">
-          {/* Vertical line — starts at first icon, ends at last icon */}
-          <div className="absolute left-3 top-[15px] bottom-[15px] w-0.5 bg-gray-200">
+        {milestones.map((m, i) => {
+          const Icon = iconMap[m.icon]
+          const isLast = i === milestones.length - 1
+
+          return (
             <motion.div
-              className="w-full rounded-full bg-gradient-to-b from-ep-primary to-ep-secondary"
-              initial={{ height: '0%' }}
-              animate={isInView ? { height: '100%' } : { height: '0%' }}
-              transition={{ duration: prefersReduced ? 0 : 1.2, ease: 'easeOut', delay: 0.3 }}
-            />
-          </div>
+              key={i}
+              variants={itemVariants}
+              className="flex gap-3"
+            >
+              {/* Icon + line segment */}
+              <div className="flex flex-col items-center">
+                <div className="mt-3 flex size-6 shrink-0 items-center justify-center rounded-full border border-ep-primary/30 bg-white shadow-sm">
+                  {Icon && <Icon className="size-3 text-ep-primary" />}
+                </div>
+                {!isLast && <div className="w-0.5 flex-1 bg-gray-200" />}
+              </div>
 
-          <div className="space-y-6">
-            {milestones.map((m, i) => {
-              const Icon = iconMap[m.icon]
-
-              return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  className="relative"
-                >
-                  {/* Dot on line */}
-                  <div className="absolute -left-8 top-3 z-10 flex size-6 items-center justify-center rounded-full border border-ep-primary/30 bg-white shadow-sm">
-                    {Icon && <Icon className="size-3 text-ep-primary" />}
-                  </div>
-
-                  {/* Card */}
-                  <div className={cn(
-                    'rounded-xl border border-ep-separator bg-white p-4 transition-all duration-300',
-                    'hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]'
-                  )}>
-                    <div className="flex items-baseline justify-between">
-                      <p className="text-xs font-medium text-ep-text-muted">{m.label}</p>
-                      <p className="text-lg font-bold text-ep-primary">
-                        {m.capital === 0 ? (
-                          'D\u00E9part'
-                        ) : (
-                          <AnimatedCapital
-                            target={m.capital}
-                            isInView={isInView}
-                            prefersReduced={prefersReduced}
-                            delay={i * 0.15}
-                          />
-                        )}
-                      </p>
-                    </div>
-                    <p className="mt-1 text-sm font-semibold text-ep-text-primary">{m.event}</p>
-                    <p className="mt-0.5 text-xs text-ep-text-muted">{m.insight}</p>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
+              {/* Card */}
+              <div className={cn(
+                'mb-3 flex-1 rounded-xl border border-ep-separator bg-white p-4 transition-all duration-300',
+                'hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]'
+              )}>
+                <div className="flex items-baseline justify-between">
+                  <p className="text-xs font-medium text-ep-text-muted">{m.label}</p>
+                  <p className="text-lg font-bold text-ep-primary">
+                    {m.capital === 0 ? (
+                      'Départ'
+                    ) : (
+                      <AnimatedCapital
+                        target={m.capital}
+                        isInView={isInView}
+                        prefersReduced={prefersReduced}
+                        delay={i * 0.15}
+                      />
+                    )}
+                  </p>
+                </div>
+                <p className="mt-1 text-sm font-semibold text-ep-text-primary">{m.event}</p>
+                <p className="mt-0.5 text-xs text-ep-text-muted">{m.insight}</p>
+              </div>
+            </motion.div>
+          )
+        })}
       </motion.div>
 
       {/* Summary */}
