@@ -172,6 +172,39 @@ const objectifData: Record<string, ObjectifData> = {
       <>Anticiper la baisse de revenus à la retraite en construisant <strong>un capital sur le long terme</strong>.</>,
     explanationSecond:
       <><strong>Chaque euro placé aujourd{'\u2019'}hui travaille pour votre avenir.</strong></>,
+    keyFigure: {
+      figure: '1 000 € → 1 800 €',
+      label: 'en 20 ans à 3 % par an',
+      description:
+        <>Grâce aux <strong>intérêts composés</strong>, votre capital grossit de manière exponentielle avec le temps. Commencer tôt change tout.</>,
+      source: 'Simulation à taux constant, hors inflation',
+    },
+    checklist: {
+      title: 'Les étapes essentielles',
+      subtitle: 'Un plan progressif pour préparer sereinement votre retraite.',
+      steps: [
+        {
+          title: 'Estimez votre besoin futur',
+          description:
+            <>Évaluez <strong>l{'\u2019'}écart entre vos revenus actuels et votre pension estimée</strong>. Le site info-retraite.fr vous donne une projection.</>,
+        },
+        {
+          title: 'Commencez le plus tôt possible',
+          description:
+            <>Même 50 € par mois à 30 ans font une vraie différence. <strong>Le temps est votre meilleur allié.</strong></>,
+        },
+        {
+          title: 'Profitez de l\u2019avantage fiscal du PER',
+          description:
+            <><strong>Les versements sont déductibles de votre revenu imposable.</strong> Plus votre tranche est élevée, plus l{'\u2019'}économie est importante.</>,
+        },
+        {
+          title: 'Diversifiez vos supports',
+          description:
+            <>Ne misez pas tout sur un seul produit. <strong>PER + Assurance-vie + PEA</strong> forment un trio complémentaire et flexible.</>,
+        },
+      ],
+    },
     leversSubtitle: 'Ce qui caractérise cet objectif.',
     levers: [
       {
