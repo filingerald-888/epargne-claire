@@ -51,6 +51,7 @@ export default async function ProductPage({
   return (
     <article>
       <ProductHero frontmatter={frontmatter} />
+      <div className="h-6 md:h-10" aria-hidden="true" />
       <Content />
     </article>
   )
