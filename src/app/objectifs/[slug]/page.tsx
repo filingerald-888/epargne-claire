@@ -61,8 +61,8 @@ const objectifData: Record<string, ObjectifData> = {
     colorKey: 'securiser',
     heroImage: '/images/hero-objectif-securiser.jpg',
     subtitle:
-      'L\u2019épargne de précaution est la première pierre de tout patrimoine.',
-    body: 'Combien mettre de côté ? Où placer cet argent ? On vous explique tout.',
+      'Dormir sans angoisse financière, ça s\u2019organise.',
+    body: 'On vous montre comment constituer le filet de sécurité à tisser.',
     questionTitle: 'Pourquoi une épargne de précaution ?',
     explanation:
       <>La vie réserve des imprévus : perte d{'\u2019'}emploi, réparation urgente, problème de santé. L{'\u2019'}épargne de précaution est <strong>un matelas financier disponible immédiatement, sans risque de perte</strong>, pour faire face sereinement à ces aléas.</>,
@@ -165,8 +165,8 @@ const objectifData: Record<string, ObjectifData> = {
     title: 'Préparer ma retraite',
     colorKey: 'retraite',
     heroImage: '/images/hero-objectif-retraite.jpg',
-    subtitle: "Plus vous commencez tôt, plus c'est facile. Mais par quoi commencer ?",
-    body: "PER, Assurance-vie, Immobilier : comparez selon votre situation.",
+    subtitle: "Dans 20 ans, votre retraite sera ce que vous en faites aujourd'hui.",
+    body: "Spoiler : le régime général ne suffira probablement pas.",
     questionTitle: "Concrètement, qu'est-ce que ça veut dire ?",
     explanation:
       <>Anticiper la baisse de revenus à la retraite en construisant <strong>un capital sur le long terme</strong>.</>,
@@ -393,8 +393,8 @@ const objectifData: Record<string, ObjectifData> = {
     colorKey: 'transmission',
     heroImage: '/images/hero-objectif-transmission.jpg',
     subtitle:
-      'Protéger ses proches et organiser la transmission de son vivant.',
-    body: 'Assurance-vie, donation, clause bénéficiaire : les clés pour anticiper.',
+      'Ce que vous avez mis une vie à construire mérite qu\u2019on y réfléchisse avant le dernier moment.',
+    body: 'On vous aide à transmettre sereinement — et sans mauvaise surprise pour vos proches.',
     questionTitle: 'Pourquoi anticiper sa transmission ?',
     explanation:
       <>En France, <strong>les droits de succession peuvent atteindre 45 % en ligne directe</strong>. Anticiper la transmission permet de réduire cette charge et de protéger ses proches selon ses volontés.</>,
