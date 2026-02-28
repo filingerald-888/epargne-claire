@@ -235,12 +235,9 @@ export function InflationLossSection() {
   // Computed values
   const loss = dailyLoss(amount)
   const annualLoss = annualAmount(amount, INFLATION_RATE)
-  // Le gain le plus élevé parmi les placements sûrs (en tenant compte du plafond Livret A)
-  const bestSafeAnnualGain = PRODUCTS.reduce((best, p) => {
-    const effective = p.slug === 'livret-a-ldds' ? Math.min(amount, LIVRET_A_PLAFOND) : amount
-    const gain = annualAmount(effective, p.rate)
-    return gain > best ? gain : best
-  }, 0)
+  // Gain Livret A (plafonné à 22 950 €)
+  const livretA = PRODUCTS.find((p) => p.slug === 'livret-a-ldds')!
+  const livretAGain = annualAmount(Math.min(amount, LIVRET_A_PLAFOND), livretA.rate)
 
   // Slider fill percentage for styling
   const sliderPercent =
@@ -377,9 +374,9 @@ export function InflationLossSection() {
         {/* Gap summary + CTA */}
         <motion.div variants={itemVariants} className="mt-8 text-center">
           <p className="text-base text-ep-text-muted md:text-lg">
-            Sans prendre aucun risque, un placement sûr peut rapporter jusqu'à{' '}
+            Sans prendre aucun risque, un placement sûr comme le Livret A peut rapporter jusqu'à{' '}
             <strong className="text-ep-text-primary">
-              {formatEuroInt(bestSafeAnnualGain)}{'\u00A0'}€/an
+              {formatEuroInt(livretAGain)}{'\u00A0'}€/an
             </strong>
             .{' '}L'inaction a un coût réel.
           </p>
