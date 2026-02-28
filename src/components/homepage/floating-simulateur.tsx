@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
 import { usePathname } from 'next/navigation'
-import { UserRound, X } from 'lucide-react'
+import { Calculator, X } from 'lucide-react'
 
 import {
   Dialog,
@@ -19,34 +19,59 @@ export function FloatingSimulateur() {
   const prefersReduced = useReducedMotion()
   const pathname = usePathname()
   const [isHovered, setIsHovered] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
-  // Hide on excluded pages
-  if (HIDDEN_ROUTES.some((route) => pathname.startsWith(route))) {
-    return null
+  const isHidden = HIDDEN_ROUTES.some((route) => pathname.startsWith(route))
+
+  // Close mobile expansion on outside tap
+  useEffect(() => {
+    if (!isExpanded) return
+    const handler = (e: PointerEvent) => {
+      if (buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+        setIsExpanded(false)
+      }
+    }
+    document.addEventListener('pointerdown', handler)
+    return () => document.removeEventListener('pointerdown', handler)
+  }, [isExpanded])
+
+  if (isHidden) return null
+
+  const handleClick = () => {
+    if (isHovered) {
+      // Desktop: hover already active → open dialog
+      setIsHovered(false)
+      setIsOpen(true)
+    } else if (isExpanded) {
+      // Mobile: text already visible → open dialog
+      setIsExpanded(false)
+      setIsOpen(true)
+    } else {
+      // Mobile: first tap → expand text
+      setIsExpanded(true)
+    }
   }
+
+  const showText = isHovered || isExpanded
 
   return (
     <>
       {/* FAB — bottom right, fixed */}
       <div className="fixed bottom-6 right-6 z-40 md:bottom-8 md:right-8">
         <motion.button
+          ref={buttonRef}
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
-          onClick={() => {
-            setIsHovered(false)
-            setIsOpen(true)
-          }}
+          onClick={handleClick}
           className="group flex items-center gap-3 rounded-full bg-ep-primary px-4 py-3 text-white shadow-lg transition-shadow duration-300 hover:bg-ep-primary-hover hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2"
           aria-label="Ouvrir le simulateur fiscal"
           layout={!prefersReduced}
         >
-          {/* Persona icon — always visible */}
-          <UserRound className="size-6 shrink-0" aria-hidden />
-
-          {/* Expanded text — on hover */}
+          {/* Text — slides out to the left on hover (desktop) or tap (mobile) */}
           <AnimatePresence>
-            {isHovered && (
+            {showText && (
               <motion.span
                 initial={prefersReduced ? { opacity: 1 } : { opacity: 0, width: 0 }}
                 animate={{ opacity: 1, width: 'auto' }}
@@ -58,6 +83,9 @@ export function FloatingSimulateur() {
               </motion.span>
             )}
           </AnimatePresence>
+
+          {/* Calculator icon — always visible */}
+          <Calculator className="size-6 shrink-0" aria-hidden />
         </motion.button>
       </div>
 
