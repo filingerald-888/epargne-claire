@@ -74,7 +74,7 @@ export function ProductHero({ frontmatter }: ProductHeroProps) {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pb-20 pt-28 text-center md:px-8 md:pb-32 md:pt-40">
         {/* Objective badges */}
         <motion.div
           className="flex flex-wrap justify-center gap-2"

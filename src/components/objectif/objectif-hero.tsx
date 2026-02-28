@@ -71,7 +71,7 @@ export function ObjectifHero({ emoji, title, subtitle, body, colorKey, heroImage
         </motion.div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-20 text-center md:px-8 md:py-32">
+        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pb-20 pt-28 text-center md:px-8 md:pb-32 md:pt-40">
           {/* Title */}
           <motion.h1
             className="text-3xl font-bold text-white md:text-5xl"
@@ -126,7 +126,7 @@ export function ObjectifHero({ emoji, title, subtitle, body, colorKey, heroImage
     <div
       ref={ref}
       className={cn(
-        'mx-[calc(-50vw+50%)] w-screen bg-gradient-to-b py-20 md:py-32',
+        'mx-[calc(-50vw+50%)] w-screen bg-gradient-to-b pb-20 pt-28 md:pb-32 md:pt-40',
         colorGradients[colorKey] ?? colorGradients.retraite
       )}
     >
