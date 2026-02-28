@@ -26,6 +26,8 @@ interface ProductDef {
   rate: number
 }
 
+const LIVRET_A_PLAFOND = 22_950
+
 const PRODUCTS: ProductDef[] = [
   {
     slug: 'livret-a-ldds',
@@ -37,18 +39,18 @@ const PRODUCTS: ProductDef[] = [
     slug: 'assurance-vie',
     name: 'Assurance-vie',
     subtitle: 'Fonds euros',
-    rate: 0.025,
+    rate: 0.03,
   },
   {
     slug: 'per',
     name: 'PER',
     subtitle: 'Profil sécurisé',
-    rate: 0.02,
+    rate: 0.03,
   },
 ]
 
 const SLIDER_MIN = 1_000
-const SLIDER_MAX = 100_000
+const SLIDER_MAX = 150_000
 const SLIDER_STEP = 1_000
 const SLIDER_DEFAULT = 10_000
 
@@ -127,6 +129,8 @@ function ProductCard({
   subtitle,
   dailyValue,
   annualValue,
+  isCapped,
+  cappedAt,
   isInView,
   prefersReduced,
   hasAnimated,
@@ -135,6 +139,8 @@ function ProductCard({
   subtitle: string
   dailyValue: number
   annualValue: number
+  isCapped?: boolean
+  cappedAt?: number
   isInView: boolean
   prefersReduced: boolean | null
   hasAnimated: boolean
@@ -191,6 +197,12 @@ function ProductCard({
       <p className="mt-2 text-sm font-semibold text-emerald-600/80">
         +{displayAnnual}{'\u00A0'}€/an
       </p>
+
+      {isCapped && cappedAt && (
+        <p className="mt-2 text-[10px] leading-tight text-ep-text-muted">
+          Plafonné à {cappedAt.toLocaleString('fr-FR')}{'\u00A0'}€
+        </p>
+      )}
     </div>
   )
 }
@@ -223,11 +235,12 @@ export function InflationLossSection() {
   // Computed values
   const loss = dailyLoss(amount)
   const annualLoss = annualAmount(amount, INFLATION_RATE)
-  // Même le produit le plus prudent rapporte quelque chose
-  const bestSafe = PRODUCTS.reduce((best, p) =>
-    p.rate > best.rate ? p : best
-  )
-  const bestSafeAnnualGain = annualAmount(amount, bestSafe.rate)
+  // Le gain le plus élevé parmi les placements sûrs (en tenant compte du plafond Livret A)
+  const bestSafeAnnualGain = PRODUCTS.reduce((best, p) => {
+    const effective = p.slug === 'livret-a-ldds' ? Math.min(amount, LIVRET_A_PLAFOND) : amount
+    const gain = annualAmount(effective, p.rate)
+    return gain > best ? gain : best
+  }, 0)
 
   // Slider fill percentage for styling
   const sliderPercent =
@@ -338,25 +351,33 @@ export function InflationLossSection() {
             className="mt-6 grid gap-4 sm:grid-cols-3"
             aria-live="polite"
           >
-            {PRODUCTS.map((product) => (
-              <ProductCard
-                key={product.slug}
-                name={product.name}
-                subtitle={product.subtitle}
-                dailyValue={dailyGain(amount, product.rate)}
-                annualValue={annualAmount(amount, product.rate)}
-                isInView={isInView}
-                prefersReduced={prefersReduced}
-                hasAnimated={hasAnimated}
-              />
-            ))}
+            {PRODUCTS.map((product) => {
+              const isLivretA = product.slug === 'livret-a-ldds'
+              const effectiveAmount = isLivretA ? Math.min(amount, LIVRET_A_PLAFOND) : amount
+              const isCapped = isLivretA && amount > LIVRET_A_PLAFOND
+
+              return (
+                <ProductCard
+                  key={product.slug}
+                  name={product.name}
+                  subtitle={product.subtitle}
+                  dailyValue={dailyGain(effectiveAmount, product.rate)}
+                  annualValue={annualAmount(effectiveAmount, product.rate)}
+                  isCapped={isCapped}
+                  cappedAt={isCapped ? LIVRET_A_PLAFOND : undefined}
+                  isInView={isInView}
+                  prefersReduced={prefersReduced}
+                  hasAnimated={hasAnimated}
+                />
+              )
+            })}
           </div>
         </motion.div>
 
         {/* Gap summary + CTA */}
         <motion.div variants={itemVariants} className="mt-8 text-center">
           <p className="text-base text-ep-text-muted md:text-lg">
-            Sans prendre aucun risque, un simple Livret A rapporte{' '}
+            Sans prendre aucun risque, un placement sûr peut rapporter jusqu'à{' '}
             <strong className="text-ep-text-primary">
               {formatEuroInt(bestSafeAnnualGain)}{'\u00A0'}€/an
             </strong>
