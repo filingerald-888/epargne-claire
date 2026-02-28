@@ -27,62 +27,73 @@ export function FiscalTimeline({ milestone, before, after, detail }: FiscalTimel
       whileInView="visible"
       viewport={{ once: true, margin: '-100px' }}
     >
-      {/* ── Desktop : timeline horizontale ── */}
+      {/* ── Desktop : timeline horizontale avec flèche ── */}
       <div className="hidden sm:block">
-        <div className="relative grid grid-cols-[1fr_auto_1fr] items-center">
-          {/* Ligne horizontale de connexion */}
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 overflow-hidden">
+        <div className="relative pr-6">
+          {/* Ligne gradient + flèche directionnelle */}
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center">
             <motion.div
-              className="h-0.5 w-full rounded-full bg-gradient-to-r from-red-300 via-ep-primary to-emerald-400"
+              className="h-0.5 flex-1 bg-gradient-to-r from-red-300 via-ep-primary to-emerald-400"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: prefersReduced ? 0 : 0.8, ease: 'easeOut', delay: 0.2 }}
               style={{ transformOrigin: 'left' }}
             />
+            <div className="size-0 border-y-[6px] border-l-[9px] border-y-transparent border-l-emerald-400" />
           </div>
 
-          {/* Avant */}
-          <div className="relative z-10 mr-5 rounded-xl border border-red-200 bg-[#FEF2F2] p-5 text-right transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-            <p className="font-semibold text-red-600">{before.label}</p>
-            <p className="mt-1 text-sm text-ep-text-muted">{before.description}</p>
-          </div>
+          {/* Grille : avant | jalon | après */}
+          <div className="relative grid grid-cols-[1fr_auto_1fr] items-center">
+            {/* Avant */}
+            <div className="relative z-10 mr-5 rounded-xl border border-red-200 bg-[#FEF2F2] p-5 text-right transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <p className="font-semibold text-red-600">{before.label}</p>
+              <p className="mt-1 text-sm text-ep-text-muted">{before.description}</p>
+            </div>
 
-          {/* Marqueur jalon */}
-          <div className="relative z-10 flex items-center justify-center px-2">
-            {!prefersReduced && (
-              <motion.div
-                className="absolute inset-0 m-auto rounded-full bg-ep-primary/20"
-                animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0, 0.4] }}
-                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-                style={{ width: 56, height: 56 }}
-              />
-            )}
-            <div className="relative flex size-14 items-center justify-center rounded-full bg-ep-primary text-center text-sm font-bold leading-tight text-white shadow-lg">
-              {milestone}
+            {/* Marqueur jalon — cercle vide + label en dessous */}
+            <div className="relative z-10 flex items-center justify-center px-4">
+              <div className="relative">
+                {!prefersReduced && (
+                  <motion.div
+                    className="absolute inset-0 m-auto rounded-full bg-ep-primary/20"
+                    animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+                    style={{ width: 48, height: 48 }}
+                  />
+                )}
+                <div className="relative flex size-12 items-center justify-center rounded-full bg-ep-primary shadow-lg ring-4 ring-white" />
+                <span className="absolute left-1/2 top-full mt-2.5 -translate-x-1/2 whitespace-nowrap rounded-full bg-ep-primary/10 px-3 py-0.5 text-sm font-bold text-ep-primary">
+                  {milestone}
+                </span>
+              </div>
+            </div>
+
+            {/* Après */}
+            <div className="relative z-10 ml-5 rounded-xl border border-emerald-200 bg-[#F0FDF4] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <p className="font-semibold text-emerald-600">{after.label}</p>
+              <p className="mt-1 text-sm text-ep-text-muted">{after.description}</p>
             </div>
           </div>
-
-          {/* Après */}
-          <div className="relative z-10 ml-5 rounded-xl border border-emerald-200 bg-[#F0FDF4] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-            <p className="font-semibold text-emerald-600">{after.label}</p>
-            <p className="mt-1 text-sm text-ep-text-muted">{after.description}</p>
-          </div>
         </div>
+
+        {/* Espace pour le label du jalon positionné en dessous */}
+        <div className="h-10" />
       </div>
 
-      {/* ── Mobile : timeline verticale ── */}
-      <div className="relative sm:hidden">
-        {/* Ligne verticale de connexion */}
-        <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-0.5 -translate-x-1/2 overflow-hidden">
+      {/* ── Mobile : timeline verticale avec flèche ── */}
+      <div className="relative pb-8 sm:hidden">
+        {/* Ligne verticale gradient + flèche directionnelle */}
+        <div className="pointer-events-none absolute left-5 top-0 bottom-2 flex -translate-x-1/2 flex-col items-center">
           <motion.div
-            className="h-full w-full bg-gradient-to-b from-red-300 via-ep-primary to-emerald-400"
+            className="w-0.5 flex-1 bg-gradient-to-b from-red-300 via-ep-primary to-emerald-400"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: prefersReduced ? 0 : 0.8, ease: 'easeOut', delay: 0.2 }}
             style={{ transformOrigin: 'top' }}
           />
+          <div className="size-0 border-x-[6px] border-t-[9px] border-x-transparent border-t-emerald-400" />
         </div>
 
         {/* Avant */}
@@ -96,13 +107,13 @@ export function FiscalTimeline({ milestone, before, after, detail }: FiscalTimel
           </div>
         </div>
 
-        {/* Marqueur jalon */}
+        {/* Marqueur jalon — surbrillance + badge */}
         <div className="flex items-center gap-3 py-3">
           <div className="relative flex w-10 shrink-0 items-center justify-center">
             {!prefersReduced && (
               <motion.div
                 className="absolute rounded-full bg-ep-primary/20"
-                animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0, 0.4] }}
+                animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
                 transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
                 style={{ width: 40, height: 40 }}
               />
