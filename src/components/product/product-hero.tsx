@@ -54,7 +54,7 @@ export function ProductHero({ frontmatter }: ProductHeroProps) {
   return (
     <div
       ref={ref}
-      className="relative mx-[calc(-50vw+50%)] flex h-[70vh] w-screen items-center overflow-hidden"
+      className="relative mx-[calc(-50vw+50%)] flex h-[80vh] w-screen items-center overflow-hidden"
     >
       {/* Parallax background — photo + dark overlay */}
       <motion.div
@@ -74,7 +74,7 @@ export function ProductHero({ frontmatter }: ProductHeroProps) {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pb-20 pt-28 text-center md:px-8 md:pb-32 md:pt-40">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pb-24 pt-32 text-center md:px-8 md:pb-40 md:pt-48">
         {/* Objective badges */}
         <motion.div
           className="flex flex-wrap justify-center gap-2"
