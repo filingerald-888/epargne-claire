@@ -71,22 +71,12 @@ export function ProduitsHero() {
           Assurance-vie, PEA, PER, SCPI, Livret A : enfin expliqués sans jargon.
         </motion.p>
 
-        {/* Disclaimer */}
-        <motion.p
-          className="mx-auto mt-6 max-w-xl text-center text-[11px] text-white/40"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: dur, delay: 0.4 }}
-        >
-          Cette page est à vocation informative. Elle ne constitue pas une recommandation d'investissement.
-        </motion.p>
-
         {/* Scroll cue */}
         <motion.div
           className="mt-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: dur, delay: 0.5 }}
+          transition={{ duration: dur, delay: 0.4 }}
         >
           <motion.div
             animate={prefersReduced ? undefined : { y: [0, 8, 0] }}
@@ -95,6 +85,16 @@ export function ProduitsHero() {
             <ChevronDown className="mx-auto size-8 text-white/40" />
           </motion.div>
         </motion.div>
+
+        {/* Disclaimer */}
+        <motion.p
+          className="mx-auto mt-4 max-w-xl text-center text-[11px] text-white/40"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: dur, delay: 0.5 }}
+        >
+          Cette page est à vocation informative. Elle ne constitue pas une recommandation d'investissement.
+        </motion.p>
       </div>
     </div>
   )
