@@ -39,13 +39,13 @@ const PRODUCTS: ProductDef[] = [
     slug: 'assurance-vie',
     name: 'Assurance-vie',
     subtitle: 'Fonds euros',
-    rate: 0.03,
+    rate: 0.025,
   },
   {
     slug: 'per',
     name: 'PER',
     subtitle: 'Profil sécurisé',
-    rate: 0.03,
+    rate: 0.025,
   },
 ]
 
