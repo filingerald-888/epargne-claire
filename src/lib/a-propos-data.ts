@@ -10,9 +10,15 @@ export interface ExperienceEntry {
   company: string
 }
 
+export interface SkillItem {
+  label: string
+  description: string
+}
+
 export interface SkillCategory {
   title: string
-  items: string[]
+  items: SkillItem[]
+  tools?: string
 }
 
 export interface Diploma {
@@ -110,31 +116,68 @@ export const skills: SkillCategory[] = [
   {
     title: 'Expertise produit',
     items: [
-      'Discovery → product-market fit',
-      'Vision → roadmap → OKRs → delivery',
-      'Delivery agile Scrum/SAFe à l\'échelle',
+      {
+        label: 'Discovery → Product-Market Fit',
+        description: 'User research, data analytics → identification besoins → validation hypothèses → fit optimisé',
+      },
+      {
+        label: 'Vision → Roadmap → Execution',
+        description: 'Vision → roadmap → priorisation → delivery Scrum/SAFe → releases fréquentes → mesure impact',
+      },
+      {
+        label: 'Conception parcours clients omnicanaux',
+        description: 'Analyse parcours existants → identification frictions → conception vision cible → optimisation conversion & attrition',
+      },
+    ],
+    tools: 'Jira • Figma • Notion • Miro • Trello',
+  },
+  {
+    title: 'Plateforme & Tech',
+    items: [
+      {
+        label: 'Plateforme SaaS modulaire',
+        description: 'API-first → produits white-label → scalabilité',
+      },
+      {
+        label: 'Culture data-driven',
+        description: 'Dashboards, funnels → analytics → décisions',
+      },
+      {
+        label: 'Automatisation de tâches via IA',
+        description: "Conception d'agents IA ou connexion multi-outils",
+      },
+    ],
+    tools: 'SQL • Amplitude • Zapier • Dust',
+  },
+  {
+    title: 'Leadership & Exécution',
+    items: [
+      {
+        label: 'Collaboration',
+        description: 'Coordination Design-Tech-Business → influence sans autorité → alignement',
+      },
+      {
+        label: 'Environnements complexes',
+        description: 'Secteur réglementé (assurance, santé, finance) → conformité/RGPD',
+      },
     ],
   },
   {
-    title: 'Data, Tech & IA',
+    title: 'Culture client & conduite du changement',
     items: [
-      'Plateforme SaaS modulaire, API-first',
-      'Culture data-driven, analytics',
-      'Automatisation de tâches via IA',
-    ],
-  },
-  {
-    title: 'Outils',
-    items: [
-      'Jira • Figma • Notion • Miro • Trello',
-      'SQL • Amplitude • Zapier • Dust',
+      {
+        label: 'Diffusion d\'une culture centrée client',
+        description: 'Animation de communautés internes → accompagnement adoption (réseaux agents, courtiers, plateformes)',
+      },
     ],
   },
   {
     title: 'Projet personnel',
     items: [
-      'Plateforme IA gestion patrimoniale',
-      'Node.js • Claude Code • BMAD',
+      {
+        label: 'Plateforme IA gestion patrimoniale',
+        description: 'Node.js • Claude Code • BMAD',
+      },
     ],
   },
 ]
@@ -177,6 +220,6 @@ export const certifications: Certification[] = [
 
 export const languages: Language[] = [
   { name: 'Français', level: 'Natif (C2)', code: 'fr' },
-  { name: 'Anglais', level: 'Bilingue (C2)', code: 'en' },
+  { name: 'Anglais', level: 'Courant (C1)', code: 'en' },
   { name: 'Espagnol', level: 'Intermédiaire (B1)', code: 'es' },
 ]
