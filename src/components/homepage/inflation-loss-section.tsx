@@ -33,7 +33,7 @@ const PRODUCTS: ProductDef[] = [
     slug: 'livret-a-ldds',
     name: 'Livret A',
     subtitle: "Taux fixé par l\u2019État",
-    rate: 0.03,
+    rate: 0.015,
   },
   {
     slug: 'assurance-vie',
