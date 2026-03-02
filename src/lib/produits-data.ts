@@ -119,7 +119,7 @@ export const produitsListing: ProduitListing[] = [
     tags: [{ label: 'Sécuriser', colorKey: 'securiser' }],
     href: '/produits/livret-a-ldds',
     metrics: {
-      rendement: '3 %',
+      rendement: '1,5 %',
       risque: 'Aucun',
       horizon: 'Court terme',
       liquidite: 'Immédiate',
