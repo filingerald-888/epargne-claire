@@ -29,9 +29,9 @@ const examples: Record<string, string> = {
   'PER':
     'Exemple : avec un TMI à 30 %, un versement de 5 000 € sur votre PER réduit votre impôt de 1 500 € l\'année du versement.',
   'Livret A':
-    'Exemple : avec 10 000 € sur un Livret A à 3 %, vous gagnez 300 € d\'intérêts par an, nets d\'impôt.',
+    'Exemple : avec 10 000 € sur un Livret A à 1,5 %, vous gagnez 150 € d\'intérêts par an, nets d\'impôt.',
   'PFU':
-    'Exemple : vous réalisez 1 000 € de plus-values. Le PFU prélève 300 € (12,8 % d\'IR + 17,2 % de prélèvements sociaux).',
+    'Exemple : vous réalisez 1 000 € de plus-values. Le PFU prélève 314 € (12,8 % d\'IR + 18,6 % de prélèvements sociaux).',
   'Fonds euros':
     'Exemple : vous placez 20 000 € sur un fonds euros à 2,5 %. Vous gagnez 500 € garantis, sans risque de perte.',
   'Frais de gestion':
@@ -43,7 +43,7 @@ const examples: Record<string, string> = {
   'Abattement':
     'Exemple : après 8 ans d\'assurance-vie, les premiers 4 600 € de gains retirés sont exonérés d\'impôt (9 200 € en couple).',
   'Rendement brut':
-    'Exemple : un fonds affiche 5 % brut. Après 1,5 % de frais et 30 % de flat tax, il reste environ 2,45 % net.',
+    'Exemple : un fonds affiche 5 % brut. Après 1,5 % de frais et 31,4 % de flat tax, il reste environ 2,40 % net.',
   'Rétrocessions':
     'Exemple : votre banque recommande un fonds qui lui reverse 1 % par an. Sur 50 000 €, c\'est 500 € de rétrocession annuelle.',
   'Unités de compte':
@@ -59,9 +59,9 @@ const examples: Record<string, string> = {
   'Rente':
     'Exemple : à 65 ans, vous convertissez 100 000 € en rente viagère. Vous recevez environ 350 € par mois à vie.',
   'LDDS':
-    'Exemple : avec 12 000 € (plafond) sur un LDDS à 3 %, vous gagnez 360 € d\'intérêts nets par an.',
+    'Exemple : avec 12 000 € (plafond) sur un LDDS à 1,5 %, vous gagnez 180 € d\'intérêts nets par an.',
   'Prélèvements sociaux':
-    'Exemple : sur 1 000 € de plus-values PEA après 5 ans, vous payez 172 € de prélèvements sociaux (17,2 %).',
+    'Exemple : sur 1 000 € de plus-values PEA après 5 ans, vous payez 186 € de prélèvements sociaux (18,6 %).',
   'Frais internes':
     'Exemple : un fonds actif prélève 2 % par an de frais internes. Sur 10 000 €, c\'est 200 € prélevés chaque année.',
 }

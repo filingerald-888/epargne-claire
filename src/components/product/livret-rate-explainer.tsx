@@ -49,6 +49,7 @@ const rateHistory: RateDataPoint[] = [
   { year: '2023', rate: 3.0 },
   { year: '2024', rate: 3.0 },
   { year: '2025', rate: 2.4 },
+  { year: '2026', rate: 1.5 },
 ]
 
 const MAX_RATE = 3.5

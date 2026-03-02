@@ -3,7 +3,7 @@ export const frontmatter = {
   slug: 'pea',
   subtitle: "La bourse, oui. Mais pas sans une bonne enveloppe fiscale. Le PEA est celle qu'on aurait dû vous présenter bien plus tôt.",
   readingTime: 7,
-  lastUpdated: '2026-02-23',
+  lastUpdated: '2026-03-02',
   objectifs: ['projets-de-vie'],
   labelCouleur: ['Projets de vie'],
   heroImage: '/images/hero-pea.jpg',
@@ -20,20 +20,20 @@ export const frontmatter = {
 
 <StrongPhrase
   title="Investir en actions avec un cadre fiscal spécifique."
-  subtitle="Le Plan d'Épargne en Actions est une enveloppe qui permet d'investir en Bourse. Après 5 ans, vos gains ne sont plus taxés sur le revenu — mais le capital n'est pas garanti."
+  subtitle="Le Plan d'Épargne en Actions est une enveloppe qui permet d'investir en Bourse. Tant que vous ne retirez pas d'argent, vous pouvez encaisser des dividendes et faire des arbitrages (vente et achat de titres) sans payer ni impôts ni prélèvements sociaux. Après 5 ans, vos gains ne sont plus taxés sur le revenu en cas de retrait — mais le capital n'est pas garanti."
 />
 
 <SplitComparison>
 
 <SplitItem icon="Shield" title="Le PEA (Plan d'Épargne en Actions)">
 
-Vous investissez en actions européennes dans une **enveloppe protégée par l'État**. Après 5 ans, vos gains ne sont soumis qu'aux cotisations sociales (17,2 %) au lieu de 30 %. Plafond de versements : **150 000 €**.
+Vous investissez en actions européennes dans une **enveloppe protégée par l'État**. Après 5 ans, vos gains ne sont soumis qu'aux prélèvements sociaux (18,6 %) au lieu de 31,4 %. Plafond de versements : **150 000 €**.
 
 </SplitItem>
 
 <SplitItem icon="Scale" title="Le compte-titres classique">
 
-Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont taxés à 30 % dès le premier euro. En contrepartie : aucun plafond, aucune restriction géographique.
+Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont taxés à 31,4 % dès le premier euro. En contrepartie : aucun plafond, aucune restriction géographique.
 
 </SplitItem>
 
@@ -62,7 +62,7 @@ Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont tax�
 
 <StrongPhrase
   title="Qu'est-ce qu'on peut mettre dans un PEA ?"
-  subtitle="Le PEA a une règle simple : actions européennes uniquement. Mais grâce aux fonds indiciels, le choix est bien plus large qu'on ne le croit."
+  subtitle="Le PEA a une règle simple : actions européennes uniquement. Mais grâce aux fonds indiciels, le choix est bien plus large qu'on ne le croit. Son petit frère le PEA-PME (plafond 225 000 €) permet d'investir spécifiquement dans les PME et ETI françaises et européennes, avec les mêmes avantages fiscaux."
   gradient
 />
 
@@ -103,9 +103,9 @@ Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont tax�
 
 <FiscalTimeline
   milestone="5 ans"
-  before={{ label: "Avant 5 ans", description: <>Retrait = <strong>clôture du PEA</strong>. Vos gains sont taxés à <strong>30 %</strong> (impôt sur le revenu + cotisations sociales).</> }}
-  after={{ label: "Après 5 ans", description: <>Retraits possibles <strong>sans fermer votre PEA</strong>. Vos gains sont <strong>exonérés d'impôt sur le revenu</strong>. Il ne reste que les cotisations sociales (17,2 %).</> }}
-  detail={<>En clair : gardez votre PEA ouvert 5 ans, et vos gains ne sont taxés qu'à <strong>17,2 % au lieu de 30 %</strong>. Sur 10 000 € de gains, c'est <strong>1 280 € d'économie</strong>.</>}
+  before={{ label: "Avant 5 ans", description: <>Retrait = <strong>clôture du PEA</strong>. Vos gains sont taxés à <strong>31,4 %</strong> (12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux).</> }}
+  after={{ label: "Après 5 ans", description: <>Retraits possibles <strong>sans fermer votre PEA</strong>. Vos gains sont <strong>exonérés d'impôt sur le revenu</strong>. Il ne reste que les prélèvements sociaux (18,6 %).</> }}
+  detail={<>En clair : gardez votre PEA ouvert 5 ans, et vos gains ne sont taxés qu'à <strong>18,6 % au lieu de 31,4 %</strong>. Sur 10 000 € de gains, c'est <strong>1 280 € d'économie</strong>.</>}
 />
 
 <div className="mt-10" />
@@ -113,8 +113,10 @@ Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont tax�
 <KeyFigure
   value="1 280 €"
   label="d'économie d'impôt"
-  description={<>Sur 10 000 € de gains, la différence entre <strong>30 %</strong> (avant 5 ans) et <strong>17,2 %</strong> (après 5 ans). Plus vos gains sont élevés, plus l'économie est importante.</>}
+  description={<>Sur 10 000 € de gains, la différence entre <strong>31,4 %</strong> (avant 5 ans) et <strong>18,6 %</strong> (après 5 ans). Plus vos gains sont élevés, plus l'économie est importante.</>}
 />
+
+<p className="mt-8 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">En cas de décès du titulaire</strong>, le PEA est automatiquement transformé en <strong className="text-ep-text-primary">compte-titres ordinaire</strong> (CTO). Les prélèvements sociaux sur les gains accumulés sont alors dus, mais les héritiers ne supportent pas d'impôt sur le revenu sur ces gains.</p>
 
 </ProductSection>
 
@@ -172,6 +174,7 @@ Même type d'investissements, mais **sans avantage fiscal**. Vos gains sont tax�
 - Vous avez un **horizon de 5 ans ou plus** et pouvez laisser votre argent travailler
 - Vous acceptez que la valeur de votre placement **varie** à court terme
 - Vous voulez investir en Bourse **simplement** (un seul fonds diversifié peut suffire)
+- Vous voulez encaisser des **dividendes et faire des arbitrages sans fiscalité** tant que vous ne retirez pas
 - Vous avez déjà un <GlossaryTooltip term="Livret A">Livret A</GlossaryTooltip> rempli et cherchez à **aller plus loin**
 
 </SplitItem>

@@ -94,7 +94,7 @@ export function LivretConcreteExample() {
           Exemple concret
         </p>
         <p className="mt-1 text-xl font-bold text-ep-text-primary md:text-2xl">
-          {"Je place 10\u00A0000\u00A0€ sur un Livret\u00A0A"}
+          {"Je place 10\u00A0000\u00A0€ sur un Livret\u00A0A (taux : 1,5\u00A0%)"}
         </p>
       </motion.div>
 
@@ -126,7 +126,7 @@ export function LivretConcreteExample() {
           <span className="flex items-center gap-1">
             <span className="inline-block size-2 rounded-full bg-emerald-400" />
             {"Intérêts : +"}
-            <AnimatedAmount target={300} isInView={isInView} prefersReduced={prefersReduced} />
+            <AnimatedAmount target={150} isInView={isInView} prefersReduced={prefersReduced} />
           </span>
         </div>
       </motion.div>
@@ -161,9 +161,9 @@ export function LivretConcreteExample() {
       >
         <p className="text-sm text-ep-text-muted">
           {"Après 1 an : "}
-          <strong className="text-emerald-600">{"10\u00A0300\u00A0€"}</strong>
+          <strong className="text-emerald-600">{"10\u00A0150\u00A0€"}</strong>
           {" sur votre compte. "}
-          <strong className="text-ep-text-primary">{"300\u00A0€ d\u2019intérêts, tout pour vous"}</strong>
+          <strong className="text-ep-text-primary">{"150\u00A0€ d\u2019intérêts, tout pour vous"}</strong>
           {", sans rien faire."}
         </p>
       </motion.div>

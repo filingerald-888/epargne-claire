@@ -72,7 +72,7 @@ export const products: ProductComparison[] = [
   {
     slug: 'livret-a-ldds',
     label: 'Livret A / LDDS',
-    rendement: "3 % (taux fixé par l'État)",
+    rendement: "1,5 % (taux fixé par l'État, depuis février 2026)",
     risque: "Aucun (capital garanti par l'État)",
     horizon: 'Court (disponible à tout moment)',
     fiscalite: "Intérêts totalement exonérés d'impôt et de prélèvements sociaux",

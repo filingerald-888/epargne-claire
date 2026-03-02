@@ -87,8 +87,9 @@ export function PlacementExample() {
           <p className="text-sm leading-relaxed text-ep-text-muted">
             Capital <strong className="text-ep-text-primary">garanti</strong>.
             Chaque ann&eacute;e, les int&eacute;r&ecirc;ts sont d&eacute;finitivement acquis.
-            Avec un rendement de 2,5&nbsp;%/an, vos 6 000 &euro; deviennent
-            environ <strong className="text-emerald-600">6 900 &euro;</strong> apr&egrave;s 5 ans.
+            Les pr&eacute;l&egrave;vements sociaux (17,2&nbsp;%) sont pr&eacute;lev&eacute;s <strong className="text-ep-text-primary">chaque ann&eacute;e</strong> sur les int&eacute;r&ecirc;ts.
+            Avec un rendement brut de 2,5&nbsp;%/an (soit ~2,07&nbsp;% net), vos 6 000 &euro; deviennent
+            environ <strong className="text-emerald-600">6 645 &euro;</strong> apr&egrave;s 5 ans.
           </p>
         </motion.div>
 
@@ -108,6 +109,7 @@ export function PlacementExample() {
           <p className="text-sm leading-relaxed text-ep-text-muted">
             Capital <strong className="text-ep-text-primary">non garanti</strong>, investi en actions et obligations.
             Historiquement, elles rapportent plus que les fonds euros sur le long terme, mais avec des hauts et des bas.
+            Les pr&eacute;l&egrave;vements sociaux ne sont dus <strong className="text-ep-text-primary">qu&rsquo;au rachat</strong> &mdash; vos gains restent investis en attendant.
             Avec un rendement de 6&nbsp;%/an, vos 4 000 &euro; pourraient valoir
             environ <strong className="text-blue-600">5 350 &euro;</strong> apr&egrave;s 5 ans
             &mdash; mais aussi moins si les march&eacute;s baissent.
@@ -123,7 +125,7 @@ export function PlacementExample() {
         <ArrowRight className="size-4 shrink-0 text-ep-primary" />
         <p className="text-sm text-ep-text-muted">
           <strong className="text-ep-text-primary">R&eacute;sultat apr&egrave;s 5 ans :</strong> vos 10 000 &euro; pourraient valoir autour de{' '}
-          <strong className="text-ep-primary">12 250 &euro;</strong>, dont une partie s&eacute;curis&eacute;e et une partie expos&eacute;e aux march&eacute;s.
+          <strong className="text-ep-primary">12 000 &euro;</strong>, dont une partie s&eacute;curis&eacute;e (fonds euros) et une partie expos&eacute;e aux march&eacute;s (UC).
         </p>
       </motion.div>
     </motion.div>

@@ -15,13 +15,13 @@ import { cn } from '@/lib/utils'
 const INITIAL = 10_000
 const GROSS = 17_182 // 10000 * 1.07^8
 const GAINS = GROSS - INITIAL // 7 182 €
-const PEA_TAX_RATE = 0.172 // cotisations sociales uniquement (après 5 ans)
-const CTO_TAX_RATE = 0.3 // impôt forfaitaire de 30 %
-const PEA_TAX = Math.round(GAINS * PEA_TAX_RATE) // 1 235 €
-const CTO_TAX = Math.round(GAINS * CTO_TAX_RATE) // 2 155 €
-const PEA_NET = GROSS - PEA_TAX // 15 947 €
-const CTO_NET = GROSS - CTO_TAX // 15 027 €
-const SAVINGS = PEA_NET - CTO_NET // 920 €
+const PEA_TAX_RATE = 0.186 // prélèvements sociaux uniquement (après 5 ans)
+const CTO_TAX_RATE = 0.314 // PFU 31,4 % (12,8 % IR + 18,6 % PS)
+const PEA_TAX = Math.round(GAINS * PEA_TAX_RATE) // 1 336 €
+const CTO_TAX = Math.round(GAINS * CTO_TAX_RATE) // 2 255 €
+const PEA_NET = GROSS - PEA_TAX // 15 846 €
+const CTO_NET = GROSS - CTO_TAX // 14 927 €
+const SAVINGS = PEA_NET - CTO_NET // 919 €
 
 function AnimatedAmount({
   target,
@@ -203,7 +203,7 @@ export function PeaGrowthSimulator() {
         <ComparisonColumn
           title="Avec un PEA"
           taxLabel="Cotisations sociales uniquement"
-          taxRate="17,2 %"
+          taxRate="18,6 %"
           taxAmount={PEA_TAX}
           netAmount={PEA_NET}
           isInView={isInView}
@@ -214,7 +214,7 @@ export function PeaGrowthSimulator() {
         <ComparisonColumn
           title="Avec un compte-titres classique"
           taxLabel="Impôt forfaitaire"
-          taxRate="30 %"
+          taxRate="31,4 %"
           taxAmount={CTO_TAX}
           netAmount={CTO_NET}
           isInView={isInView}

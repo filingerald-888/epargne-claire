@@ -1,10 +1,14 @@
 // Règles fiscales françaises — calculs factuels sur des règles publiques
 // Aucun conseil : uniquement des simulations mathématiques
 
-// --- Taux et seuils ---
-const SOCIAL_CHARGES_RATE = 0.172 // Prélèvements sociaux
-const PFU_RATE = 0.30 // Prélèvement forfaitaire unique (flat tax)
-const PFU_IR_RATE = 0.128 // Part IR du PFU
+// --- Taux et seuils (LFSS 2026) ---
+// Hausse CSG au 1er janvier 2026 : +1,4 pt sur les revenus financiers
+// MAIS l'assurance-vie et les revenus fonciers en sont EXCLUS
+const SOCIAL_CHARGES_RATE = 0.186 // PS général (revenus financiers : PEA, PER, CTO…)
+const SOCIAL_CHARGES_RATE_AV = 0.172 // PS assurance-vie (exclue de la hausse CSG 2026)
+const PFU_RATE = 0.314 // PFU général (12,8 % IR + 18,6 % PS)
+const PFU_RATE_AV = 0.30 // PFU assurance-vie (12,8 % IR + 17,2 % PS)
+const PFU_IR_RATE = 0.128 // Part IR du PFU (identique pour tous)
 const AV_REDUCED_IR_RATE = 0.075 // IR réduit AV après 8 ans
 const AV_THRESHOLD_YEARS = 8
 const PEA_THRESHOLD_YEARS = 5
@@ -200,14 +204,14 @@ function calculateAV(input: FiscalInput): FiscalResult {
   let taxableGains: number
 
   if (holdingYears < AV_THRESHOLD_YEARS) {
-    // Avant 8 ans : PFU 30% sur les plus-values
+    // Avant 8 ans : PFU 30% sur les plus-values (AV exclue de la hausse CSG)
     taxableGains = gainsPart
     incomeTax = taxableGains * PFU_IR_RATE
-    socialCharges = taxableGains * SOCIAL_CHARGES_RATE
+    socialCharges = taxableGains * SOCIAL_CHARGES_RATE_AV
 
     steps.push({
       label: `Avant ${AV_THRESHOLD_YEARS} ans : prélèvement forfaitaire unique (PFU)`,
-      formula: `${fmt(taxableGains)} × ${fmtRate(PFU_RATE)}`,
+      formula: `${fmt(taxableGains)} × ${fmtRate(PFU_RATE_AV)}`,
       result: fmt(incomeTax + socialCharges),
       highlight: 'negative',
     })
@@ -221,7 +225,7 @@ function calculateAV(input: FiscalInput): FiscalResult {
 
     steps.push({
       label: 'Dont prélèvements sociaux',
-      formula: `${fmt(taxableGains)} × ${fmtRate(SOCIAL_CHARGES_RATE)}`,
+      formula: `${fmt(taxableGains)} × ${fmtRate(SOCIAL_CHARGES_RATE_AV)}`,
       result: fmt(socialCharges),
       highlight: 'negative',
     })
@@ -242,7 +246,7 @@ function calculateAV(input: FiscalInput): FiscalResult {
     })
 
     incomeTax = taxableGains * AV_REDUCED_IR_RATE
-    socialCharges = gainsPart * SOCIAL_CHARGES_RATE
+    socialCharges = gainsPart * SOCIAL_CHARGES_RATE_AV
 
     if (taxableGains > 0) {
       steps.push({
@@ -262,7 +266,7 @@ function calculateAV(input: FiscalInput): FiscalResult {
 
     steps.push({
       label: 'Prélèvements sociaux (sur toutes les plus-values)',
-      formula: `${fmt(gainsPart)} × ${fmtRate(SOCIAL_CHARGES_RATE)}`,
+      formula: `${fmt(gainsPart)} × ${fmtRate(SOCIAL_CHARGES_RATE_AV)}`,
       result: fmt(socialCharges),
       highlight: 'negative',
     })

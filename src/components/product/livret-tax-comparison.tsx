@@ -25,19 +25,19 @@ interface TaxColumn {
 const columns: TaxColumn[] = [
   {
     title: 'Livret A',
-    grossAmount: '300 € brut',
+    grossAmount: '150 € brut',
     taxLabel: 'Aucun impôt ni cotisation',
-    netAmount: '300 € net',
-    netValue: 300,
+    netAmount: '150 € net',
+    netValue: 150,
     highlighted: true,
     badge: 'Vous gardez tout',
   },
   {
     title: 'Livret bancaire ordinaire',
-    grossAmount: '300 € brut',
-    taxLabel: '\u221290 € de prélèvement forfaitaire (30 %)',
-    netAmount: '210 € net',
-    netValue: 210,
+    grossAmount: '150 € brut',
+    taxLabel: '\u221247 € de prélèvement forfaitaire (31,4 %)',
+    netAmount: '103 € net',
+    netValue: 103,
   },
   {
     title: 'Compte courant',
@@ -49,7 +49,7 @@ const columns: TaxColumn[] = [
   },
 ]
 
-const MAX_NET = 300
+const MAX_NET = 150
 const MAX_BAR_HEIGHT = 80
 
 export function LivretTaxComparison() {
@@ -69,7 +69,7 @@ export function LivretTaxComparison() {
     >
       <motion.div variants={itemVariants} className="mb-6 text-center">
         <p className="text-sm font-medium uppercase tracking-wide text-ep-text-muted">
-          {"Comparaison sur 10\u00A0000\u00A0€ placés à 3\u00A0% pendant 1 an"}
+          {"Comparaison sur 10\u00A0000\u00A0€ placés à 1,5\u00A0% pendant 1 an"}
         </p>
       </motion.div>
 

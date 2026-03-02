@@ -6,7 +6,7 @@
   },
   "PEA": {
     "definition": "Plan d'Épargne en Actions : enveloppe fiscale permettant d'investir en actions européennes avec exonération d'impôt sur les gains après 5 ans.",
-    "definitionComplete": "Le PEA (Plan d'Épargne en Actions) est un compte-titres bénéficiant d'un cadre fiscal privilégié. Il permet d'investir jusqu'à 150 000 € en actions d'entreprises européennes ou en fonds (OPCVM) éligibles. Après 5 ans de détention, les plus-values et dividendes sont exonérés d'impôt sur le revenu (seuls les prélèvements sociaux de 17,2 % restent dus). Tout retrait avant 5 ans entraîne la clôture du plan et l'imposition au PFU.",
+    "definitionComplete": "Le PEA (Plan d'Épargne en Actions) est un compte-titres bénéficiant d'un cadre fiscal privilégié. Il permet d'investir jusqu'à 150 000 € en actions d'entreprises européennes ou en fonds (OPCVM) éligibles. Après 5 ans de détention, les plus-values et dividendes sont exonérés d'impôt sur le revenu (seuls les prélèvements sociaux de 18,6 % restent dus). Tout retrait avant 5 ans entraîne la clôture du plan et l'imposition au PFU.",
     "aliases": ["plan d'épargne en actions"]
   },
   "PER": {
@@ -21,7 +21,7 @@
   },
   "Livret A": {
     "definition": "Livret d'épargne réglementé par l'État, à capital garanti, dont les intérêts sont totalement exonérés d'impôt et de prélèvements sociaux.",
-    "definitionComplete": "Le Livret A est le placement le plus populaire en France. Son taux est fixé par l'État (3 % en 2024), le capital est garanti et les intérêts sont nets d'impôt et de prélèvements sociaux. Le plafond de dépôt est de 22 950 €. L'argent est disponible à tout moment. C'est l'outil d'épargne de précaution par excellence, mais son rendement est souvent inférieur à l'inflation sur le long terme.",
+    "definitionComplete": "Le Livret A est le placement le plus populaire en France. Son taux est fixé par l'État (1,5 % depuis février 2026, contre 3 % en 2024). Le capital est garanti et les intérêts sont nets d'impôt et de prélèvements sociaux. Le plafond de dépôt est de 22 950 €. L'argent est disponible à tout moment. C'est l'outil d'épargne de précaution par excellence.",
     "aliases": ["livret A"]
   },
   "LDDS": {
@@ -30,8 +30,8 @@
     "aliases": ["livret de développement durable et solidaire", "LDD"]
   },
   "PFU": {
-    "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 30 % sur les revenus du capital, combinant 12,8 % d'IR et 17,2 % de prélèvements sociaux.",
-    "definitionComplete": "Le PFU, instauré en 2018, simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Au lieu du barème progressif de l'impôt sur le revenu, un taux forfaitaire unique de 30 % s'applique (12,8 % d'IR + 17,2 % de prélèvements sociaux). Le contribuable peut toutefois opter pour l'imposition au barème progressif si cela lui est plus favorable (option globale pour l'ensemble des revenus du capital).",
+    "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 31,4 % sur les revenus du capital, combinant 12,8 % d'IR et 18,6 % de prélèvements sociaux.",
+    "definitionComplete": "Le PFU simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Le taux standard est de 31,4 % depuis 2026 (12,8 % d'IR + 18,6 % de prélèvements sociaux) pour les revenus financiers courants (PEA, PER, CTO). Exception : l'assurance-vie conserve un PFU à 30 % (12,8 % d'IR + 17,2 % de PS), car elle est exclue de la hausse de CSG de 2026. Le contribuable peut opter pour l'imposition au barème progressif si cela lui est plus favorable.",
     "aliases": ["flat tax", "prélèvement forfaitaire unique"]
   },
   "Fonds euros": {
@@ -54,7 +54,7 @@
   },
   "Plus-value": {
     "definition": "Gain réalisé lors de la vente d'un actif (action, part de fonds, bien immobilier) à un prix supérieur à son prix d'achat.",
-    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au PFU (30 %) ou au barème de l'IR sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
+    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au PFU (31,4 %) ou au barème de l'IR sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
     "aliases": ["plus value", "gain"]
   },
   "Rétrocessions": {
@@ -73,8 +73,8 @@
     "aliases": ["frais annuels", "frais de gestion annuels"]
   },
   "Prélèvements sociaux": {
-    "definition": "Cotisations sociales prélevées sur les revenus du patrimoine et du capital, au taux global de 17,2 %.",
-    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global de 17,2 % se décompose en CSG (9,2 %), CRDS (0,5 %), prélèvement de solidarité (7,5 %). Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : PEA après 5 ans, intérêts du Livret A exceptés). Dans le cadre du PFU, les 17,2 % sont inclus dans les 30 % de flat tax.",
+    "definition": "Cotisations sociales prélevées sur les revenus du capital, au taux de 18,6 % depuis 2026 (17,2 % pour l'assurance-vie et les revenus fonciers).",
+    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global est passé de 17,2 % à 18,6 % au 1er janvier 2026 pour les revenus financiers (PEA, PER, CTO, épargne salariale). Toutefois, l'assurance-vie et les revenus fonciers (SCPI) restent à 17,2 %, car ils sont exclus de la hausse de CSG de 2026. Ils se décomposent en CSG, CRDS et prélèvement de solidarité. Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : PEA après 5 ans, intérêts du Livret A exceptés).",
     "aliases": ["PS", "cotisations sociales", "CSG-CRDS"]
   },
   "Abattement": {

@@ -10,7 +10,7 @@ import {
 } from '@/lib/motion'
 
 const termsPreview = [
-  { term: 'PFU', definition: 'Impôt forfaitaire de 30 % sur vos gains' },
+  { term: 'PFU', definition: 'Impôt forfaitaire de 31,4 % sur vos gains' },
   { term: 'Fonds euros', definition: 'Capital garanti, ne peut pas baisser' },
   { term: 'UC', definition: 'Supports dont la valeur peut varier' },
   { term: 'Liquidité', definition: 'Facilité à récupérer votre argent' },
