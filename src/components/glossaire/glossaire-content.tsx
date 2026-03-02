@@ -31,13 +31,13 @@ const examples: Record<string, string> = {
   'Livret A':
     'Exemple : avec 10 000 € sur un Livret A à 1,5 %, vous gagnez 150 € d\'intérêts par an, nets d\'impôt.',
   'PFU':
-    'Exemple : vous réalisez 1 000 € de plus-values. Le PFU prélève 314 € (12,8 % d\'IR + 18,6 % de prélèvements sociaux).',
+    'Exemple : vous réalisez 1 000 € de plus-values. Le PFU prélève 314 € (12,8 % d\'impôt sur le revenu + 18,6 % de prélèvements sociaux).',
   'Fonds euros':
     'Exemple : vous placez 20 000 € sur un fonds euros à 2,5 %. Vous gagnez 500 € garantis, sans risque de perte.',
   'Frais de gestion':
     'Exemple : sur un contrat avec 0,6 % de frais annuels et 50 000 € d\'encours, vous payez 300 € par an.',
   'Frais d\'arbitrage':
-    'Exemple : vous transférez 5 000 € du fonds euros vers des UC. Avec 0,5 % de frais, cela vous coûte 25 €.',
+    'Exemple : vous transférez 5 000 € du fonds euros vers des unités de compte. Avec 0,5 % de frais, cela vous coûte 25 €.',
   'TMI':
     'Exemple : si votre TMI est à 30 %, chaque euro déductible (PER) vous fait économiser 0,30 € d\'impôt.',
   'Abattement':
@@ -47,7 +47,7 @@ const examples: Record<string, string> = {
   'Rétrocessions':
     'Exemple : votre banque recommande un fonds qui lui reverse 1 % par an. Sur 50 000 €, c\'est 500 € de rétrocession annuelle.',
   'Unités de compte':
-    'Exemple : vous investissez 10 000 € en UC actions. Si le marché monte de 8 %, votre capital passe à 10 800 €. S\'il baisse de 5 %, il descend à 9 500 €.',
+    'Exemple : vous investissez 10 000 € en unités de compte actions. Si le marché monte de 8 %, votre capital passe à 10 800 €. S\'il baisse de 5 %, il descend à 9 500 €.',
   'SCPI':
     'Exemple : vous achetez 10 000 € de parts de SCPI avec un rendement de 5 %. Vous recevez environ 500 € de revenus par an.',
   'Horizon de placement':

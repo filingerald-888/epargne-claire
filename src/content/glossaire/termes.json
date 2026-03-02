@@ -6,12 +6,12 @@
   },
   "PEA": {
     "definition": "Plan d'Épargne en Actions : enveloppe fiscale permettant d'investir en actions européennes avec exonération d'impôt sur les gains après 5 ans.",
-    "definitionComplete": "Le PEA (Plan d'Épargne en Actions) est un compte-titres bénéficiant d'un cadre fiscal privilégié. Il permet d'investir jusqu'à 150 000 € en actions d'entreprises européennes ou en fonds (OPCVM) éligibles. Après 5 ans de détention, les plus-values et dividendes sont exonérés d'impôt sur le revenu (seuls les prélèvements sociaux de 18,6 % restent dus). Tout retrait avant 5 ans entraîne la clôture du plan et l'imposition au PFU.",
+    "definitionComplete": "Le PEA (Plan d'Épargne en Actions) est un compte-titres bénéficiant d'un cadre fiscal privilégié. Il permet d'investir jusqu'à 150 000 € en actions d'entreprises européennes ou en fonds d'investissement collectifs éligibles. Après 5 ans de détention, les plus-values et dividendes sont exonérés d'impôt sur le revenu (seuls les prélèvements sociaux de 18,6 % restent dus). Tout retrait avant 5 ans entraîne la clôture du plan et l'imposition au prélèvement forfaitaire unique.",
     "aliases": ["plan d'épargne en actions"]
   },
   "PER": {
     "definition": "Plan d'Épargne Retraite : produit d'épargne à long terme dont les versements sont déductibles du revenu imposable, avec sortie au moment de la retraite.",
-    "definitionComplete": "Le PER (Plan d'Épargne Retraite), créé par la loi PACTE en 2019, remplace les anciens PERP et Madelin. Les versements volontaires sont déductibles du revenu imposable (dans certaines limites), ce qui réduit l'impôt l'année du versement. En contrepartie, l'épargne est bloquée jusqu'à la retraite (sauf cas de déblocage anticipé comme l'achat de la résidence principale). À la sortie, le capital est imposé selon le barème de l'IR.",
+    "definitionComplete": "Le PER (Plan d'Épargne Retraite), créé par la loi PACTE en 2019, remplace les anciens PERP et Madelin. Les versements volontaires sont déductibles du revenu imposable (dans certaines limites), ce qui réduit l'impôt l'année du versement. En contrepartie, l'épargne est bloquée jusqu'à la retraite (sauf cas de déblocage anticipé comme l'achat de la résidence principale). À la sortie, le capital est imposé selon le barème de l'impôt sur le revenu.",
     "aliases": ["plan d'épargne retraite"]
   },
   "SCPI": {
@@ -30,8 +30,8 @@
     "aliases": ["livret de développement durable et solidaire", "LDD"]
   },
   "PFU": {
-    "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 31,4 % sur les revenus du capital, combinant 12,8 % d'IR et 18,6 % de prélèvements sociaux.",
-    "definitionComplete": "Le PFU simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Le taux standard est de 31,4 % depuis 2026 (12,8 % d'IR + 18,6 % de prélèvements sociaux) pour les revenus financiers courants (PEA, PER, CTO). Exception : l'assurance-vie conserve un PFU à 30 % (12,8 % d'IR + 17,2 % de PS), car elle est exclue de la hausse de CSG de 2026. Le contribuable peut opter pour l'imposition au barème progressif si cela lui est plus favorable.",
+    "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 31,4 % sur les revenus du capital, combinant 12,8 % d'impôt sur le revenu et 18,6 % de prélèvements sociaux.",
+    "definitionComplete": "Le prélèvement forfaitaire unique simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Le taux standard est de 31,4 % depuis 2026 (12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux) pour les revenus financiers courants (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire). Exception : l'assurance-vie conserve un taux à 30 % (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux), car elle est exclue de la hausse de contribution sociale généralisée de 2026. Le contribuable peut opter pour l'imposition au barème progressif si cela lui est plus favorable.",
     "aliases": ["flat tax", "prélèvement forfaitaire unique"]
   },
   "Fonds euros": {
@@ -41,7 +41,7 @@
   },
   "Unités de compte": {
     "definition": "Supports d'investissement en assurance-vie investis sur les marchés financiers (actions, obligations, immobilier), sans garantie en capital.",
-    "definitionComplete": "Les unités de compte (UC) sont les supports non garantis d'un contrat d'assurance-vie. Contrairement au fonds euros, le capital n'est pas garanti : la valeur fluctue selon les marchés. Les UC peuvent être des fonds actions, obligataires, diversifiés, des ETF, des SCPI, ou des supports structurés. Elles offrent un potentiel de rendement supérieur au fonds euros en contrepartie d'un risque de perte en capital. La diversification entre fonds euros et UC est la clé d'une allocation équilibrée.",
+    "definitionComplete": "Les unités de compte sont les supports non garantis d'un contrat d'assurance-vie. Contrairement au fonds euros, le capital n'est pas garanti : la valeur fluctue selon les marchés. Les unités de compte peuvent être des fonds actions, obligataires, diversifiés, des fonds indiciels cotés, des SCPI, ou des supports structurés. Elles offrent un potentiel de rendement supérieur au fonds euros en contrepartie d'un risque de perte en capital. La diversification entre fonds euros et unités de compte est la clé d'une allocation équilibrée.",
     "aliases": ["UC", "unité de compte"]
   },
   "Rente": {
@@ -54,27 +54,27 @@
   },
   "Plus-value": {
     "definition": "Gain réalisé lors de la vente d'un actif (action, part de fonds, bien immobilier) à un prix supérieur à son prix d'achat.",
-    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au PFU (31,4 %) ou au barème de l'IR sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
+    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au prélèvement forfaitaire unique (31,4 %) ou au barème de l'impôt sur le revenu sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
     "aliases": ["plus value", "gain"]
   },
   "Rétrocessions": {
     "definition": "Commissions reversées par les sociétés de gestion aux distributeurs (banques, conseillers) qui commercialisent leurs fonds.",
-    "definitionComplete": "Les rétrocessions sont la part des frais de gestion d'un fonds (OPCVM, UC d'assurance-vie) que la société de gestion reverse à l'intermédiaire qui a distribué le produit (banque, courtier, CGP). Elles représentent typiquement 0,5 % à 1 % par an sur l'encours. C'est un point à surveiller car elles peuvent créer un conflit d'intérêts : le distributeur peut être incité à recommander les fonds qui lui versent les rétrocessions les plus élevées, pas nécessairement les plus performants.",
+    "definitionComplete": "Les rétrocessions sont la part des frais de gestion d'un fonds d'investissement (ou d'unités de compte en assurance-vie) que la société de gestion reverse à l'intermédiaire qui a distribué le produit (banque, courtier, conseiller en gestion de patrimoine). Elles représentent typiquement 0,5 % à 1 % par an sur l'encours. C'est un point à surveiller car elles peuvent créer un conflit d'intérêts : le distributeur peut être incité à recommander les fonds qui lui versent les rétrocessions les plus élevées, pas nécessairement les plus performants.",
     "aliases": ["rétrocession", "commissions de distribution"]
   },
   "TMI": {
     "definition": "Taux Marginal d'Imposition : taux d'impôt appliqué à la dernière tranche de vos revenus, déterminant l'économie d'impôt réelle des déductions.",
-    "definitionComplete": "Le TMI est le taux de la tranche la plus élevée du barème progressif de l'IR qui s'applique à vos revenus. Les tranches 2024 sont : 0 % (jusqu'à 11 294 €), 11 % (11 295 – 28 797 €), 30 % (28 798 – 82 341 €), 41 % (82 342 – 177 106 €), 45 % (au-delà). Connaître son TMI est essentiel pour évaluer l'intérêt de dispositifs déductibles comme le PER : un versement PER de 1 000 € pour un TMI à 30 % génère une économie d'impôt de 300 €.",
+    "definitionComplete": "Le taux marginal d'imposition est le taux de la tranche la plus élevée du barème progressif de l'impôt sur le revenu qui s'applique à vos revenus. Les tranches 2024 sont : 0 % (jusqu'à 11 294 €), 11 % (11 295 – 28 797 €), 30 % (28 798 – 82 341 €), 41 % (82 342 – 177 106 €), 45 % (au-delà). Connaître son taux marginal est essentiel pour évaluer l'intérêt de dispositifs déductibles comme le Plan d'Épargne Retraite : un versement de 1 000 € avec un taux marginal à 30 % génère une économie d'impôt de 300 €.",
     "aliases": ["taux marginal d'imposition", "tranche marginale"]
   },
   "Frais de gestion": {
     "definition": "Prélèvement annuel effectué par l'assureur ou la société de gestion sur votre épargne, en pourcentage de l'encours.",
-    "definitionComplete": "Les frais de gestion rémunèrent la société de gestion (pour un fonds) ou l'assureur (pour un contrat d'assurance-vie) pour l'administration et la gestion de votre placement. Ils sont exprimés en pourcentage annuel de l'encours et sont prélevés automatiquement. En assurance-vie, ils varient de 0,5 % à 1 % par an sur les fonds euros, et de 0,6 % à 1,2 % sur les UC. S'ajoutent les frais des fonds sous-jacents (UC). L'impact cumulé sur le long terme peut être considérable.",
+    "definitionComplete": "Les frais de gestion rémunèrent la société de gestion (pour un fonds) ou l'assureur (pour un contrat d'assurance-vie) pour l'administration et la gestion de votre placement. Ils sont exprimés en pourcentage annuel de l'encours et sont prélevés automatiquement. En assurance-vie, ils varient de 0,5 % à 1 % par an sur les fonds euros, et de 0,6 % à 1,2 % sur les unités de compte. S'ajoutent les frais des fonds sous-jacents. L'impact cumulé sur le long terme peut être considérable.",
     "aliases": ["frais annuels", "frais de gestion annuels"]
   },
   "Prélèvements sociaux": {
     "definition": "Cotisations sociales prélevées sur les revenus du capital, au taux de 18,6 % depuis 2026 (17,2 % pour l'assurance-vie et les revenus fonciers).",
-    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global est passé de 17,2 % à 18,6 % au 1er janvier 2026 pour les revenus financiers (PEA, PER, CTO, épargne salariale). Toutefois, l'assurance-vie et les revenus fonciers (SCPI) restent à 17,2 %, car ils sont exclus de la hausse de CSG de 2026. Ils se décomposent en CSG, CRDS et prélèvement de solidarité. Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : PEA après 5 ans, intérêts du Livret A exceptés).",
+    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global est passé de 17,2 % à 18,6 % au 1er janvier 2026 pour les revenus financiers (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire, épargne salariale). Toutefois, l'assurance-vie et les revenus fonciers (SCPI) restent à 17,2 %, car ils sont exclus de la hausse de contribution sociale généralisée de 2026. Ils se décomposent en contribution sociale généralisée, contribution au remboursement de la dette sociale et prélèvement de solidarité. Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : Plan d'Épargne en Actions après 5 ans, intérêts du Livret A exceptés).",
     "aliases": ["PS", "cotisations sociales", "CSG-CRDS"]
   },
   "Abattement": {
@@ -83,12 +83,12 @@
   },
   "Horizon de placement": {
     "definition": "Durée pendant laquelle vous prévoyez de laisser votre argent investi avant d'en avoir besoin.",
-    "definitionComplete": "L'horizon de placement est un concept clé pour déterminer la répartition optimale de votre épargne. Court terme (< 2 ans) : privilégier la sécurité (Livret A, LDDS, fonds euros). Moyen terme (2-8 ans) : diversifier entre sécurité et performance (assurance-vie mixte, PEA). Long terme (> 8 ans) : accepter plus de risque pour plus de rendement (actions, SCPI, UC dynamiques). Plus l'horizon est long, plus on peut tolérer la volatilité des marchés.",
+    "definitionComplete": "L'horizon de placement est un concept clé pour déterminer la répartition optimale de votre épargne. Court terme (< 2 ans) : privilégier la sécurité (Livret A, LDDS, fonds euros). Moyen terme (2-8 ans) : diversifier entre sécurité et performance (assurance-vie mixte, Plan d'Épargne en Actions). Long terme (> 8 ans) : accepter plus de risque pour plus de rendement (actions, SCPI, unités de compte dynamiques). Plus l'horizon est long, plus on peut tolérer la volatilité des marchés.",
     "aliases": ["durée de placement", "horizon d'investissement"]
   },
   "Contrat en ligne": {
     "definition": "Contrat d'assurance-vie souscrit auprès d'un courtier en ligne, offrant généralement des frais réduits et un large choix de supports.",
-    "definitionComplete": "Un contrat en ligne est un contrat d'assurance-vie distribué par un courtier sur Internet (Linxea, Assurancevie.com, Boursorama, etc.). Ces contrats se distinguent des contrats bancaires par des frais nettement inférieurs : pas de frais d'entrée, frais de gestion réduits, arbitrages gratuits. Ils offrent aussi un choix de supports plus large (parfois 500+ UC). La contrepartie est l'absence de conseil en agence.",
+    "definitionComplete": "Un contrat en ligne est un contrat d'assurance-vie distribué par un courtier sur Internet (Linxea, Assurancevie.com, Boursorama, etc.). Ces contrats se distinguent des contrats bancaires par des frais nettement inférieurs : pas de frais d'entrée, frais de gestion réduits, arbitrages gratuits. Ils offrent aussi un choix de supports plus large (parfois plus de 500 unités de compte). La contrepartie est l'absence de conseil en agence.",
     "aliases": ["contrat internet", "courtier en ligne"]
   },
   "Contrat bancaire": {
@@ -98,12 +98,12 @@
   },
   "Frais d'arbitrage": {
     "definition": "Frais prélevés par l'assureur lors d'un changement de répartition entre les supports d'un contrat d'assurance-vie.",
-    "definitionComplete": "Les frais d'arbitrage sont facturés chaque fois que vous transférez une partie de votre épargne d'un support à un autre au sein de votre contrat (par exemple, du fonds euros vers des UC ou l'inverse). Ils peuvent être forfaitaires (15 à 30 €) ou proportionnels (0,5 % à 1 %). La plupart des contrats en ligne proposent des arbitrages gratuits et illimités.",
+    "definitionComplete": "Les frais d'arbitrage sont facturés chaque fois que vous transférez une partie de votre épargne d'un support à un autre au sein de votre contrat (par exemple, du fonds euros vers des unités de compte ou l'inverse). Ils peuvent être forfaitaires (15 à 30 €) ou proportionnels (0,5 % à 1 %). La plupart des contrats en ligne proposent des arbitrages gratuits et illimités.",
     "aliases": ["frais de transfert", "arbitrage"]
   },
   "Frais internes": {
-    "definition": "Frais de gestion prélevés à l'intérieur même des fonds (UC) dans lesquels vous êtes investi, en plus des frais du contrat.",
-    "definitionComplete": "Les frais internes (ou frais courants) sont les frais de gestion propres à chaque fonds d'investissement dans lequel vous placez votre épargne via les unités de compte. Ils varient de 0,2 % par an (ETF) à 2,5 % par an (fonds actifs). Ils s'ajoutent aux frais de gestion du contrat d'assurance-vie. C'est un coût souvent méconnu mais significatif sur le long terme.",
+    "definition": "Frais de gestion prélevés à l'intérieur même des fonds (unités de compte) dans lesquels vous êtes investi, en plus des frais du contrat.",
+    "definitionComplete": "Les frais internes (ou frais courants) sont les frais de gestion propres à chaque fonds d'investissement dans lequel vous placez votre épargne via les unités de compte. Ils varient de 0,2 % par an (fonds indiciels cotés) à 2,5 % par an (fonds actifs). Ils s'ajoutent aux frais de gestion du contrat d'assurance-vie. C'est un coût souvent méconnu mais significatif sur le long terme.",
     "aliases": ["frais courants", "frais de gestion internes", "TER"]
   },
   "Rendement brut": {

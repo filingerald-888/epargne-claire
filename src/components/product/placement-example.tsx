@@ -64,7 +64,7 @@ export function PlacementExample() {
           </span>
           <span className="flex items-center gap-1">
             <span className="inline-block size-2 rounded-full bg-blue-400" />
-            4 000 &euro; en UC
+            4 000 &euro; en unit&eacute;s de compte
           </span>
         </div>
       </motion.div>
@@ -125,7 +125,7 @@ export function PlacementExample() {
         <ArrowRight className="size-4 shrink-0 text-ep-primary" />
         <p className="text-sm text-ep-text-muted">
           <strong className="text-ep-text-primary">R&eacute;sultat apr&egrave;s 5 ans :</strong> vos 10 000 &euro; pourraient valoir autour de{' '}
-          <strong className="text-ep-primary">12 000 &euro;</strong>, dont une partie s&eacute;curis&eacute;e (fonds euros) et une partie expos&eacute;e aux march&eacute;s (UC).
+          <strong className="text-ep-primary">12 000 &euro;</strong>, dont une partie s&eacute;curis&eacute;e (fonds euros) et une partie expos&eacute;e aux march&eacute;s (unit&eacute;s de compte).
         </p>
       </motion.div>
     </motion.div>

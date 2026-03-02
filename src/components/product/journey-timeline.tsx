@@ -275,7 +275,7 @@ export function JourneyTimeline() {
         viewport={{ once: true }}
         className="mt-8 text-center text-xs text-ep-text-muted"
       >
-        Simulation à titre indicatif basée sur un rendement moyen de 4 %/an (profil mixte fonds euros + UC). Les marchés peuvent
+        Simulation à titre indicatif basée sur un rendement moyen de 4 %/an (profil mixte fonds euros + unités de compte). Les marchés peuvent
         connaître des baisses prolongées. Les rendements passés ne garantissent pas les résultats futurs.
         Le capital investi en unités de compte n'est pas garanti.
       </motion.p>
