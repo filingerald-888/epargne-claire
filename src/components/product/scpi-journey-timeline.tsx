@@ -39,7 +39,7 @@ const milestones: MilestoneData[] = [
   {
     year: 0,
     capital: 20000,
-    event: 'Sophie investit en SCPI',
+    event: 'Nadia investit en SCPI',
     insight: (
       <>
         Premier investissement de <strong className="text-ep-text-primary">20{'\u00A0'}000{'\u00A0'}€</strong> réparti sur 2 SCPI diversifiées. Elle commence à percevoir des loyers trimestriels.
@@ -53,7 +53,7 @@ const milestones: MilestoneData[] = [
     event: 'Revenus réguliers',
     insight: (
       <>
-        Sophie reçoit environ <strong className="text-ep-text-primary">80{'\u00A0'}€/mois</strong> de revenus. Elle réinvestit ses loyers en achetant de nouvelles parts chaque trimestre.
+        Nadia reçoit environ <strong className="text-ep-text-primary">80{'\u00A0'}€/mois</strong> de revenus. Elle réinvestit ses loyers en achetant de nouvelles parts chaque trimestre.
       </>
     ),
     icon: 'Banknote',
