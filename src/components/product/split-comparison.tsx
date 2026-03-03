@@ -41,6 +41,7 @@ interface SplitItemProps {
 export function SplitItem(_props: SplitItemProps) {
   return null
 }
+SplitItem.displayName = 'SplitItem'
 
 const variantStyles = {
   green: {
@@ -76,13 +77,14 @@ export function SplitComparison({ children }: { children?: ReactNode }) {
 
   const items: ExtractedSplitItem[] = []
   Children.forEach(children, (child) => {
-    if (isValidElement(child) && child.type === SplitItem) {
-      const props = child.props as SplitItemProps
+    if (!isValidElement(child)) return
+    const props = child.props as Record<string, unknown>
+    if (typeof props.icon === 'string' && typeof props.title === 'string') {
       items.push({
-        icon: props.icon,
-        title: props.title,
-        variant: props.variant ?? 'neutral',
-        content: props.children,
+        icon: props.icon as string,
+        title: props.title as string,
+        variant: (props.variant as 'green' | 'red' | 'neutral') ?? 'neutral',
+        content: props.children as ReactNode,
       })
     }
   })
