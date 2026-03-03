@@ -47,18 +47,14 @@ export function FounderSection() {
 
           <motion.blockquote variants={itemVariants} className="-mt-4">
             <p className="text-lg leading-relaxed text-ep-text-primary md:text-xl">
-              Comme certains d&rsquo;entre vous, j&rsquo;épargne depuis des
-              années. Et comme{' '}
-              <mark className="rounded bg-amber-100 px-1 font-semibold text-ep-text-primary">
-                beaucoup
-              </mark>{' '}
-              d&rsquo;entre vous, j&rsquo;ai longtemps eu l&rsquo;impression de
-              naviguer à l&rsquo;aveugle dans un océan de jargon financier.
+              Comme vous, j&rsquo;épargne depuis des années. Comme vous,
+              j&rsquo;ai longtemps navigué à l&rsquo;aveugle dans un océan de
+              jargon.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ep-text-muted">
               J&rsquo;ai créé Épargne Claire pour avoir la ressource que
-              j&rsquo;aurais aimé trouver&nbsp;: claire, neutre et qui explique
-              vraiment comment ça marche… sans rien vous vendre.
+              j&rsquo;aurais voulu trouver&nbsp;: honnête, neutre et qui
+              explique vraiment comment ça marche. Sans rien vous vendre.
             </p>
           </motion.blockquote>
 
@@ -66,7 +62,7 @@ export function FounderSection() {
             variants={itemVariants}
             className="mt-6 text-sm font-medium text-ep-text-muted"
           >
-            — Gérald, 43 ans, Épargnant
+            — Gérald, épargnant.
           </motion.p>
         </div>
       </div>
