@@ -46,6 +46,8 @@ export const produitsListing: ProduitListing[] = [
     tags: [
       { label: 'Sécuriser', colorKey: 'securiser' },
       { label: 'Projets', colorKey: 'projets' },
+      { label: 'Retraite', colorKey: 'retraite' },
+      { label: 'Transmission', colorKey: 'transmission' },
     ],
     href: '/produits/assurance-vie',
     metrics: {
@@ -62,7 +64,10 @@ export const produitsListing: ProduitListing[] = [
     description:
       "Investissez en actions européennes sans impôt après 5 ans.",
     image: '/images/hero-pea.jpg',
-    tags: [{ label: 'Projets', colorKey: 'projets' }],
+    tags: [
+      { label: 'Projets', colorKey: 'projets' },
+      { label: 'Retraite', colorKey: 'retraite' },
+    ],
     href: '/produits/pea',
     metrics: {
       rendement: '5 à 10 %',
@@ -80,7 +85,7 @@ export const produitsListing: ProduitListing[] = [
     image: '/images/hero-per-v2.jpg',
     tags: [
       { label: 'Retraite', colorKey: 'retraite' },
-      { label: 'Sécuriser', colorKey: 'securiser' },
+      { label: 'Transmission', colorKey: 'transmission' },
     ],
     href: '/produits/per',
     metrics: {
@@ -98,7 +103,7 @@ export const produitsListing: ProduitListing[] = [
       "Investissez dans l'immobilier collectif sans acheter de bien.",
     image: '/images/hero-scpi.jpg',
     tags: [
-      { label: 'Projets', colorKey: 'projets' },
+      { label: 'Retraite', colorKey: 'retraite' },
       { label: 'Transmission', colorKey: 'transmission' },
     ],
     href: '/produits/scpi',

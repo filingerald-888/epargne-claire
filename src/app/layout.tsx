@@ -7,7 +7,6 @@ import { StickyHeader } from "@/components/layout/sticky-header"
 import { Footer } from "@/components/layout/footer"
 import { AppTooltipProvider } from "@/components/layout/tooltip-provider"
 import { HeroProvider } from "@/lib/hero-context"
-import { FloatingSimulateur } from "@/components/homepage/floating-simulateur"
 import { ScrollToTop } from "@/components/layout/scroll-to-top"
 
 const inter = Inter({
@@ -46,7 +45,6 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <FloatingSimulateur />
           </HeroProvider>
         </AppTooltipProvider>
       </body>

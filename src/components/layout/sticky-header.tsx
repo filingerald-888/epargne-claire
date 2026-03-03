@@ -7,6 +7,12 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 import { useHeroVisibility } from '@/lib/hero-context'
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import { SimulateurFiscal } from '@/components/simulateur/simulateur-fiscal'
 
 interface StickyHeaderProps {
   className?: string
@@ -15,6 +21,7 @@ interface StickyHeaderProps {
 const navLinks = [
   { label: 'Produits', href: '/produits', activePrefix: '/produits' },
   { label: 'Comparer', href: '/comparer', activePrefix: '/comparer' },
+  { label: 'Simulation', href: '#simulation', activePrefix: '#simulation' },
   { label: 'Glossaire', href: '/glossaire', activePrefix: '/glossaire' },
   { label: 'À propos', href: '/a-propos', activePrefix: '/a-propos' },
 ]
@@ -22,6 +29,7 @@ const navLinks = [
 export function StickyHeader({ className }: StickyHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSimOpen, setIsSimOpen] = useState(false)
   const pathname = usePathname()
   const { isHeroVisible, setHeroVisible } = useHeroVisibility()
   const showWhite = isScrolled || isHeroVisible
@@ -142,19 +150,31 @@ export function StickyHeader({ className }: StickyHeaderProps) {
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                aria-current={isActive(link) ? 'page' : undefined}
-                className={`inline-flex min-h-[44px] min-w-[44px] items-center px-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary ${
-                  showWhite ? 'text-white' : 'text-ep-primary'
-                } ${
-                  isActive(link)
-                    ? 'font-bold underline underline-offset-4 decoration-2'
-                    : 'hover:underline hover:underline-offset-4 hover:decoration-2'
-                }`}
-              >
-                {link.label}
-              </Link>
+              {link.href === '#simulation' ? (
+                <button
+                  type="button"
+                  onClick={() => setIsSimOpen(true)}
+                  className={`inline-flex min-h-[44px] min-w-[44px] items-center px-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary hover:underline hover:underline-offset-4 hover:decoration-2 ${
+                    showWhite ? 'text-white' : 'text-ep-primary'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  href={link.href}
+                  aria-current={isActive(link) ? 'page' : undefined}
+                  className={`inline-flex min-h-[44px] min-w-[44px] items-center px-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ep-primary ${
+                    showWhite ? 'text-white' : 'text-ep-primary'
+                  } ${
+                    isActive(link)
+                      ? 'font-bold underline underline-offset-4 decoration-2'
+                      : 'hover:underline hover:underline-offset-4 hover:decoration-2'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -216,24 +236,61 @@ export function StickyHeader({ className }: StickyHeaderProps) {
 
           {/* Mobile nav links */}
           <nav className="flex flex-1 flex-col items-center justify-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                aria-current={isActive(link) ? 'page' : undefined}
-                className={`min-h-[44px] inline-flex items-center text-xl rounded px-4 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2 ${
-                  isActive(link)
-                    ? 'font-bold text-ep-primary underline underline-offset-4 decoration-2'
-                    : 'text-ep-text-primary hover:text-ep-primary'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href === '#simulation' ? (
+                <button
+                  key={link.href}
+                  type="button"
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    setIsSimOpen(true)
+                  }}
+                  className="min-h-[44px] inline-flex items-center text-xl rounded px-4 py-2 text-ep-text-primary hover:text-ep-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2"
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-current={isActive(link) ? 'page' : undefined}
+                  className={`min-h-[44px] inline-flex items-center text-xl rounded px-4 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary focus-visible:ring-offset-2 ${
+                    isActive(link)
+                      ? 'font-bold text-ep-primary underline underline-offset-4 decoration-2'
+                      : 'text-ep-text-primary hover:text-ep-primary'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
         </div>
       )}
+      {/* Simulateur popup */}
+      <Dialog open={isSimOpen} onOpenChange={setIsSimOpen}>
+        <DialogContent
+          showCloseButton={false}
+          className="flex h-[85vh] max-h-[700px] max-w-[calc(100%-1rem)] flex-col gap-0 overflow-hidden p-0 sm:max-w-2xl"
+        >
+          <div className="flex items-center justify-between border-b border-ep-separator px-5 py-3">
+            <DialogTitle className="text-sm font-semibold text-ep-primary">
+              Simulateur fiscal
+            </DialogTitle>
+            <button
+              onClick={() => setIsSimOpen(false)}
+              className="flex size-8 items-center justify-center rounded-full text-ep-text-muted transition-colors hover:bg-ep-separator hover:text-ep-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ep-primary"
+              aria-label="Fermer"
+            >
+              <X className="size-4" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-hidden">
+            <SimulateurFiscal />
+          </div>
+        </DialogContent>
+      </Dialog>
     </header>
   )
 }

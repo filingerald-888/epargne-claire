@@ -75,7 +75,7 @@ const objectifs: Objectif[] = [
       'Transmettre votre patrimoine \u00E0 vos proches dans les meilleures conditions fiscales.',
     tags: [
       { label: 'Assurance-vie', colorKey: 'transmission' },
-      { label: 'SCPI', colorKey: 'transmission' },
+      { label: 'PER', colorKey: 'transmission' },
     ],
     href: '/objectifs/transmission',
   },

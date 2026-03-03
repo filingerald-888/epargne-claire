@@ -264,6 +264,17 @@ const objectifData: Record<string, ObjectifData> = {
         ],
         href: '/produits/pea',
       },
+      {
+        title: 'SCPI',
+        description:
+          <>Revenus réguliers sans gestion locative. <strong>Rendement moyen de 4 à 6 % par an</strong>, idéal pour compléter sa pension de retraite.</>,
+        image: '/images/hero-scpi.jpg',
+        tags: [
+          { label: 'Revenus', colorKey: 'retraite' },
+          { label: 'Long terme', colorKey: 'longterme' },
+        ],
+        href: '/produits/scpi',
+      },
     ],
     nextObjectifSlug: 'transmission',
     nextObjectifTitle: 'Transmettre mon patrimoine',
@@ -367,17 +378,6 @@ const objectifData: Record<string, ObjectifData> = {
         ],
         href: '/produits/pea',
       },
-      {
-        title: 'Livret A (& LDDS)',
-        description:
-          <><strong>Poche sécurisée de votre projet.</strong> Capital garanti et disponible. Idéal pour la part à court terme ou l{'\u2019'}apport immobilier en attente.</>,
-        image: '/images/hero-livret-a.jpg',
-        tags: [
-          { label: 'Sécuriser', colorKey: 'securiser' },
-          { label: 'Garanti', colorKey: 'securiser' },
-        ],
-        href: '/produits/livret-a-ldds',
-      },
     ],
     nextObjectifSlug: 'retraite',
     nextObjectifTitle: 'Préparer ma retraite',
@@ -480,6 +480,17 @@ const objectifData: Record<string, ObjectifData> = {
           { label: 'Transmission', colorKey: 'transmission' },
         ],
         href: '/produits/per',
+      },
+      {
+        title: 'SCPI',
+        description:
+          <>Transmettre de l{'\u2019'}immobilier sans les contraintes de gestion. <strong>Le démembrement de parts SCPI</strong> permet de réduire significativement les droits de donation.</>,
+        image: '/images/hero-scpi.jpg',
+        tags: [
+          { label: 'Transmission', colorKey: 'transmission' },
+          { label: 'Long terme', colorKey: 'longterme' },
+        ],
+        href: '/produits/scpi',
       },
     ],
     nextObjectifSlug: 'securiser',
