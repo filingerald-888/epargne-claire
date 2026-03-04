@@ -21,9 +21,22 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
+const siteUrl = "https://www.epargne-claire.fr"
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "EpargneClaire — Comprendre l'épargne, simplement",
   description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "EpargneClaire",
+    title: "EpargneClaire — Comprendre l'épargne, simplement",
+    description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
+  },
+  alternates: {
+    canonical: "/",
+  },
 }
 
 export default function RootLayout({
