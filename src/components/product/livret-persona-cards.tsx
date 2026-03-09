@@ -98,7 +98,10 @@ export function LivretPersonaCards() {
                 src={persona.image}
                 alt=""
                 fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
+                className={cn(
+                  'object-cover transition-transform duration-500 hover:scale-105',
+                  i === 0 && 'object-[center_20%]'
+                )}
                 sizes="300px"
               />
             </div>

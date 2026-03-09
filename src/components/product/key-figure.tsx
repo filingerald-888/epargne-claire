@@ -11,17 +11,20 @@ function parseValue(value: string) {
   const rawNumber = match[2]
   const suffix = match[3]
   const hasSpace = rawNumber.includes(' ')
-  const number = parseFloat(rawNumber.replace(/\s/g, '').replace(',', '.'))
+  const normalised = rawNumber.replace(/\s/g, '').replace(',', '.')
+  const number = parseFloat(normalised)
   if (isNaN(number)) return null
-  return { prefix, number, suffix, hasSpace }
+  const decimalPart = normalised.split('.')[1]
+  const decimals = decimalPart ? decimalPart.length : 0
+  return { prefix, number, suffix, hasSpace, decimals }
 }
 
-function formatNumber(n: number, hasSpace: boolean): string {
-  const rounded = Math.round(n)
-  if (hasSpace) {
-    return rounded.toLocaleString('fr-FR')
+function formatNumber(n: number, hasSpace: boolean, decimals: number): string {
+  if (decimals === 0) {
+    const rounded = Math.round(n)
+    return hasSpace ? rounded.toLocaleString('fr-FR') : String(rounded)
   }
-  return String(rounded)
+  return n.toFixed(decimals).replace('.', ',')
 }
 
 interface KeyFigureProps {
@@ -54,7 +57,7 @@ export function KeyFigure({ value, label, description }: KeyFigureProps) {
       duration: 1.5,
       ease: 'easeOut',
       onUpdate(latest) {
-        setDisplayValue(`${parsed.prefix}${formatNumber(latest, parsed.hasSpace)}${parsed.suffix}`)
+        setDisplayValue(`${parsed.prefix}${formatNumber(latest, parsed.hasSpace, parsed.decimals)}${parsed.suffix}`)
       },
       onComplete() {
         setDisplayValue(value)
