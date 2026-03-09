@@ -21,6 +21,12 @@ export interface SkillCategory {
   tools?: string
 }
 
+export const topSkills: string[] = [
+  'Pilotage de programmes stratégiques en environnement réglementé',
+  'Leadership transverse auprès d\u2019équipes pluridisciplinaires (IT, Métiers, Legal, Produit)',
+  'Création de valeur business durable et mesurable',
+]
+
 export interface Diploma {
   year: string
   title: string
@@ -82,101 +88,101 @@ export const amItems = [
 export const experiences: ExperienceEntry[] = [
   {
     period: 'Depuis avril 2022',
-    role: 'Senior Product Manager, Digital Health Platform',
-    company: 'AXA Group Operations',
+    role: 'Product Manager Senior – Plateforme Santé Digitale',
+    company: 'AXA Group',
   },
   {
     period: 'Oct. 2019 – Mars 2022',
-    role: 'Senior Product Manager, Selfcare & Product Lifecycle',
+    role: 'Product Manager Senior – Plateforme selfcare B2BC',
     company: 'AXA Partners',
   },
   {
     period: 'Avril 2017 – Oct. 2019',
-    role: 'Product Manager, Claims Automation & Data Process',
+    role: 'Product Manager – Transformation digitale sinistres',
     company: 'Allianz France',
   },
   {
     period: 'Avril 2012 – Mars 2017',
-    role: 'Product Manager, Mobile App',
+    role: 'Product Manager – Appli mobile / Engagement client',
     company: 'Allianz France',
-  },
-  {
-    period: 'Nov. 2010 – Avril 2012',
-    role: 'Product Owner, Parcours Digital & CRM',
-    company: 'Crédit Foncier / BPCE',
-  },
-  {
-    period: 'Janv. 2008 – Oct. 2010',
-    role: 'Digital Business Analyst, Refonte Plateforme Web',
-    company: 'SNCF Proximités',
   },
 ]
 
 export const skills: SkillCategory[] = [
   {
-    title: 'Expertise produit',
+    title: 'Transformation digitale et programme delivery',
     items: [
       {
-        label: 'Discovery → Product-Market Fit',
-        description: 'User research, data analytics → identification besoins → validation hypothèses → fit optimisé',
+        label: 'Pilotage programmes transformation',
+        description: 'Digitalisation omnicanale • SAFe/Scrum • Coordination multi-entités et géographies',
       },
       {
-        label: 'Vision → Roadmap → Execution',
-        description: 'Vision → roadmap → priorisation → delivery Scrum/SAFe → releases fréquentes → mesure impact',
+        label: 'Gestion délais/budgets',
+        description: 'Reporting exécutif • Suivi KPIs business et opérationnels',
       },
       {
-        label: 'Conception parcours clients omnicanaux',
-        description: 'Analyse parcours existants → identification frictions → conception vision cible → optimisation conversion & attrition',
-      },
-    ],
-    tools: 'Jira • Figma • Notion • Miro • Trello',
-  },
-  {
-    title: 'Plateforme & Tech',
-    items: [
-      {
-        label: 'Plateforme SaaS modulaire',
-        description: 'API-first → produits white-label → scalabilité',
-      },
-      {
-        label: 'Culture data-driven',
-        description: 'Dashboards, funnels → analytics → décisions',
-      },
-      {
-        label: 'Automatisation de tâches via IA',
-        description: "Conception d'agents IA ou connexion multi-outils",
-      },
-    ],
-    tools: 'SQL • Amplitude • Zapier • Dust',
-  },
-  {
-    title: 'Leadership & Exécution',
-    items: [
-      {
-        label: 'Collaboration',
-        description: 'Coordination Design-Tech-Business → influence sans autorité → alignement',
-      },
-      {
-        label: 'Environnements complexes',
-        description: 'Secteur réglementé (assurance, santé, finance) → conformité/RGPD',
+        label: 'Gestion risques et conformité',
+        description: 'Leadership équipes transverses',
       },
     ],
   },
   {
-    title: 'Culture client & conduite du changement',
+    title: 'Leadership exécutif et gouvernance',
     items: [
       {
-        label: 'Diffusion d\'une culture centrée client',
-        description: 'Animation de communautés internes → accompagnement adoption (réseaux agents, courtiers, plateformes)',
+        label: 'Définition vision digitale',
+        description: 'Stratégies optimisation processus • Arbitrage priorités multi-équipes',
+      },
+      {
+        label: 'Allocation ressources',
+        description: 'Engagement parties prenantes • Encadrement hiérarchique',
+      },
+      {
+        label: 'Cadre de gouvernance produit',
+        description: 'Conduite changement organisationnel',
       },
     ],
   },
   {
-    title: 'Projet personnel',
+    title: 'Excellence opérationnelle et impact',
     items: [
       {
-        label: 'Plateforme IA gestion patrimoniale',
-        description: 'Node.js • Claude Code • BMAD',
+        label: 'Optimisation processus et automatisation',
+        description: 'Amélioration CSAT/NPS • Scaling multi-pays',
+      },
+      {
+        label: 'Architecture modulaire',
+        description: 'Intégration partenaires',
+      },
+    ],
+  },
+  {
+    title: 'Expertise secteur et réglementaire',
+    items: [
+      {
+        label: 'Services financiers, Assurance, Banque, Santé',
+        description: 'RGPD, ACPR, CNIL, AMF, gestion risques et conformité',
+      },
+      {
+        label: 'Systèmes legacy complexes',
+        description: 'Modernisation entreprise',
+      },
+    ],
+  },
+  {
+    title: 'Outils et méthodologies',
+    items: [
+      {
+        label: 'Frameworks',
+        description: 'SAFe • Scrum • OKRs • Méthodologies agile',
+      },
+      {
+        label: 'Outils',
+        description: 'Jira • Notion • Figma • Trello • PowerBI • Amplitude',
+      },
+      {
+        label: 'Culture data',
+        description: 'Définition métriques • Pilotage par la donnée',
       },
     ],
   },

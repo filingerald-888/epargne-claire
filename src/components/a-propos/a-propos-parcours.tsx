@@ -15,6 +15,7 @@ import {
   experiences,
   languages,
   skills,
+  topSkills,
 } from '@/lib/a-propos-data'
 
 import { ProductSection } from '@/components/content/product-section'
@@ -127,6 +128,30 @@ export function AProposParcours() {
           <Briefcase className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Compétences
         </motion.h3>
+        {/* Top 3 compétences clés */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-6 rounded-xl border border-ep-primary/20 bg-ep-primary/5 p-5"
+        >
+          <p className="mb-3 text-sm font-bold text-ep-primary">
+            Top 3 compétences clés
+          </p>
+          <ul className="space-y-2">
+            {topSkills.map((skill) => (
+              <li
+                key={skill}
+                className="flex items-start gap-2 text-sm leading-relaxed text-ep-text-primary"
+              >
+                <span className="mt-1 size-1.5 shrink-0 rounded-full bg-ep-primary" aria-hidden />
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
         <motion.div
           variants={staggerContainerVariants}
           initial="hidden"
