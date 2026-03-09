@@ -18,7 +18,7 @@ export function AProposPositionnement() {
 
   return (
     <section className="py-16 md:py-24">
-      <StrongPhrase title="Ce que je suis — et ce que je ne suis pas" />
+      <StrongPhrase title="Ce que je suis et ce que je ne suis pas" />
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Ce que je suis */}

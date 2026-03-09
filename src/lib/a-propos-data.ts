@@ -76,7 +76,7 @@ export const notItems = [
 export const amItems = [
   'Un épargnant comme vous',
   'Un traducteur du jargon financier',
-  "Un ami qui partage ce qu'il a compris",
+  "Une personne qui partage ce qu'elle a compris",
 ]
 
 export const experiences: ExperienceEntry[] = [
