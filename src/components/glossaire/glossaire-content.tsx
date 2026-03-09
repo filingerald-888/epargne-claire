@@ -122,7 +122,7 @@ function TermCard({ entry }: { entry: TermEntry }) {
     <div
       id={slug}
       className={cn(
-        'scroll-mt-28',
+        'scroll-mt-36',
         'rounded-xl border border-ep-separator bg-white p-5',
         'shadow-[0_2px_8px_rgb(0,0,0,0.06)] transition-shadow duration-300',
         'hover:shadow-[0_4px_16px_rgb(0,0,0,0.08)]'
