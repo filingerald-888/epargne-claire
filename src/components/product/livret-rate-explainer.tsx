@@ -43,7 +43,6 @@ interface RateDataPoint {
 }
 
 const rateHistory: RateDataPoint[] = [
-  { year: '2020', rate: 0.5 },
   { year: '2021', rate: 0.5 },
   { year: '2022', rate: 1.0 },
   { year: '2023', rate: 3.0 },
