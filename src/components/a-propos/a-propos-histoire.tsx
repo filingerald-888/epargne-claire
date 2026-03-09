@@ -25,7 +25,7 @@ export function AProposHistoire() {
           variants={itemVariants}
           className="text-xl leading-relaxed text-ep-text-primary md:text-2xl"
         >
-          Je m&apos;appelle Gérald. J&apos;ai 43 ans.
+          Je m&apos;appelle Gérald.
         </motion.p>
         <motion.p
           variants={itemVariants}
