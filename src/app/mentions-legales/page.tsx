@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { MentionsLegalesHero } from '@/components/mentions-legales/mentions-legales-hero'
+
 export const metadata: Metadata = {
   title: 'Mentions légales — EpargneClaire',
   description:
@@ -10,9 +12,9 @@ const sections = [
   {
     title: 'Éditeur du site',
     content: [
-      'Le site epargne-claire.fr est édité par Gérald, personne physique agissant à titre personnel.',
+      'Le site epargne-claire.fr est édité par Gérald Filin, personne physique agissant à titre personnel.',
       'Email : filingerald@gmail.com',
-      'Directeur de la publication : Gérald.',
+      'Directeur de la publication : Gérald Filin.',
     ],
   },
   {
@@ -63,35 +65,31 @@ const sections = [
 
 export default function MentionsLegalesPage() {
   return (
-    <div className="py-16 md:py-24">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="text-3xl font-bold tracking-tight text-ep-text-primary md:text-4xl">
-          Mentions légales
-        </h1>
-        <p className="mt-4 text-sm text-ep-text-muted">
-          Dernière mise à jour : 4 mars 2026
-        </p>
-
-        <div className="mt-12 space-y-10">
-          {sections.map((section) => (
-            <section key={section.title}>
-              <h2 className="text-lg font-semibold text-ep-text-primary">
-                {section.title}
-              </h2>
-              <div className="mt-3 space-y-3">
-                {section.content.map((paragraph, i) => (
-                  <p
-                    key={i}
-                    className="text-sm leading-relaxed text-ep-text-muted"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
+    <article>
+      <MentionsLegalesHero />
+      <div className="py-16 md:py-24">
+        <div className="mx-auto max-w-3xl">
+          <div className="space-y-10">
+            {sections.map((section) => (
+              <section key={section.title}>
+                <h2 className="text-lg font-semibold text-ep-text-primary">
+                  {section.title}
+                </h2>
+                <div className="mt-3 space-y-3">
+                  {section.content.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-sm leading-relaxed text-ep-text-muted"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
