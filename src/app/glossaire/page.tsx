@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { GlossaireAlphabetNav } from '@/components/glossaire/glossaire-alphabet-nav'
 import { GlossaireClosing } from '@/components/glossaire/glossaire-closing'
 import { GlossaireContent } from '@/components/glossaire/glossaire-content'
+import { GlossaireHashScroll } from '@/components/glossaire/glossaire-hash-scroll'
 import { GlossaireHero } from '@/components/glossaire/glossaire-hero'
 import { getGlossaireData } from '@/lib/glossaire'
 import type { GlossaireTerm } from '@/types/glossaire'
@@ -34,6 +35,7 @@ export default function GlossairePage() {
 
   return (
     <>
+      <GlossaireHashScroll />
       <GlossaireHero termCount={entries.length} />
       <div id="contenu" className="scroll-mt-24" />
       <GlossaireAlphabetNav letters={letters} />
