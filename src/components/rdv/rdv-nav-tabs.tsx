@@ -3,6 +3,7 @@
 import { AlertTriangle, CheckCircle2, MessageCircleQuestion } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 
@@ -20,6 +21,8 @@ const tabs: Tab[] = [
 ]
 
 export function RdvNavTabs({ currentSlug }: { currentSlug: string }) {
+  const router = useRouter()
+
   return (
     <nav
       aria-label="Guides RDV"
@@ -28,11 +31,29 @@ export function RdvNavTabs({ currentSlug }: { currentSlug: string }) {
       {tabs.map((tab) => {
         const isActive = tab.slug === currentSlug
         const Icon = tab.icon
-        const href = isActive ? `/rdv/${tab.slug}` : `/rdv/${tab.slug}#contenu`
+
         return (
           <Link
             key={tab.slug}
-            href={href}
+            href={`/rdv/${tab.slug}`}
+            scroll={false}
+            onClick={
+              isActive
+                ? undefined
+                : (e) => {
+                    e.preventDefault()
+                    router.push(`/rdv/${tab.slug}`)
+                    const poll = () => {
+                      const el = document.getElementById('contenu')
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' })
+                      } else {
+                        requestAnimationFrame(poll)
+                      }
+                    }
+                    requestAnimationFrame(poll)
+                  }
+            }
             className={cn(
               'flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200',
               isActive
