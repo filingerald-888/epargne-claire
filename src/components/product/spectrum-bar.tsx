@@ -22,7 +22,7 @@ export function SpectrumBar({ leftLabel, rightLabel, markers, caption }: Spectru
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-100px' }}
-      className="mx-auto mb-12 max-w-xl"
+      className="mx-auto mt-10 mb-12 max-w-xl"
     >
       {/* Visual illustration */}
       <div className="mb-8 flex items-end justify-center gap-6 sm:gap-8" aria-hidden>
