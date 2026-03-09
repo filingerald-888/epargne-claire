@@ -7,7 +7,6 @@ import { useEffect, useRef } from 'react'
 
 import type { RdvFrontmatter } from '@/types/rdv'
 
-import { DisclaimerBanner } from '@/components/content/disclaimer-banner'
 import { RdvNavTabs } from '@/components/rdv/rdv-nav-tabs'
 import { useHeroVisibility } from '@/lib/hero-context'
 
@@ -103,22 +102,12 @@ export function RdvHero({ frontmatter, currentSlug }: RdvHeroProps) {
           <RdvNavTabs currentSlug={currentSlug} />
         </motion.div>
 
-        {/* Disclaimer */}
-        <motion.div
-          className="mt-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: dur, delay: 0.5 }}
-        >
-          <DisclaimerBanner variant="rdv" />
-        </motion.div>
-
         {/* Scroll cue */}
         <motion.div
           className="mt-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: dur, delay: 0.7 }}
+          transition={{ duration: dur, delay: 0.5 }}
         >
           <motion.div
             animate={prefersReduced ? undefined : { y: [0, 8, 0] }}
@@ -127,6 +116,16 @@ export function RdvHero({ frontmatter, currentSlug }: RdvHeroProps) {
             <ChevronDown className="mx-auto size-8 text-white/40" />
           </motion.div>
         </motion.div>
+
+        {/* Disclaimer */}
+        <motion.p
+          className="mt-4 text-center text-[11px] text-white/40"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: dur, delay: 0.7 }}
+        >
+          Ces éléments sont fournis à titre informatif pour vous aider à préparer un échange avec un professionnel habilité.
+        </motion.p>
       </div>
     </div>
   )
