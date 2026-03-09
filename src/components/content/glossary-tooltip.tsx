@@ -29,32 +29,45 @@ export function GlossaryTooltip({ term, children, className }: GlossaryTooltipPr
 
   const { key, term: termData } = result
   const slug = getTermSlug(key)
+  const glossaireHref = `/glossaire#${slug}`
+
+  const sharedClassName = cn(
+    'underline decoration-dotted decoration-ep-primary/50 underline-offset-2 inline-flex items-center',
+    className
+  )
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <span
-          tabIndex={0}
-          className={cn(
-            'underline decoration-dotted decoration-ep-primary/50 underline-offset-2 cursor-help inline-flex items-center',
-            className
-          )}
-        >
-          {children ?? term}
-        </span>
-      </TooltipTrigger>
-      <TooltipContent
-        sideOffset={4}
-        className="bg-white text-ep-text-primary border border-ep-separator rounded-lg shadow-md p-3 max-w-xs [&>svg]:fill-white [&>svg]:bg-transparent"
+    <>
+      {/* Desktop: tooltip on hover */}
+      <span className="hidden md:inline">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <span tabIndex={0} className={cn(sharedClassName, 'cursor-help')}>
+              {children ?? term}
+            </span>
+          </TooltipTrigger>
+          <TooltipContent
+            sideOffset={4}
+            className="bg-white text-ep-text-primary border border-ep-separator rounded-lg shadow-md p-3 max-w-xs [&>svg]:fill-white [&>svg]:bg-transparent"
+          >
+            <p className="text-sm leading-relaxed">{termData.definition}</p>
+            <Link
+              href={glossaireHref}
+              className="mt-2 inline-block text-sm font-medium text-ep-primary hover:text-ep-primary-hover"
+            >
+              Voir dans le glossaire →
+            </Link>
+          </TooltipContent>
+        </Tooltip>
+      </span>
+
+      {/* Mobile: direct link to glossary */}
+      <Link
+        href={glossaireHref}
+        className={cn(sharedClassName, 'md:hidden text-ep-primary')}
       >
-        <p className="text-sm leading-relaxed">{termData.definition}</p>
-        <Link
-          href={`/glossaire#${slug}`}
-          className="mt-2 inline-block text-sm font-medium text-ep-primary hover:text-ep-primary-hover"
-        >
-          Voir dans le glossaire →
-        </Link>
-      </TooltipContent>
-    </Tooltip>
+        {children ?? term}
+      </Link>
+    </>
   )
 }

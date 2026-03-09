@@ -11,6 +11,7 @@ import {
 } from '@/lib/motion'
 import { cn } from '@/lib/utils'
 import type { GlossaireTerm } from '@/types/glossaire'
+import { getTermSlug } from '@/lib/glossaire'
 
 interface TermEntry {
   name: string
@@ -64,15 +65,64 @@ const examples: Record<string, string> = {
     'Exemple : sur 1 000 € de plus-values PEA après 5 ans, vous payez 186 € de prélèvements sociaux (18,6 %).',
   'Frais internes':
     'Exemple : un fonds actif prélève 2 % par an de frais internes. Sur 10 000 €, c\'est 200 € prélevés chaque année.',
+  'Liquidité':
+    'Exemple : vous avez besoin de 3 000 € en urgence. Sur un Livret A, c\'est instantané. Sur une SCPI, il faut compter plusieurs semaines à plusieurs mois pour revendre vos parts.',
+  'Rachat':
+    'Exemple : vous retirez 5 000 € de votre assurance-vie qui vaut 20 000 € (dont 4 000 € de gains). Le rachat porte sur 1 000 € de gains et 4 000 € de capital. Seuls les 1 000 € de gains sont imposables.',
+  'Clause bénéficiaire':
+    'Exemple : vous désignez « mon conjoint, à défaut mes enfants par parts égales ». Au décès, chacun bénéficie de l\'abattement de 152 500 €.',
+  'Effet cliquet':
+    'Exemple : votre fonds euros gagne 2,5 % en 2025. Ces intérêts sont définitivement acquis. Même si le rendement tombe à 1,5 % en 2026, vos gains 2025 restent intacts.',
+  'Dividende':
+    'Exemple : vous détenez 100 actions à 50 €. L\'entreprise verse 2 € de dividende par action : vous recevez 200 €.',
+  'Moins-value':
+    'Exemple : vous achetez une action à 100 € et la revendez 80 €. Votre moins-value de 20 € peut être déduite de vos plus-values de l\'année.',
+  'Gestion pilotée':
+    'Exemple : vous choisissez un profil « équilibré » sur votre PER. Le gérant place 50 % en fonds euros et 50 % en actions, puis sécurise progressivement à l\'approche de la retraite.',
+  'Déblocage anticipé':
+    'Exemple : vous achetez votre résidence principale et débloquez votre PER pour l\'apport. Le capital retiré est soumis à l\'impôt sur le revenu si les versements avaient été déduits.',
+  'Revenus fonciers':
+    'Exemple : vous détenez 20 000 € de parts SCPI à 5 % de rendement. Vous percevez 1 000 €/an de revenus fonciers, imposés à votre TMI + 17,2 % de PS.',
+  'Taux de distribution':
+    'Exemple : une SCPI verse 5 € de dividende par part. La part vaut 100 € au 1er janvier. Le taux de distribution est de 5 %.',
+  'Frais d\'entrée':
+    'Exemple : vous versez 10 000 € sur une assurance-vie avec 2 % de frais d\'entrée. Seuls 9 800 € sont effectivement investis.',
+  'Délai de jouissance':
+    'Exemple : vous achetez des parts de SCPI en janvier. Avec un délai de jouissance de 4 mois, vos premiers revenus arrivent en mai.',
+  'Micro-foncier':
+    'Exemple : vous percevez 8 000 € de revenus SCPI. En micro-foncier, l\'abattement de 30 % ramène la base imposable à 5 600 €.',
+  'Régime réel':
+    'Exemple : vous percevez 10 000 € de loyers et avez 7 000 € de charges déductibles (intérêts + travaux). Vous n\'êtes imposé que sur 3 000 €.',
+  'Volatilité':
+    'Exemple : un fonds actions peut varier de +20 % à -15 % en un an. Un fonds euros varie de +1,5 % à +3 %. Le premier est plus volatil.',
+  'AMF':
+    'Exemple : avant d\'investir sur une plateforme en ligne, vérifiez qu\'elle n\'apparaît pas sur la liste noire de l\'AMF (amf-france.org).',
+  'Loi PACTE':
+    'Exemple : grâce à la loi PACTE, vous pouvez transférer votre ancien PERP vers un nouveau PER et choisir une sortie en capital plutôt qu\'en rente.',
+  'Allocation d\'actifs':
+    'Exemple : à 30 ans avec un horizon retraite, une allocation 70 % actions / 30 % obligations est cohérente. À 60 ans, on inverse progressivement.',
+  'Exonération':
+    'Exemple : les intérêts du Livret A sont totalement exonérés. Vous gagnez 150 € ? Vous recevez 150 €, sans aucun prélèvement.',
+  'Droits de succession':
+    'Exemple : un parent transmet 200 000 € à son enfant. Après l\'abattement de 100 000 €, seuls 100 000 € sont taxés (de 5 % à 20 % selon les tranches).',
+  'Commission':
+    'Exemple : votre conseiller touche 1 % de commission sur le contrat qu\'il vous propose. Sur 30 000 €, c\'est 300 € pour lui — sans que cela vous soit toujours signalé.',
+  'Plafond':
+    'Exemple : votre Livret A est au plafond (22 950 €). Vous ne pouvez plus y verser d\'argent, mais les intérêts continuent de s\'accumuler au-delà.',
+  'ORIAS':
+    'Exemple : votre conseiller vous dit être « courtier en assurances ». En 30 secondes sur orias.fr, vous pouvez vérifier s\'il est bien immatriculé.',
 }
 
 function TermCard({ entry }: { entry: TermEntry }) {
   const [isOpen, setIsOpen] = useState(false)
   const example = examples[entry.name]
+  const slug = getTermSlug(entry.name)
 
   return (
     <div
+      id={slug}
       className={cn(
+        'scroll-mt-28',
         'rounded-xl border border-ep-separator bg-white p-5',
         'shadow-[0_2px_8px_rgb(0,0,0,0.06)] transition-shadow duration-300',
         'hover:shadow-[0_4px_16px_rgb(0,0,0,0.08)]'

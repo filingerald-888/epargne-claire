@@ -110,5 +110,119 @@
     "definition": "Performance d'un placement avant déduction de tous les frais et de la fiscalité.",
     "definitionComplete": "Le rendement brut est le taux de rentabilité d'un investissement avant que n'en soient déduits les frais de gestion du contrat, les frais internes des fonds, et l'impôt. Par exemple, si un fonds affiche un rendement brut de 5 % et que les frais totaux s'élèvent à 2 %, le rendement net de frais est de 3 %. C'est le chiffre le plus souvent mis en avant dans la communication commerciale.",
     "aliases": ["performance brute", "rendement avant frais"]
+  },
+  "Liquidité": {
+    "definition": "Capacité à récupérer rapidement son argent, sans perte significative de valeur ni délai excessif.",
+    "definitionComplete": "La liquidité mesure la facilité avec laquelle un placement peut être converti en argent disponible. Le Livret A offre une liquidité immédiate (retrait en quelques clics). L'assurance-vie est liquide sous quelques jours. Le PEA est liquide mais un retrait avant 5 ans entraîne sa clôture. Les SCPI ont une faible liquidité (délai de revente de parts pouvant atteindre plusieurs mois). Le PER est illiquide (bloqué jusqu'à la retraite sauf exceptions). Plus un placement est liquide, plus il est facile de récupérer son argent en cas de besoin.",
+    "aliases": ["disponibilité"]
+  },
+  "Rachat": {
+    "definition": "Retrait partiel ou total de l'argent placé sur un contrat d'assurance-vie ou un PER.",
+    "definitionComplete": "Le rachat est le terme technique utilisé pour désigner un retrait sur un contrat d'assurance-vie. Un rachat partiel permet de retirer une partie de l'épargne en conservant le contrat ouvert. Un rachat total met fin au contrat. Seule la part de gains incluse dans le rachat est soumise à l'impôt (et non l'intégralité du montant retiré). Après 8 ans, un abattement fiscal s'applique sur les gains rachetés.",
+    "aliases": ["retrait", "rachat partiel", "rachat total"]
+  },
+  "Clause bénéficiaire": {
+    "definition": "Disposition du contrat d'assurance-vie désignant la ou les personnes qui recevront le capital en cas de décès du souscripteur.",
+    "definitionComplete": "La clause bénéficiaire est l'élément central de la dimension transmission de l'assurance-vie. Elle désigne qui recevra l'épargne au décès du souscripteur, en dehors de la succession classique. La rédaction est libre : on peut désigner son conjoint, ses enfants, un tiers, une association. Chaque bénéficiaire bénéficie d'un abattement de 152 500 € sur les sommes reçues (pour les primes versées avant 70 ans). Une clause mal rédigée peut entraîner des conflits ou une fiscalité défavorable.",
+    "aliases": ["bénéficiaire"]
+  },
+  "Effet cliquet": {
+    "definition": "Mécanisme qui garantit que les intérêts acquis sur un fonds euros sont définitivement acquis, même si les performances futures baissent.",
+    "definitionComplete": "L'effet cliquet est propre au fonds euros de l'assurance-vie. Chaque année, les intérêts générés sont ajoutés au capital de manière irréversible. Même si le rendement baisse les années suivantes, les gains passés ne peuvent pas être perdus. C'est ce qui distingue fondamentalement le fonds euros des unités de compte, où la valeur peut fluctuer à la hausse comme à la baisse.",
+    "aliases": ["cliquet"]
+  },
+  "Dividende": {
+    "definition": "Part des bénéfices d'une entreprise distribuée aux actionnaires, généralement une fois par an.",
+    "definitionComplete": "Le dividende est la rémunération versée par une entreprise à ses actionnaires, proportionnellement au nombre d'actions détenues. En France, les dividendes sont soumis au prélèvement forfaitaire unique (31,4 %) ou au barème de l'impôt sur le revenu sur option. Dans un PEA, les dividendes sont réinvestis sans imposition immédiate et exonérés d'impôt sur le revenu après 5 ans. Les SCPI versent aussi des « dividendes » (revenus fonciers) issus des loyers collectés.",
+    "aliases": ["dividendes"]
+  },
+  "Moins-value": {
+    "definition": "Perte subie lors de la vente d'un actif à un prix inférieur à son prix d'achat.",
+    "definitionComplete": "La moins-value est l'inverse de la plus-value : elle correspond à la perte réalisée quand un actif est vendu moins cher qu'il n'a été acheté. Les moins-values sur valeurs mobilières peuvent être imputées sur les plus-values de même nature réalisées la même année ou reportées sur les 10 années suivantes. En assurance-vie, si votre contrat est en moins-value au moment d'un rachat, aucun impôt n'est dû sur les gains (puisqu'il n'y en a pas).",
+    "aliases": ["moins value", "perte en capital"]
+  },
+  "Gestion pilotée": {
+    "definition": "Mode de gestion où un professionnel se charge de répartir et d'ajuster votre épargne entre différents supports selon votre profil de risque.",
+    "definitionComplete": "La gestion pilotée (ou gestion sous mandat) délègue les décisions d'investissement à un gérant professionnel. Vous définissez votre profil (prudent, équilibré, dynamique) et le gérant répartit votre épargne entre fonds euros et unités de compte, puis ajuste l'allocation au fil du temps. C'est l'option privilégiée pour ceux qui ne souhaitent pas gérer eux-mêmes leurs placements. En PER, la gestion pilotée est même le mode par défaut (gestion à horizon : plus l'échéance retraite approche, plus l'allocation devient prudente).",
+    "aliases": ["gestion sous mandat", "gestion déléguée", "mandat de gestion"]
+  },
+  "Déblocage anticipé": {
+    "definition": "Possibilité de retirer l'épargne d'un PER avant la retraite dans des cas exceptionnels prévus par la loi.",
+    "definitionComplete": "Le PER est en principe bloqué jusqu'à la retraite, mais la loi prévoit des cas de déblocage anticipé : achat de la résidence principale (le cas le plus courant), décès du conjoint, invalidité du titulaire ou de son conjoint, surendettement, expiration des droits au chômage, cessation d'activité non salariée suite à liquidation judiciaire. Le déblocage pour achat de résidence principale est soumis à l'impôt sur le revenu (si les versements ont été déduits), les autres cas bénéficient d'une exonération d'impôt.",
+    "aliases": ["sortie anticipée", "retrait anticipé"]
+  },
+  "Revenus fonciers": {
+    "definition": "Revenus issus de la location de biens immobiliers, imposés au barème de l'impôt sur le revenu.",
+    "definitionComplete": "Les revenus fonciers sont les loyers perçus par un propriétaire bailleur ou un détenteur de parts de SCPI. Ils sont imposés au barème progressif de l'impôt sur le revenu, auquel s'ajoutent les prélèvements sociaux de 17,2 % (inchangés en 2026). Deux régimes existent : le micro-foncier (abattement forfaitaire de 30 % si les revenus bruts sont inférieurs à 15 000 €/an) et le régime réel (déduction des charges réelles : travaux, intérêts d'emprunt, etc.).",
+    "aliases": ["loyers", "revenus locatifs"]
+  },
+  "Taux de distribution": {
+    "definition": "Indicateur de rendement des SCPI, exprimant le rapport entre les dividendes versés et le prix de la part.",
+    "definitionComplete": "Le taux de distribution (TD) est le ratio entre le dividende brut annuel versé par une SCPI et le prix de sa part au 1er janvier de l'année. Il remplace l'ancien « TDVM » depuis 2022. En 2025, le taux de distribution moyen des SCPI était de 4,91 %. Ce taux ne reflète pas la performance globale du placement, car il ne tient pas compte de l'évolution du prix de la part (qui peut baisser). Il faut aussi regarder la performance globale annuelle (PGA) et le TRI sur longue période.",
+    "aliases": ["TD", "rendement SCPI"]
+  },
+  "Frais d'entrée": {
+    "definition": "Commission prélevée lors de chaque versement sur un contrat d'assurance-vie, un fonds ou des parts de SCPI.",
+    "definitionComplete": "Les frais d'entrée (ou frais sur versement) sont un pourcentage prélevé sur chaque somme investie, avant qu'elle ne commence à travailler. En assurance-vie bancaire, ils peuvent atteindre 3 % (sur 10 000 € versés, seuls 9 700 € sont réellement investis). La plupart des contrats en ligne ne facturent aucun frais d'entrée. En SCPI, les frais de souscription (8 à 12 %) sont intégrés dans le prix de la part et ne sont « payés » qu'à la revente.",
+    "aliases": ["frais sur versement", "frais de souscription"]
+  },
+  "Délai de jouissance": {
+    "definition": "Période d'attente après l'achat de parts de SCPI pendant laquelle l'investisseur ne perçoit pas encore de revenus.",
+    "definitionComplete": "Le délai de jouissance est le temps qui s'écoule entre l'achat de parts de SCPI et le premier versement de dividendes. Il varie généralement de 3 à 6 mois selon les SCPI. Ce délai permet à la société de gestion d'investir les fonds collectés avant de commencer à distribuer des revenus. C'est un paramètre à prendre en compte dans le calcul de la rentabilité réelle la première année.",
+    "aliases": ["jouissance"]
+  },
+  "Micro-foncier": {
+    "definition": "Régime fiscal simplifié pour les revenus fonciers inférieurs à 15 000 €/an, avec un abattement forfaitaire de 30 %.",
+    "definitionComplete": "Le micro-foncier est un régime d'imposition simplifié applicable aux propriétaires bailleurs (y compris les détenteurs de parts de SCPI) dont les revenus fonciers bruts ne dépassent pas 15 000 € par an. Un abattement forfaitaire de 30 % est appliqué automatiquement, le solde étant imposé au barème de l'impôt sur le revenu. Si vos charges réelles dépassent 30 % de vos revenus, le régime réel peut être plus avantageux.",
+    "aliases": ["régime micro-foncier"]
+  },
+  "Régime réel": {
+    "definition": "Régime fiscal permettant de déduire les charges réelles (travaux, intérêts d'emprunt) des revenus fonciers.",
+    "definitionComplete": "Le régime réel d'imposition permet aux propriétaires bailleurs de déduire de leurs revenus fonciers l'ensemble des charges réellement supportées : intérêts d'emprunt, travaux d'entretien et de réparation, charges de copropriété, taxe foncière, frais de gestion. Si les charges dépassent les revenus, le déficit foncier est imputable sur le revenu global (dans la limite de 10 700 €/an). Ce régime est souvent plus avantageux que le micro-foncier pour les investisseurs ayant financé à crédit.",
+    "aliases": ["régime réel d'imposition"]
+  },
+  "Volatilité": {
+    "definition": "Mesure de l'amplitude des variations de prix d'un actif financier sur une période donnée.",
+    "definitionComplete": "La volatilité quantifie le risque d'un placement en mesurant l'écart entre ses hausses et ses baisses. Un placement très volatil (comme les actions) peut gagner ou perdre 20 % en un an. Un placement peu volatil (comme le fonds euros) varie très peu. Sur le long terme, la volatilité tend à se lisser : c'est pourquoi un horizon de placement long permet d'accepter plus de volatilité en échange d'un rendement potentiellement plus élevé.",
+    "aliases": ["risque de marché"]
+  },
+  "AMF": {
+    "definition": "Autorité des Marchés Financiers : organisme public chargé de réguler et surveiller les marchés financiers en France.",
+    "definitionComplete": "L'AMF est le gendarme de la bourse en France. Elle protège l'épargne investie dans les instruments financiers, veille à l'information des investisseurs et au bon fonctionnement des marchés. Avant de souscrire un produit financier, vérifier que le prestataire est bien enregistré auprès de l'AMF est un réflexe essentiel. L'AMF tient une liste noire des sites et acteurs frauduleux consultable sur son site.",
+    "aliases": ["Autorité des Marchés Financiers"]
+  },
+  "Loi PACTE": {
+    "definition": "Loi de 2019 qui a créé le PER et modernisé l'épargne retraite en France.",
+    "definitionComplete": "La loi PACTE (Plan d'Action pour la Croissance et la Transformation des Entreprises), promulguée en mai 2019, a profondément réformé l'épargne retraite en créant le Plan d'Épargne Retraite (PER), qui remplace les anciens PERP, Madelin et contrats Article 83. Elle a aussi facilité la portabilité de l'épargne retraite et harmonisé les règles de fonctionnement. Le PER offre plus de souplesse, notamment la possibilité de sortie en capital (et non uniquement en rente).",
+    "aliases": ["PACTE"]
+  },
+  "Allocation d'actifs": {
+    "definition": "Répartition de votre épargne entre différentes classes d'actifs (actions, obligations, immobilier, liquidités) selon vos objectifs et votre profil de risque.",
+    "definitionComplete": "L'allocation d'actifs est la décision la plus importante en matière d'investissement. Elle consiste à répartir son épargne entre différentes classes d'actifs pour optimiser le couple rendement/risque. Un profil prudent privilégiera les fonds euros et obligations (80/20). Un profil dynamique acceptera une part importante en actions (60/40 voire 80/20 en faveur des actions). L'allocation doit être ajustée en fonction de l'horizon de placement : plus on s'approche de l'échéance, plus on sécurise.",
+    "aliases": ["allocation", "répartition d'actifs"]
+  },
+  "Exonération": {
+    "definition": "Dispense totale ou partielle d'impôt sur certains revenus ou gains, accordée par la loi sous conditions.",
+    "definitionComplete": "L'exonération fiscale signifie qu'un revenu ou un gain n'est pas soumis à l'impôt. Le Livret A bénéficie d'une exonération totale (ni impôt ni prélèvements sociaux). Le PEA offre une exonération d'impôt sur le revenu après 5 ans (mais les prélèvements sociaux restent dus). L'assurance-vie bénéficie d'un abattement (exonération partielle) après 8 ans. À ne pas confondre avec la déduction fiscale (qui réduit la base imposable) ou le crédit d'impôt (qui réduit l'impôt dû).",
+    "aliases": ["exonéré", "exonération fiscale"]
+  },
+  "Droits de succession": {
+    "definition": "Impôt prélevé par l'État sur la part du patrimoine transmise aux héritiers lors d'un décès.",
+    "definitionComplete": "Les droits de succession sont calculés sur la part nette reçue par chaque héritier, après application d'abattements (100 000 € par parent et par enfant). Le taux varie de 5 % à 45 % selon le montant et le lien de parenté. L'assurance-vie bénéficie d'un régime dérogatoire : 152 500 € par bénéficiaire sont exonérés pour les primes versées avant 70 ans. C'est ce qui fait de l'assurance-vie un outil privilégié de transmission de patrimoine.",
+    "aliases": ["succession", "héritage"]
+  },
+  "Commission": {
+    "definition": "Rémunération versée à un intermédiaire financier (conseiller, banque, courtier) pour la vente ou la gestion d'un produit d'épargne.",
+    "definitionComplete": "Les commissions rémunèrent les intermédiaires qui distribuent les produits financiers. Elles peuvent prendre la forme de frais d'entrée, de rétrocessions sur les frais de gestion, ou de commissions de surperformance. Depuis la directive MiFID II, les conseillers doivent informer leurs clients des commissions qu'ils perçoivent. Demander « touchez-vous une commission sur ce produit ? » est un réflexe essentiel lors d'un rendez-vous avec un conseiller.",
+    "aliases": ["commissions"]
+  },
+  "Plafond": {
+    "definition": "Montant maximum de versement autorisé sur certains produits d'épargne réglementés.",
+    "definitionComplete": "Le plafond est le montant maximum que vous pouvez déposer sur un produit d'épargne. Livret A : 22 950 €. LDDS : 12 000 €. PEA : 150 000 € de versements. Les intérêts ou gains générés au-delà du plafond restent acquis et continuent de produire des intérêts. Certains produits n'ont pas de plafond de versement (assurance-vie, PER), mais peuvent avoir des plafonds de déduction fiscale."
+  },
+  "ORIAS": {
+    "definition": "Registre unique des intermédiaires en assurance, banque et finance, permettant de vérifier qu'un conseiller est bien habilité.",
+    "definitionComplete": "L'ORIAS (Organisme pour le Registre unique des Intermédiaires en Assurance, banque et finance) est le registre officiel où doivent s'inscrire tous les intermédiaires financiers exerçant en France. Avant un rendez-vous avec un conseiller, vous pouvez vérifier son inscription sur orias.fr. Un conseiller non inscrit n'est pas autorisé à exercer. C'est un réflexe simple et rapide pour s'assurer du sérieux de son interlocuteur.",
+    "aliases": ["registre ORIAS"]
   }
 }
