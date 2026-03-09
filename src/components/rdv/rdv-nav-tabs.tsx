@@ -43,15 +43,11 @@ export function RdvNavTabs({ currentSlug }: { currentSlug: string }) {
                 : (e) => {
                     e.preventDefault()
                     router.push(`/rdv/${tab.slug}`)
-                    const poll = () => {
+                    // Wait for Next.js to finish rendering the new page
+                    setTimeout(() => {
                       const el = document.getElementById('contenu')
-                      if (el) {
-                        el.scrollIntoView({ behavior: 'smooth' })
-                      } else {
-                        requestAnimationFrame(poll)
-                      }
-                    }
-                    requestAnimationFrame(poll)
+                      if (el) el.scrollIntoView({ behavior: 'smooth' })
+                    }, 300)
                   }
             }
             className={cn(
