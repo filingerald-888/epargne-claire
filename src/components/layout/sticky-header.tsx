@@ -22,7 +22,7 @@ const navLinks = [
   { label: 'Produits', href: '/produits', activePrefix: '/produits' },
   { label: 'Comparer', href: '/comparer', activePrefix: '/comparer' },
   { label: 'Simulation', href: '#simulation', activePrefix: '#simulation' },
-  { label: 'Préparer un rendez-vous', href: '/rdv/questions-a-poser', activePrefix: '/rdv' },
+  { label: 'Préparer rendez-vous', href: '/rdv/questions-a-poser', activePrefix: '/rdv' },
   { label: 'À propos', href: '/a-propos', activePrefix: '/a-propos' },
 ]
 
