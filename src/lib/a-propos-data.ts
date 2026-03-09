@@ -10,15 +10,9 @@ export interface ExperienceEntry {
   company: string
 }
 
-export interface SkillItem {
-  label: string
-  description: string
-}
-
 export interface SkillCategory {
   title: string
-  items: SkillItem[]
-  tools?: string
+  content: string
 }
 
 export const topSkills: string[] = [
@@ -111,80 +105,23 @@ export const experiences: ExperienceEntry[] = [
 export const skills: SkillCategory[] = [
   {
     title: 'Transformation digitale et programme delivery',
-    items: [
-      {
-        label: 'Pilotage programmes transformation',
-        description: 'Digitalisation omnicanale • SAFe/Scrum • Coordination multi-entités et géographies',
-      },
-      {
-        label: 'Gestion délais/budgets',
-        description: 'Reporting exécutif • Suivi KPIs business et opérationnels',
-      },
-      {
-        label: 'Gestion risques et conformité',
-        description: 'Leadership équipes transverses',
-      },
-    ],
+    content: 'Pilotage programmes transformation, digitalisation omnicanale • SAFe/Scrum • Coordination multi-entités et géographies • Gestion délais/budgets • Reporting exécutif • Suivi KPIs business et opérationnels • Gestion risques et conformité • Leadership équipes transverses',
   },
   {
     title: 'Leadership exécutif et gouvernance',
-    items: [
-      {
-        label: 'Définition vision digitale',
-        description: 'Stratégies optimisation processus • Arbitrage priorités multi-équipes',
-      },
-      {
-        label: 'Allocation ressources',
-        description: 'Engagement parties prenantes • Encadrement hiérarchique',
-      },
-      {
-        label: 'Cadre de gouvernance produit',
-        description: 'Conduite changement organisationnel',
-      },
-    ],
+    content: 'Définition vision digitale et stratégies optimisation processus • Arbitrage priorités multi-équipes • Allocation ressources • Engagement parties prenantes • Encadrement hiérarchique • Cadre de gouvernance produit • Conduite changement organisationnel',
   },
   {
     title: 'Excellence opérationnelle et impact',
-    items: [
-      {
-        label: 'Optimisation processus et automatisation',
-        description: 'Amélioration CSAT/NPS • Scaling multi-pays',
-      },
-      {
-        label: 'Architecture modulaire',
-        description: 'Intégration partenaires',
-      },
-    ],
+    content: 'Optimisation processus et automatisation • Amélioration CSAT/NPS • Scaling multi-pays • Architecture modulaire • Intégration partenaires',
   },
   {
     title: 'Expertise secteur et réglementaire',
-    items: [
-      {
-        label: 'Services financiers, Assurance, Banque, Santé',
-        description: 'RGPD, ACPR, CNIL, AMF, gestion risques et conformité',
-      },
-      {
-        label: 'Systèmes legacy complexes',
-        description: 'Modernisation entreprise',
-      },
-    ],
+    content: 'Services financiers, Assurance, Banque, Santé • RGPD, ACPR, CNIL, AMF, gestion risques et conformité • Systèmes legacy complexes / modernisation entreprise',
   },
   {
     title: 'Outils et méthodologies',
-    items: [
-      {
-        label: 'Frameworks',
-        description: 'SAFe • Scrum • OKRs • Méthodologies agile',
-      },
-      {
-        label: 'Outils',
-        description: 'Jira • Notion • Figma • Trello • PowerBI • Amplitude',
-      },
-      {
-        label: 'Culture data',
-        description: 'Définition métriques • Pilotage par la donnée',
-      },
-    ],
+    content: 'SAFe, Scrum, Jira, Notion, Figma, Trello, PowerBI • OKRs • Définition métriques • Méthodologies agile (SAFe, Scrum) • Amplitude • Pilotage par la donnée',
   },
 ]
 

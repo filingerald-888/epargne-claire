@@ -168,24 +168,9 @@ export function AProposParcours() {
               <p className="text-sm font-bold text-ep-text-primary">
                 {cat.title}
               </p>
-              <ul className="mt-2 space-y-2">
-                {cat.items.map((item) => (
-                  <li
-                    key={item.label}
-                    className="text-sm leading-relaxed text-ep-text-muted"
-                  >
-                    <strong className="text-ep-text-primary">{item.label}</strong>
-                    <br />
-                    {item.description}
-                  </li>
-                ))}
-              </ul>
-              {cat.tools && (
-                <p className="mt-3 border-t border-ep-separator pt-3 text-xs text-ep-text-muted">
-                  <span className="font-semibold text-ep-text-primary">Outils :</span>{' '}
-                  {cat.tools}
-                </p>
-              )}
+              <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
+                {cat.content}
+              </p>
             </motion.div>
           ))}
         </motion.div>
