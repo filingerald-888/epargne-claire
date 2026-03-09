@@ -17,7 +17,7 @@ export function AProposHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: dur, delay: 0.1 }}
         >
-          Pourquoi EpargneClaire existe.
+          Pourquoi Epargne Claire existe ?
         </motion.h1>
 
         <motion.p
