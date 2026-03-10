@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 import { AppTooltipProvider } from "@/components/layout/tooltip-provider"
 import { HeroProvider } from "@/lib/hero-context"
 import { ScrollToTop } from "@/components/layout/scroll-to-top"
+import { Analytics } from "@vercel/analytics/next"
 import { JsonLd } from "@/components/seo/json-ld"
 
 const inter = Inter({
@@ -94,6 +95,7 @@ export default function RootLayout({
             <Footer />
           </HeroProvider>
         </AppTooltipProvider>
+        <Analytics />
       </body>
     </html>
   )
