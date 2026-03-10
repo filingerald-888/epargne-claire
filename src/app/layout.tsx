@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 import { AppTooltipProvider } from "@/components/layout/tooltip-provider"
 import { HeroProvider } from "@/lib/hero-context"
 import { ScrollToTop } from "@/components/layout/scroll-to-top"
+import { JsonLd } from "@/components/seo/json-ld"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +26,10 @@ const siteUrl = "https://www.epargne-claire.fr"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "EpargneClaire — Comprendre l'épargne, simplement",
+  title: {
+    default: "EpargneClaire — Comprendre l'épargne, simplement",
+    template: "%s",
+  },
   description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
   openGraph: {
     type: "website",
@@ -33,10 +37,39 @@ export const metadata: Metadata = {
     siteName: "EpargneClaire",
     title: "EpargneClaire — Comprendre l'épargne, simplement",
     description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "EpargneClaire — Comprendre l'épargne, simplement",
+      },
+    ],
   },
-  alternates: {
-    canonical: "/",
+  twitter: {
+    card: "summary_large_image",
+    title: "EpargneClaire — Comprendre l'épargne, simplement",
+    description: "Comprendre l'épargne et le patrimoine, simplement. Ressource éducative neutre sur les produits patrimoniaux français.",
+    images: ["/opengraph-image"],
   },
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "EpargneClaire",
+  url: siteUrl,
+  description: "Ressource éducative neutre sur les produits patrimoniaux français.",
+  inLanguage: "fr-FR",
+}
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "EpargneClaire",
+  url: siteUrl,
+  logo: `${siteUrl}/logo-bleu.svg`,
+  description: "Ressource éducative neutre et gratuite sur les produits patrimoniaux français.",
 }
 
 export default function RootLayout({
@@ -49,6 +82,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <JsonLd schema={[websiteSchema, organizationSchema]} />
         <AppTooltipProvider>
           <HeroProvider>
             <ScrollToTop />

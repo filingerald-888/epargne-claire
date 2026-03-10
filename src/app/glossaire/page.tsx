@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Glossaire financier — EpargneClaire',
   description:
     'Tous les termes financiers expliqués simplement : assurance-vie, PEA, PER, SCPI, PFU, fonds euros, unités de compte et bien plus.',
+  alternates: { canonical: '/glossaire' },
 }
 
 export default function GlossairePage() {

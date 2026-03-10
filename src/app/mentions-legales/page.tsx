@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Mentions légales — EpargneClaire',
   description:
     'Mentions légales du site EpargneClaire : éditeur, hébergeur, propriété intellectuelle et protection des données.',
+  alternates: { canonical: '/mentions-legales' },
 }
 
 const sections = [

@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 
 import { ProductHero } from '@/components/product/product-hero'
+import { JsonLd } from '@/components/seo/json-ld'
 import { getProduct, getAllProductSlugs, getPlaceholderTitle } from '@/lib/products'
+
+const siteUrl = 'https://www.epargne-claire.fr'
 
 export const dynamicParams = false
 
@@ -20,9 +23,23 @@ export async function generateMetadata({
     const title = getPlaceholderTitle(slug)
     return { title: `${title} — EpargneClaire` }
   }
+  const { seo } = product.frontmatter
   return {
-    title: product.frontmatter.seo.title,
-    description: product.frontmatter.seo.description,
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: `/produits/${slug}` },
+    openGraph: {
+      type: 'article',
+      title: seo.title,
+      description: seo.description,
+      locale: 'fr_FR',
+      siteName: 'EpargneClaire',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+    },
   }
 }
 
@@ -48,8 +65,34 @@ export default async function ProductPage({
 
   const { Content, frontmatter } = product
 
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Produits', item: `${siteUrl}/produits` },
+      { '@type': 'ListItem', position: 3, name: frontmatter.title, item: `${siteUrl}/produits/${slug}` },
+    ],
+  }
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: frontmatter.seo.title,
+    description: frontmatter.seo.description,
+    dateModified: frontmatter.lastUpdated,
+    url: `${siteUrl}/produits/${slug}`,
+    inLanguage: 'fr-FR',
+    publisher: {
+      '@type': 'Organization',
+      name: 'EpargneClaire',
+      url: siteUrl,
+    },
+  }
+
   return (
     <article>
+      <JsonLd schema={[breadcrumb, articleSchema]} />
       <ProductHero frontmatter={frontmatter} />
       <div className="h-6 md:h-10" aria-hidden="true" />
       <Content />

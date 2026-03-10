@@ -5,6 +5,8 @@ import { Compass, Home, BookOpen, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Page non trouvée — EpargneClaire',
+  description: 'La page que vous cherchez est introuvable. Retrouvez les fiches produits, le glossaire et les outils pédagogiques sur EpargneClaire.',
+  robots: { index: false, follow: true },
 }
 
 const suggestions = [

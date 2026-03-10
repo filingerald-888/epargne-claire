@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'À propos — EpargneClaire',
   description:
     "Découvrez pourquoi EpargneClaire existe : un projet personnel pour traduire le jargon financier en français courant. Gratuitement, sans promotion, sans affiliation.",
+  alternates: { canonical: '/a-propos' },
 }
 
 export default function AProposPage() {

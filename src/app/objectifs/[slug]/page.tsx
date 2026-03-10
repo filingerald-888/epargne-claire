@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 
+import { JsonLd } from '@/components/seo/json-ld'
 import { ProductSection } from '@/components/content/product-section'
 import { ObjectifChecklist } from '@/components/objectif/objectif-checklist'
 import { ObjectifClosing } from '@/components/objectif/objectif-closing'
@@ -526,7 +527,23 @@ export async function generateMetadata({
   const { slug } = await params
   const data = objectifData[slug]
   if (data) {
-    return { title: data.seo.title, description: data.seo.description }
+    return {
+      title: data.seo.title,
+      description: data.seo.description,
+      alternates: { canonical: `/objectifs/${slug}` },
+      openGraph: {
+        type: 'article',
+        title: data.seo.title,
+        description: data.seo.description,
+        locale: 'fr_FR',
+        siteName: 'EpargneClaire',
+      },
+      twitter: {
+        card: 'summary_large_image' as const,
+        title: data.seo.title,
+        description: data.seo.description,
+      },
+    }
   }
   const placeholder = placeholderObjectifs.find((o) => o.slug === slug)
   return { title: `${placeholder?.title ?? 'Objectif'} — EpargneClaire` }
@@ -545,9 +562,22 @@ export default async function ObjectivePage({
 
   /* ---------- Objectif avec contenu complet ---------- */
   const data = objectifData[slug]
+  const siteUrl = 'https://www.epargne-claire.fr'
+
   if (data) {
+    const breadcrumb = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Objectifs', item: `${siteUrl}/objectifs` },
+        { '@type': 'ListItem', position: 3, name: data.title, item: `${siteUrl}/objectifs/${slug}` },
+      ],
+    }
+
     return (
       <>
+        <JsonLd schema={breadcrumb} />
         {/* O0 — Hero */}
         <ObjectifHero
           emoji={data.emoji}

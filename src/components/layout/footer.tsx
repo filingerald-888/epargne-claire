@@ -5,9 +5,14 @@ interface FooterProps {
 }
 
 const footerLinks = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Produits', href: '/produits' },
+  { label: 'Comparer', href: '/comparer' },
+  { label: 'Simulateur fiscal', href: '/simulateur-fiscal' },
+  { label: 'Préparer rendez-vous', href: '/rdv/questions-a-poser' },
+  { label: 'Glossaire', href: '/glossaire' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Mentions légales', href: '/mentions-legales' },
-  { label: 'Glossaire', href: '/glossaire' },
 ]
 
 export function Footer({ className }: FooterProps) {
@@ -17,7 +22,9 @@ export function Footer({ className }: FooterProps) {
     >
       <div className="mx-auto max-w-[1200px] px-4 py-12">
         {/* Logo */}
-        <p className="text-lg font-bold">Épargne Claire</p>
+        <Link href="/" className="text-lg font-bold text-white hover:text-gray-300">
+          Épargne Claire
+        </Link>
 
         {/* Links */}
         <nav className="mt-6 flex flex-wrap gap-6" aria-label="Liens du pied de page">

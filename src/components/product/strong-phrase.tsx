@@ -38,7 +38,7 @@ export function StrongPhrase({ title, subtitle, gradient }: StrongPhraseProps) {
         className="mx-auto mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-ep-primary to-ep-secondary"
         aria-hidden
       />
-      <p
+      <h2
         className={cn(
           'text-2xl font-bold md:text-4xl',
           gradient
@@ -47,7 +47,7 @@ export function StrongPhrase({ title, subtitle, gradient }: StrongPhraseProps) {
         )}
       >
         {title}
-      </p>
+      </h2>
       {subtitle && (
         <p className="mt-4 text-lg text-ep-text-muted">{subtitle}</p>
       )}

@@ -188,9 +188,9 @@ export function GlossaireContent({ groups }: GlossaireContentProps) {
           viewport={{ once: true, margin: '-50px' }}
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-5xl font-bold text-ep-primary/15">
+            <h2 className="text-5xl font-bold text-ep-primary/15">
               {group.letter}
-            </span>
+            </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 
 import { RdvHero } from '@/components/rdv/rdv-hero'
+import { JsonLd } from '@/components/seo/json-ld'
 import { getRdv, getAllRdvSlugs } from '@/lib/rdv'
+
+const siteUrl = 'https://www.epargne-claire.fr'
 
 export const dynamicParams = false
 
@@ -17,9 +20,23 @@ export async function generateMetadata({
   const { slug } = await params
   const rdv = await getRdv(slug)
   if (!rdv) return { title: 'RDV Conseiller — EpargneClaire' }
+  const { seo } = rdv.frontmatter
   return {
-    title: rdv.frontmatter.seo.title,
-    description: rdv.frontmatter.seo.description,
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: `/rdv/${slug}` },
+    openGraph: {
+      type: 'article',
+      title: seo.title,
+      description: seo.description,
+      locale: 'fr_FR',
+      siteName: 'EpargneClaire',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+    },
   }
 }
 
@@ -46,8 +63,19 @@ export default async function RdvPage({
 
   const { Content, frontmatter } = rdv
 
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Préparer un rendez-vous', item: `${siteUrl}/rdv/questions-a-poser` },
+      { '@type': 'ListItem', position: 3, name: frontmatter.title, item: `${siteUrl}/rdv/${slug}` },
+    ],
+  }
+
   return (
     <article>
+      <JsonLd schema={breadcrumb} />
       <RdvHero frontmatter={frontmatter} currentSlug={slug} />
       <div id="contenu" className="scroll-mt-24" />
       <Content />
