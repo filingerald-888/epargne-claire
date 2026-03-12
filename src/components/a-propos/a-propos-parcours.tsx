@@ -168,9 +168,11 @@ export function AProposParcours() {
               <p className="text-sm font-bold text-ep-text-primary">
                 {cat.title}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
-                {cat.content}
-              </p>
+              {cat.content && (
+                <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
+                  {cat.content}
+                </p>
+              )}
             </motion.div>
           ))}
         </motion.div>

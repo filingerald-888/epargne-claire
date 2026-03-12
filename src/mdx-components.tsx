@@ -26,6 +26,8 @@ import { PerJourneyTimeline } from "@/components/product/per-journey-timeline"
 import { PerPersonaCards } from "@/components/product/per-persona-cards"
 import { PerTaxSavingsExample } from "@/components/product/per-tax-savings-example"
 import { PerUnlockCases } from "@/components/product/per-unlock-cases"
+import { LivretMythBuster } from "@/components/product/livret-myth-buster"
+import { LivretRiskGrid } from "@/components/product/livret-risk-grid"
 import { LivretConcreteExample } from "@/components/product/livret-concrete-example"
 import { LivretPersonaCards } from "@/components/product/livret-persona-cards"
 import { LivretRateExplainer } from "@/components/product/livret-rate-explainer"
@@ -100,6 +102,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     PerMythBuster,
     PerRiskGrid,
     PerJourneyTimeline,
+    LivretMythBuster,
+    LivretRiskGrid,
     LivretConcreteExample,
     LivretPersonaCards,
     LivretRateExplainer,

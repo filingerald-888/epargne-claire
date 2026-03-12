@@ -2,7 +2,7 @@ export const frontmatter = {
   title: 'Livret A / LDDS',
   slug: 'livret-a-ldds',
   subtitle: "Le Livret A est un excellent ami pour votre épargne de précaution. Comme tout bon ami, il a ses limites — mieux vaut les connaître.",
-  readingTime: 6,
+  readingTime: 7,
   lastUpdated: '2026-03-02',
   objectifs: ['securiser'],
   labelCouleur: ['Sécuriser'],
@@ -58,7 +58,32 @@ Même taux, même garantie d'État, même fiscalité. Le plafond est de **12 000
 
 </ProductSection>
 
-{/* Écran 3 — Taux du Livret A */}
+{/* Écran 3 — Idées reçues */}
+
+<ProductSection background="primary-subtle">
+
+<StrongPhrase
+  title="5 idées reçues sur le Livret A."
+  gradient
+/>
+
+<LivretMythBuster />
+
+</ProductSection>
+
+{/* Écran 4 — Risques */}
+
+<ProductSection>
+
+<StrongPhrase title="Les limites réelles du Livret A." />
+
+<LivretRiskGrid />
+
+<p className="mt-6 text-center text-sm text-ep-text-muted"><strong className="text-ep-text-primary">Le Livret A n'est pas un placement de performance.</strong> C'est un outil de précaution. Une fois votre matelas constitué, explorez d'autres options pour faire travailler votre épargne.</p>
+
+</ProductSection>
+
+{/* Écran 5 — Taux du Livret A */}
 
 <ProductSection>
 

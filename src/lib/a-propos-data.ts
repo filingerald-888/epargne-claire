@@ -117,11 +117,11 @@ export const skills: SkillCategory[] = [
   },
   {
     title: 'Expertise secteur et réglementaire',
-    content: 'Services financiers, Assurance, Banque, Santé • RGPD, ACPR, CNIL, AMF, gestion risques et conformité • Systèmes legacy complexes / modernisation entreprise',
+    content: '',
   },
   {
     title: 'Outils et méthodologies',
-    content: 'SAFe, Scrum, Jira, Notion, Figma, Trello, PowerBI • OKRs • Définition métriques • Méthodologies agile (SAFe, Scrum) • Amplitude • Pilotage par la donnée',
+    content: '',
   },
 ]
 

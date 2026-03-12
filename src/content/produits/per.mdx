@@ -102,9 +102,26 @@ En échange de cet avantage, votre épargne reste **bloquée jusqu'à la retrait
 
 </ProductSection>
 
-{/* Écran 6 — Frais */}
+{/* Écran 6 — Fiscalité */}
 
 <ProductSection background="primary-subtle">
+
+<StrongPhrase title="Comment fonctionne l'avantage fiscal ?" />
+
+<FiscalTimeline
+  milestone="Retraite"
+  before={{ label: "Quand vous versez", description: <>Chaque euro versé est <strong>déduit de votre revenu imposable</strong>. Résultat : vous payez moins d'impôts l'année du versement. Le plafond de déduction est d'environ <strong>10 % de vos revenus professionnels</strong>. Le plafond non utilisé est reportable sur <strong>5 ans</strong> (au lieu de 3 ans auparavant). <strong>Attention :</strong> depuis 2026, les versements effectués après <strong>70 ans</strong> ne sont plus déductibles.</> }}
+  after={{ label: "Quand vous retirez", description: <>À la retraite, le capital récupéré est <strong>soumis à l'impôt sur le revenu</strong>. Les gains sont taxés séparément, avec un prélèvement fixe de <strong>31,4 %</strong> (12,8 % d'IR + 18,6 % de prélèvements sociaux) ou au barème progressif si c'est plus avantageux pour vous.</> }}
+  detail={<>En clair : l'État vous fait <strong>un prêt fiscal</strong>. Vous payez moins d'impôts aujourd'hui, mais vous les payez à la retraite. L'intérêt ? Votre taux d'imposition est souvent <strong>plus bas à la retraite</strong> qu'en activité — vous y gagnez.</>}
+/>
+
+<PerExitOptions />
+
+</ProductSection>
+
+{/* Écran 7 — Frais */}
+
+<ProductSection>
 
 <StrongPhrase title="Les frais font la différence, ici aussi." />
 
@@ -126,23 +143,6 @@ En échange de cet avantage, votre épargne reste **bloquée jusqu'à la retrait
 />
 
 <p className="mt-8 text-center text-sm text-ep-text-muted">À ces frais s'ajoutent les frais propres aux placements que vous choisissez (environ 1,5 % à 2 % par an). <strong className="text-ep-text-primary">Ces frais sont les mêmes quel que soit le type de PER.</strong></p>
-
-</ProductSection>
-
-{/* Écran 7 — Fiscalité */}
-
-<ProductSection>
-
-<StrongPhrase title="Comment fonctionne l'avantage fiscal ?" />
-
-<FiscalTimeline
-  milestone="Retraite"
-  before={{ label: "Quand vous versez", description: <>Chaque euro versé est <strong>déduit de votre revenu imposable</strong>. Résultat : vous payez moins d'impôts l'année du versement. Le plafond de déduction est d'environ <strong>10 % de vos revenus professionnels</strong>. Le plafond non utilisé est reportable sur <strong>5 ans</strong> (au lieu de 3 ans auparavant). <strong>Attention :</strong> depuis 2026, les versements effectués après <strong>70 ans</strong> ne sont plus déductibles.</> }}
-  after={{ label: "Quand vous retirez", description: <>À la retraite, le capital récupéré est <strong>soumis à l'impôt sur le revenu</strong>. Les gains sont taxés séparément, avec un prélèvement fixe de <strong>31,4 %</strong> (12,8 % d'IR + 18,6 % de prélèvements sociaux) ou au barème progressif si c'est plus avantageux pour vous.</> }}
-  detail={<>En clair : l'État vous fait <strong>un prêt fiscal</strong>. Vous payez moins d'impôts aujourd'hui, mais vous les payez à la retraite. L'intérêt ? Votre taux d'imposition est souvent <strong>plus bas à la retraite</strong> qu'en activité — vous y gagnez.</>}
-/>
-
-<PerExitOptions />
 
 </ProductSection>
 

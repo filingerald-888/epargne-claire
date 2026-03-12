@@ -102,9 +102,26 @@ Votre épargne est investie sur les marchés financiers (actions, obligations, i
 
 </ProductSection>
 
-{/* Écran 6 — Frais */}
+{/* Écran 6 — Fiscalité */}
 
 <ProductSection background="primary-subtle">
+
+<StrongPhrase title="Quand l'assurance-vie devient-elle vraiment intéressante ?" />
+
+<FiscalTimeline
+  milestone="8 ans"
+  before={{ label: "Avant 8 ans", description: <>Si vous retirez de l'argent, l'État prélève <strong>30 %</strong> sur vos gains (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux). L'assurance-vie est exclue de la hausse de CSG de 2026.</> }}
+  after={{ label: "Après 8 ans", description: <>Chaque année, une partie de vos gains retirés est <strong>exonérée d'impôt</strong> (<strong>4 600 €</strong> si vous êtes seul, <strong>9 200 €</strong> en couple). Au-delà, le taux d'imposition est réduit.</> }}
+  detail={<>En clair : après 8 ans, vous payez <strong>moins d'impôts</strong> quand vous retirez votre argent. Et les prélèvements sociaux (17,2 %) restent dus dans les deux cas — c'est un prélèvement automatique sur vos gains. À noter : sur les fonds en euros, les prélèvements sociaux sont prélevés <strong>chaque année</strong> sur les intérêts. Sur les unités de compte, ils ne sont dus <strong>qu'au moment du rachat</strong>, ce qui permet de réinvestir la totalité des gains en attendant.</>}
+/>
+
+<FiscalExample />
+
+</ProductSection>
+
+{/* Écran 7 — Frais */}
+
+<ProductSection>
 
 <StrongPhrase title="Les frais font plus de différence que vous ne le pensez." />
 
@@ -126,23 +143,6 @@ Votre épargne est investie sur les marchés financiers (actions, obligations, i
 />
 
 <p className="mt-8 text-center text-sm text-ep-text-muted">À ces frais s'ajoutent les frais propres aux fonds dans lesquels vous investissez (typiquement 1,5 % à 2 % par an). <strong className="text-ep-text-primary">Ces frais sont les mêmes quel que soit le type de contrat.</strong></p>
-
-</ProductSection>
-
-{/* Écran 7 — Fiscalité */}
-
-<ProductSection>
-
-<StrongPhrase title="Quand l'assurance-vie devient-elle vraiment intéressante ?" />
-
-<FiscalTimeline
-  milestone="8 ans"
-  before={{ label: "Avant 8 ans", description: <>Si vous retirez de l'argent, l'État prélève <strong>30 %</strong> sur vos gains (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux). L'assurance-vie est exclue de la hausse de CSG de 2026.</> }}
-  after={{ label: "Après 8 ans", description: <>Chaque année, une partie de vos gains retirés est <strong>exonérée d'impôt</strong> (<strong>4 600 €</strong> si vous êtes seul, <strong>9 200 €</strong> en couple). Au-delà, le taux d'imposition est réduit.</> }}
-  detail={<>En clair : après 8 ans, vous payez <strong>moins d'impôts</strong> quand vous retirez votre argent. Et les prélèvements sociaux (17,2 %) restent dus dans les deux cas — c'est un prélèvement automatique sur vos gains. À noter : sur les fonds en euros, les prélèvements sociaux sont prélevés <strong>chaque année</strong> sur les intérêts. Sur les unités de compte, ils ne sont dus <strong>qu'au moment du rachat</strong>, ce qui permet de réinvestir la totalité des gains en attendant.</>}
-/>
-
-<FiscalExample />
 
 </ProductSection>
 
