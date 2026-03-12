@@ -33,7 +33,7 @@ const objectifs: Objectif[] = [
     title: 'S\u00E9curiser mon quotidien',
     colorKey: 'securiser',
     description:
-      'Prot\u00E9ger votre argent avec des produits \u00E0 capital garanti et une disponibilit\u00E9 imm\u00E9diate de vos fonds.',
+      'Prot\u00E9gez votre argent avec des produits \u00E0 capital garanti et une disponibilit\u00E9 imm\u00E9diate de vos fonds.',
     tags: [
       { label: 'Livret A', colorKey: 'securiser' },
       { label: 'Assurance-vie', colorKey: 'securiser' },
@@ -46,7 +46,7 @@ const objectifs: Objectif[] = [
     title: 'Pr\u00E9parer mes projets',
     colorKey: 'projets',
     description:
-      'Financer vos projets de vie \u2014 immobilier, \u00E9tudes, voyages \u2014 avec une \u00E9pargne qui grandit.',
+      'Financez vos projets de vie \u2014 immobilier, \u00E9tudes, voyages \u2014 avec une \u00E9pargne qui grandit.',
     tags: [
       { label: 'Assurance-vie', colorKey: 'projets' },
       { label: 'PEA', colorKey: 'projets' },
@@ -59,7 +59,7 @@ const objectifs: Objectif[] = [
     title: 'Pr\u00E9parer ma retraite',
     colorKey: 'retraite',
     description:
-      "Pr\u00E9parer votre retraite en payant moins d'imp\u00F4ts aujourd'hui.",
+      "Pr\u00E9parez votre retraite tout en r\u00E9duisant vos imp\u00F4ts d\u00E8s aujourd'hui.",
     tags: [
       { label: 'PER', colorKey: 'retraite' },
       { label: 'Assurance-vie', colorKey: 'retraite' },
@@ -72,7 +72,7 @@ const objectifs: Objectif[] = [
     title: 'Transmettre mon patrimoine',
     colorKey: 'transmission',
     description:
-      'Transmettre votre patrimoine \u00E0 vos proches dans les meilleures conditions fiscales.',
+      'Transmettez votre patrimoine \u00E0 vos proches dans les meilleures conditions fiscales.',
     tags: [
       { label: 'Assurance-vie', colorKey: 'transmission' },
       { label: 'PER', colorKey: 'transmission' },

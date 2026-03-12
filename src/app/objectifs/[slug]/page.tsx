@@ -63,7 +63,7 @@ const objectifData: Record<string, ObjectifData> = {
     heroImage: '/images/hero-objectif-securiser.jpg',
     subtitle:
       'Dormir sans angoisse financière, ça s\u2019organise.',
-    body: 'On vous montre comment constituer le filet de sécurité à tisser.',
+    body: 'On vous montre comment constituer votre filet de sécurité.',
     questionTitle: 'Pourquoi une épargne de précaution ?',
     explanation:
       <>La vie réserve des imprévus : perte d{'\u2019'}emploi, réparation urgente, problème de santé. L{'\u2019'}épargne de précaution est <strong>un matelas financier disponible immédiatement, sans risque de perte</strong>, pour faire face sereinement à ces aléas.</>,
@@ -128,7 +128,7 @@ const objectifData: Record<string, ObjectifData> = {
       },
     ],
     productsSubtitle:
-      'Explorer les solutions qui correspondent à cet objectif.',
+      'Explorez les solutions qui correspondent à cet objectif.',
     products: [
       {
         title: 'Livret A (& LDDS)',
@@ -221,7 +221,7 @@ const objectifData: Record<string, ObjectifData> = {
       {
         icon: 'landmark',
         title: 'Fiscalité différée',
-        description: "Déduire aujourd'hui, payer moins demain",
+        description: "Déduire aujourd'hui, payer moins d'impôt demain",
       },
       {
         icon: 'refresh-cw',
@@ -230,7 +230,7 @@ const objectifData: Record<string, ObjectifData> = {
       },
     ],
     productsSubtitle:
-      'Explorer les solutions qui correspondent à cet objectif.',
+      'Explorez les solutions qui correspondent à cet objectif.',
     products: [
       {
         title: 'PER',
@@ -341,7 +341,7 @@ const objectifData: Record<string, ObjectifData> = {
       {
         icon: 'trending-up',
         title: 'Rendement adapté',
-        description: 'Dosez risque et performance selon l\u2019horizon',
+        description: 'Dosez risque et performance selon votre horizon',
       },
       {
         icon: 'calendar',
@@ -355,7 +355,7 @@ const objectifData: Record<string, ObjectifData> = {
       },
     ],
     productsSubtitle:
-      'Explorer les solutions qui correspondent à cet objectif.',
+      'Explorez les solutions qui correspondent à cet objectif.',
     products: [
       {
         title: 'Assurance-vie',
@@ -458,7 +458,7 @@ const objectifData: Record<string, ObjectifData> = {
       },
     ],
     productsSubtitle:
-      'Explorer les solutions qui correspondent à cet objectif.',
+      'Explorez les solutions qui correspondent à cet objectif.',
     products: [
       {
         title: 'Assurance-vie',

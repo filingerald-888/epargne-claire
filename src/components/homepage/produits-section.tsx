@@ -40,7 +40,7 @@ const produits: Produit[] = [
   {
     title: 'PEA',
     description:
-      "Investissez en actions europ\u00E9ennes sans imp\u00F4t apr\u00E8s 5 ans.",
+      "Investissez en actions europ\u00E9ennes sans imp\u00F4t sur les gains apr\u00E8s 5 ans.",
     image: '/images/hero-pea.jpg',
     tags: [{ label: 'Projets', colorKey: 'projets' }],
     href: '/produits/pea',

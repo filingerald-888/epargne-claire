@@ -52,7 +52,7 @@ const sections = [
     title: 'Responsabilité',
     content: [
       "L'éditeur s'efforce de fournir des informations exactes et à jour. Toutefois, il ne peut garantir l'absence d'erreurs ou d'omissions. L'utilisation des informations se fait sous la seule responsabilité de l'utilisateur.",
-      "L'éditeur ne saurait être tenu responsable de tout dommage direct ou indirect résultant de l'utilisation du site ou de l'impossibilité d'y accéder.",
+      "L'éditeur ne saurait être tenu responsable d'un quelconque dommage, direct ou indirect, résultant de l'utilisation du site ou de l'impossibilité d'y accéder.",
       "Les liens vers des sites externes sont fournis à titre informatif. L'éditeur n'exerce aucun contrôle sur leur contenu et décline toute responsabilité les concernant.",
     ],
   },

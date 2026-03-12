@@ -31,12 +31,12 @@
   },
   "PFU": {
     "definition": "Prélèvement Forfaitaire Unique (flat tax) : impôt de 31,4 % sur les revenus du capital, combinant 12,8 % d'impôt sur le revenu et 18,6 % de prélèvements sociaux.",
-    "definitionComplete": "Le prélèvement forfaitaire unique simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Le taux standard est de 31,4 % depuis 2026 (12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux) pour les revenus financiers courants (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire). Exception : l'assurance-vie conserve un taux à 30 % (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux), car elle est exclue de la hausse de contribution sociale généralisée de 2026. Le contribuable peut opter pour l'imposition au barème progressif si cela lui est plus favorable.",
+    "definitionComplete": "Le prélèvement forfaitaire unique simplifie la fiscalité des revenus du capital (intérêts, dividendes, plus-values). Le taux standard est de 31,4 % depuis 2026 (12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux) pour les revenus financiers courants (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire). Exception : l'assurance-vie conserve un taux à 30 % (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux), car elle est exclue de la hausse de la contribution sociale généralisée de 2026. Le contribuable peut opter pour l'imposition au barème progressif si cela lui est plus favorable.",
     "aliases": ["flat tax", "prélèvement forfaitaire unique"]
   },
   "Fonds euros": {
     "definition": "Support d'investissement à capital garanti au sein d'un contrat d'assurance-vie, composé principalement d'obligations d'État.",
-    "definitionComplete": "Le fonds euros est le support sécurisé de l'assurance-vie. L'assureur garantit le capital investi (effet cliquet : les intérêts acquis sont définitivement acquis). Le portefeuille est composé majoritairement d'obligations d'État et d'entreprises, avec une poche diversifiée (immobilier, actions). Le rendement moyen était d'environ 2,5 % en 2023, en hausse grâce à la remontée des taux. C'est le placement idéal pour la partie sécuritaire d'une allocation.",
+    "definitionComplete": "Le fonds euros est le support sécurisé de l'assurance-vie. L'assureur garantit le capital investi (effet cliquet : les intérêts acquis sont définitivement acquis). Le portefeuille est composé majoritairement d'obligations d'État et d'entreprises, avec une poche diversifiée (immobilier, actions). Le rendement moyen était d'environ 2,6 % en 2024, en hausse grâce à la remontée des taux. C'est le placement idéal pour la partie sécuritaire d'une allocation.",
     "aliases": ["fonds en euros", "support euros"]
   },
   "Unités de compte": {
@@ -54,7 +54,7 @@
   },
   "Plus-value": {
     "definition": "Gain réalisé lors de la vente d'un actif (action, part de fonds, bien immobilier) à un prix supérieur à son prix d'achat.",
-    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au prélèvement forfaitaire unique (31,4 %) ou au barème de l'impôt sur le revenu sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
+    "definitionComplete": "La plus-value est la différence positive entre le prix de vente et le prix d'acquisition d'un actif. En valeurs mobilières, elle est soumise au prélèvement forfaitaire unique (31,4 %, ou 30 % en assurance-vie) ou au barème de l'impôt sur le revenu sur option. En assurance-vie, les plus-values ne sont imposées qu'au moment du rachat (retrait), avec des abattements après 8 ans. En immobilier, un régime spécifique avec abattements pour durée de détention s'applique. À l'inverse, une moins-value est une perte.",
     "aliases": ["plus value", "gain"]
   },
   "Rétrocessions": {
@@ -64,7 +64,7 @@
   },
   "TMI": {
     "definition": "Taux Marginal d'Imposition : taux d'impôt appliqué à la dernière tranche de vos revenus, déterminant l'économie d'impôt réelle des déductions.",
-    "definitionComplete": "Le taux marginal d'imposition est le taux de la tranche la plus élevée du barème progressif de l'impôt sur le revenu qui s'applique à vos revenus. Les tranches 2024 sont : 0 % (jusqu'à 11 294 €), 11 % (11 295 – 28 797 €), 30 % (28 798 – 82 341 €), 41 % (82 342 – 177 106 €), 45 % (au-delà). Connaître son taux marginal est essentiel pour évaluer l'intérêt de dispositifs déductibles comme le Plan d'Épargne Retraite : un versement de 1 000 € avec un taux marginal à 30 % génère une économie d'impôt de 300 €.",
+    "definitionComplete": "Le taux marginal d'imposition est le taux de la tranche la plus élevée du barème progressif de l'impôt sur le revenu qui s'applique à vos revenus. Les tranches 2025 sont : 0 % (jusqu'à 11 497 €), 11 % (11 498 – 29 315 €), 30 % (29 316 – 83 823 €), 41 % (83 824 – 180 294 €), 45 % (au-delà). Connaître son taux marginal est essentiel pour évaluer l'intérêt de dispositifs déductibles comme le Plan d'Épargne Retraite : un versement de 1 000 € avec un taux marginal à 30 % génère une économie d'impôt de 300 €.",
     "aliases": ["taux marginal d'imposition", "tranche marginale"]
   },
   "Frais de gestion": {
@@ -74,7 +74,7 @@
   },
   "Prélèvements sociaux": {
     "definition": "Cotisations sociales prélevées sur les revenus du capital, au taux de 18,6 % depuis 2026 (17,2 % pour l'assurance-vie et les revenus fonciers).",
-    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global est passé de 17,2 % à 18,6 % au 1er janvier 2026 pour les revenus financiers (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire, épargne salariale). Toutefois, l'assurance-vie et les revenus fonciers (SCPI) restent à 17,2 %, car ils sont exclus de la hausse de contribution sociale généralisée de 2026. Ils se décomposent en contribution sociale généralisée, contribution au remboursement de la dette sociale et prélèvement de solidarité. Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : Plan d'Épargne en Actions après 5 ans, intérêts du Livret A exceptés).",
+    "definitionComplete": "Les prélèvements sociaux s'appliquent aux revenus du capital : intérêts, dividendes, plus-values, revenus fonciers. Le taux global est passé de 17,2 % à 18,6 % au 1er janvier 2026 pour les revenus financiers (Plan d'Épargne en Actions, Plan d'Épargne Retraite, compte-titres ordinaire, épargne salariale). Toutefois, l'assurance-vie et les revenus fonciers (SCPI) restent à 17,2 %, car ils sont exclus de la hausse de la contribution sociale généralisée de 2026. Ils se décomposent en contribution sociale généralisée, contribution au remboursement de la dette sociale et prélèvement de solidarité. Ils sont dus même en cas d'exonération d'impôt sur le revenu (exemple : Plan d'Épargne en Actions après 5 ans, intérêts du Livret A exceptés).",
     "aliases": ["PS", "cotisations sociales", "CSG-CRDS"]
   },
   "Abattement": {
@@ -133,7 +133,7 @@
   },
   "Dividende": {
     "definition": "Part des bénéfices d'une entreprise distribuée aux actionnaires, généralement une fois par an.",
-    "definitionComplete": "Le dividende est la rémunération versée par une entreprise à ses actionnaires, proportionnellement au nombre d'actions détenues. En France, les dividendes sont soumis au prélèvement forfaitaire unique (31,4 %) ou au barème de l'impôt sur le revenu sur option. Dans un PEA, les dividendes sont réinvestis sans imposition immédiate et exonérés d'impôt sur le revenu après 5 ans. Les SCPI versent aussi des « dividendes » (revenus fonciers) issus des loyers collectés.",
+    "definitionComplete": "Le dividende est la rémunération versée par une entreprise à ses actionnaires, proportionnellement au nombre d'actions détenues. En France, les dividendes sont soumis au prélèvement forfaitaire unique (31,4 %, ou 30 % en assurance-vie) ou au barème de l'impôt sur le revenu sur option. Dans un PEA, les dividendes sont réinvestis sans imposition immédiate et exonérés d'impôt sur le revenu après 5 ans. Les SCPI versent aussi des « dividendes » (revenus fonciers) issus des loyers collectés.",
     "aliases": ["dividendes"]
   },
   "Moins-value": {
