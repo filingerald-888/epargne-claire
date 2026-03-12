@@ -1,6 +1,6 @@
 'use client'
 
-import { Award, Briefcase, Globe, GraduationCap, Mail, Phone } from 'lucide-react'
+import { Award, Briefcase, Globe, GraduationCap, Linkedin, Mail, Phone } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import Image from 'next/image'
 
@@ -72,6 +72,15 @@ export function AProposParcours() {
         >
           <Mail className="size-4 text-ep-primary" strokeWidth={1.5} />
           filingerald@gmail.com
+        </a>
+        <a
+          href="https://www.linkedin.com/in/gerald-filin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-ep-separator bg-white px-4 py-2 text-ep-text-primary transition-colors hover:border-ep-primary hover:text-ep-primary"
+        >
+          <Linkedin className="size-4 text-ep-primary" strokeWidth={1.5} />
+          LinkedIn
         </a>
       </motion.div>
 

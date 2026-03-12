@@ -105,22 +105,18 @@ export const experiences: ExperienceEntry[] = [
 export const skills: SkillCategory[] = [
   {
     title: 'Transformation digitale et programme delivery',
-    content: 'Pilotage programmes transformation, digitalisation omnicanale • SAFe/Scrum • Coordination multi-entités et géographies • Gestion délais/budgets • Reporting exécutif • Suivi KPIs business et opérationnels • Gestion risques et conformité • Leadership équipes transverses',
-  },
-  {
-    title: 'Leadership exécutif et gouvernance',
-    content: 'Définition vision digitale et stratégies optimisation processus • Arbitrage priorités multi-équipes • Allocation ressources • Engagement parties prenantes • Encadrement hiérarchique • Cadre de gouvernance produit • Conduite changement organisationnel',
-  },
-  {
-    title: 'Excellence opérationnelle et impact',
-    content: 'Optimisation processus et automatisation • Amélioration CSAT/NPS • Scaling multi-pays • Architecture modulaire • Intégration partenaires',
-  },
-  {
-    title: 'Expertise secteur et réglementaire',
     content: '',
   },
   {
-    title: 'Outils et méthodologies',
+    title: 'Leadership exécutif et gouvernance',
+    content: '',
+  },
+  {
+    title: 'Excellence opérationnelle et impact',
+    content: '',
+  },
+  {
+    title: 'Expertise secteur et réglementaire',
     content: '',
   },
 ]
