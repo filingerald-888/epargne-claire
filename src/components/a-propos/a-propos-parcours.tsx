@@ -137,13 +137,12 @@ export function AProposParcours() {
           <Briefcase className="size-6 text-ep-primary" strokeWidth={1.5} aria-hidden />
           Compétences
         </motion.h3>
-        {/* Top 3 compétences clés */}
         <motion.div
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-6 rounded-xl border border-ep-primary/20 bg-ep-primary/5 p-5"
+          className="rounded-xl border border-ep-primary/20 bg-ep-primary/5 p-5"
         >
           <p className="mb-3 text-sm font-bold text-ep-primary">
             Top 3 compétences clés
@@ -159,31 +158,22 @@ export function AProposParcours() {
               </li>
             ))}
           </ul>
-        </motion.div>
-
-        <motion.div
-          variants={staggerContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-        >
-          {skills.map((cat) => (
-            <motion.div
-              key={cat.title}
-              variants={itemVariants}
-              className="rounded-xl border border-ep-separator bg-white p-5 shadow-[0_2px_8px_rgb(0,0,0,0.06)]"
-            >
-              <p className="text-sm font-bold text-ep-text-primary">
-                {cat.title}
-              </p>
-              {cat.content && (
-                <p className="mt-2 text-sm leading-relaxed text-ep-text-muted">
-                  {cat.content}
-                </p>
-              )}
-            </motion.div>
-          ))}
+          <div className="mt-4 border-t border-ep-primary/10 pt-4">
+            <p className="mb-2 text-sm font-bold text-ep-primary">
+              Domaines d'expertise
+            </p>
+            <ul className="space-y-1.5">
+              {skills.map((cat) => (
+                <li
+                  key={cat.title}
+                  className="flex items-start gap-2 text-sm leading-relaxed text-ep-text-primary"
+                >
+                  <span className="mt-1 size-1.5 shrink-0 rounded-full bg-ep-primary/50" aria-hidden />
+                  {cat.title}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
       </div>
 
